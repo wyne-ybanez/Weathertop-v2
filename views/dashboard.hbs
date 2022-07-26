@@ -1,0 +1,37 @@
+{{> menu id="dashboard"}}
+
+<section class="ui raised segment">
+  <header class="ui header">
+    WeatherTop V2
+  </header>
+  <table class="ui fixed table">
+  <thead>
+    <tr>
+      <th>Readings</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <div class="ui bulleted list">
+      {{#each readingslist}}
+      <tr>
+        <td>{{title}}</td>
+        <td>
+          <a href="/dashboard/deletereading/{{id}} " class="ui tiny red button">
+            Delete
+          </a>
+        </td>
+      </tr>
+      {{/each}}
+    </div>
+  </tbody>
+</table>
+</section>
+
+<form class="ui stacked segment form" action="/dashboard/addreading" method="POST">
+  <div class="field">
+    <label>Reading Title</label>
+    <input placeholder="Title" type="text" name="title" />
+  </div>
+  <button class="ui blue submit button">Add Reading</button>
+</form>
