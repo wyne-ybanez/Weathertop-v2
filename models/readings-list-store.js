@@ -27,6 +27,10 @@ const readingsListStore = {
     this.store.remove(this.collection, reading);
     this.store.save();
   },
+
+  getUserReadings(userid) {
+    return this.store.findBy(this.collection, { userid: userid });
+  },
 };
 
 module.exports = readingsListStore;

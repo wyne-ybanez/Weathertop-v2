@@ -20,13 +20,13 @@ const accounts = {
   },
 
   logout(request, response) {
-    response.cookie("station", "");
+    response.cookie("user", "");
     response.redirect("/");
   },
 
   signup(request, response) {
     const viewData = {
-      title: "Login to the Service",
+      title: "Login to WeatherTop",
     };
     response.render("signup", viewData);
   },
@@ -42,7 +42,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if (user) {
-      response.cookie("station", user.email);
+      response.cookie("user", user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect("/dashboard");
     } else {
@@ -51,7 +51,7 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userEmail = request.cookies.station;
+    const userEmail = request.cookies.user;
     return userstore.getUserByEmail(userEmail);
   },
 };
