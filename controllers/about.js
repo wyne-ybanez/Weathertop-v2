@@ -4,9 +4,9 @@ const logger = require("../utils/logger");
 
 const about = {
   index(request, response) {
-    logger.info("about rendering");
+    logger.info("about page rendering");
     const viewData = {
-      title: "About Template 1",
+      title: "About WeatherTop V2 Template",
     };
     response.render("about", viewData);
   },
