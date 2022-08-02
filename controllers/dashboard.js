@@ -1,37 +1,39 @@
 "use strict";
 
 const logger = require("../utils/logger");
-const readingsListStore = require("../models/readings-list-store");
+const stationsStore = require("../models/station-store");
 const accounts = require("./accounts");
 const uuid = require("uuid");
 // const { response } = require("express");
 
 const dashboard = {
   index(request, response) {
-    logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "WeatherTop Dashboard",
-      readingslist: readingsListStore.getUserReadings(loggedInUser.id),
+      user: loggedInUser,
+      stationslist: stationsStore.getAllStations(),
+      // stationslist: stationsStore.getUserStations(loggedInUser.id),
     };
+    logger.info("dashboard rendering", stationsStore.getAllStations());
     response.render("dashboard", viewData);
   },
 
-  addReading(request, response) {
+  addStation(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
-    const reading = {
+    const station = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       title: request.body.title,
     };
-    readingsListStore.addReading(reading);
+    stationsStore.addStation(station);
     response.redirect("/dashboard");
   },
 
-  deleteReading(request, response) {
-    const readingId = request.params.id;
-    logger.info(`Deleting reading ${readingId}`);
-    readingsListStore.removeReading(readingId);
+  deleteStation(request, response) {
+    const stationId = request.params.id;
+    logger.info(`Deleting station ${stationId}`);
+    stationsStore.removeStation(stationId);
     response.redirect("/dashboard");
   },
 };
