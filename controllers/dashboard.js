@@ -12,7 +12,7 @@ const dashboard = {
     const viewData = {
       title: "WeatherTop Dashboard",
       user: loggedInUser,
-      stationslist: stationsStore.getAllStations(),
+      stations: stationsStore.getAllStations(),
       // stationslist: stationsStore.getUserStations(loggedInUser.id),
     };
     logger.info("dashboard rendering", stationsStore.getAllStations());
@@ -21,18 +21,19 @@ const dashboard = {
 
   addStation(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
-    const station = {
+    const newStation = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       title: request.body.title,
+      readings: [],
     };
-    stationsStore.addStation(station);
+    stationsStore.addStation(newStation);
     response.redirect("/dashboard");
   },
 
   deleteStation(request, response) {
     const stationId = request.params.id;
-    logger.info(`Deleting station ${stationId}`);
+    logger.debug(`Deleting station ${stationId}`);
     stationsStore.removeStation(stationId);
     response.redirect("/dashboard");
   },

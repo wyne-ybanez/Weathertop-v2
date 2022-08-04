@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger");
 const stationsStore = require("../models/station-store.js");
+const uuid = require("uuid");
 
 const station = {
   index(request, response) {
@@ -12,6 +13,20 @@ const station = {
       station: stationsStore.getStation(stationId),
     };
     response.render("station", viewData);
+  },
+
+  addReading(request, response) {
+    const stationId = request.params.id;
+    const station = stationsStore.getStation(stationId);
+    const newReading = {
+      id: uuid.v1(),
+      title: request.body.title,
+      artist: request.body.artist,
+      duration: Number(request.body.duration),
+    };
+    logger.debug("New Reading = ", newReading);
+    stationsStore.addReading(stationId, newReading);
+    response.redirect("/station/" + stationId);
   },
 
   deleteReading(request, response) {
