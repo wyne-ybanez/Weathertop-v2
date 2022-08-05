@@ -8,14 +8,14 @@ const uuid = require("uuid");
 
 const dashboard = {
   index(request, response) {
+    logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "WeatherTop Dashboard",
       user: loggedInUser,
-      stations: stationsStore.getAllStations(),
-      // stationslist: stationsStore.getUserStations(loggedInUser.id),
+      stations: stationsStore.getUserStations(loggedInUser.id),
     };
-    logger.info("dashboard rendering", stationsStore.getAllStations());
+    logger.info("about to render", stationsStore.getAllStations());
     response.render("dashboard", viewData);
   },
 
@@ -27,6 +27,7 @@ const dashboard = {
       title: request.body.title,
       readings: [],
     };
+    logger.debug("Creating a new Station", newStation);
     stationsStore.addStation(newStation);
     response.redirect("/dashboard");
   },

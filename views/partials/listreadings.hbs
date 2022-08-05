@@ -5,6 +5,7 @@
       <th>Artist</th>
       <th>Duration</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,13 @@
         <td>
           {{duration}}
         </td>
+        {{!-- Edit Reading --}}
+        <td>
+          <a href="/reading/{{../station.id}}/editreading/{{id}}" class="ui icon button">
+            <i class="pencil alternate icon"></i>
+          </a>
+        </td>
+        {{!-- Delete Reading --}}
         <td>
           <a href="/station/{{../station.id}}/deletereading/{{id}}" class="ui icon button">
             <i class="icon trash"></i>

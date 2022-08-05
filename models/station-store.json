@@ -1,11 +1,18 @@
 {
   "stationsCollection": [
     {
-      "id": "5f173010-1414-11ed-bb9b-eb55dcda836f",
+      "id": "891f0250-14cf-11ed-841b-8f0cd13020f8",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "test",
-      "readings": [],
-      "duration": 123
+      "title": "test 2",
+      "readings": [
+        {
+          "id": "9474ecf0-14cf-11ed-841b-8f0cd13020f8",
+          "title": "test 2",
+          "artist": "test 2",
+          "duration": 222
+        }
+      ],
+      "duration": 223
     }
   ]
 }

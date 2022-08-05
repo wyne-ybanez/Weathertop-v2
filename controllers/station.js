@@ -8,9 +8,25 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station Id = ", stationId);
+
+    let shortestReading = null;
+    const station = stationsStore.getStation(stationId);
+
+    // Algorithm to look for the shortest reading
+    if (station.readings.length > 0) {
+      shortestReading = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].duration < shortestReading.duration) {
+          shortestReading = station.readings[i];
+        }
+      }
+    }
+
+    console.log(shortestReading);
     const viewData = {
       title: "Station",
       station: stationsStore.getStation(stationId),
+      shortestReading: shortestReading,
     };
     response.render("station", viewData);
   },
