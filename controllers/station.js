@@ -1,6 +1,7 @@
 "use strict";
 
-const logger = require("../utils/logger");
+const logger = require("../utils/logger.js");
+const stationAnalytics = require("../utils/station-analytics.js");
 const stationsStore = require("../models/station-store.js");
 const uuid = require("uuid");
 
@@ -9,24 +10,18 @@ const station = {
     const stationId = request.params.id;
     logger.debug("Station Id = ", stationId);
 
-    let shortestReading = null;
     const station = stationsStore.getStation(stationId);
-
-    // Algorithm to look for the shortest reading
-    if (station.readings.length > 0) {
-      shortestReading = station.readings[0];
-      for (let i = 1; i < station.readings.length; i++) {
-        if (station.readings[i].duration < shortestReading.duration) {
-          shortestReading = station.readings[i];
-        }
-      }
-    }
-
+    let shortestReading = stationAnalytics.getShortestReading(station);
     console.log(shortestReading);
+
+    const duration = stationAnalytics.getStationDuration(station);
+    console.log(duration);
+
     const viewData = {
       title: "Station",
       station: stationsStore.getStation(stationId),
       shortestReading: shortestReading,
+      duration: duration,
     };
     response.render("station", viewData);
   },
