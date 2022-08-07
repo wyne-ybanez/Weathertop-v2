@@ -4,8 +4,36 @@
   <h2 class="ui header">
     {{station.title}}
   </h2>
-  <h4>Total Duration: {{duration}}</h4> 
-  <h4>Shortest reading: {{shortestReading.title}}</h4>
+
+  <table>
+    {{!-- Trends and Latest Data --}}
+    <div class="ui five column stackable grid">
+
+      <div id="station" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height">
+            <h3 class="ui header top-medium-padding">
+              {{station.title}}
+              <i class="marker icon"></i>
+            </h3>
+            <p class="description">
+              Lat: {{station.latitude}}
+              <br>
+              Lng: {{station.longitude}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="weather" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height"></div>
+        </div>
+      </div>
+
+    </div>
+  </table>
+
   {{> listreadings}}
   {{> addreading}}
 </section>

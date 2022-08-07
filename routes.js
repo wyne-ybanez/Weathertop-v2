@@ -22,7 +22,7 @@ router.get("/dashboard/deletestation/:id", dashboard.deleteStation);
 
 router.get("/about", about.index);
 router.get("/station/:id", station.index);
-router.post("/station/:id/addreading", station.addReading);
+router.post("/station/:id/addreading", station.addreading);
 router.get("/station/:id/deletereading/:readingid", station.deleteReading);
 
 router.get("/reading/:id/editreading/:readingid", reading.index);
