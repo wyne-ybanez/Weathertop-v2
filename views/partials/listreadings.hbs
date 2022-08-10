@@ -1,9 +1,10 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Duration</th>
+      <th>Code</th>
+      <th>Temp</th>
+      <th>Wind Speed</th>
+      <th>Pressure</th>
       <th></th>
       <th></th>
     </tr>
@@ -12,13 +13,16 @@
     {{#each station.readings}}
       <tr>
         <td>
-          {{title}}
+          {{code}}
         </td>
         <td>
-          {{artist}}
+          {{temperature}}
         </td>
         <td>
-          {{duration}}
+          {{windSpeed}}
+        </td>
+        <td>
+          {{pressure}}
         </td>
         {{!-- Edit Reading --}}
         <td>

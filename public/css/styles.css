@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header h1,
+.header h2 {
+  font-weight: 700;
+}
+
+.top-medium-padding {
+  padding-top: 2.5rem !important;
+}
+
+.top-small-padding {
+  padding-top: 1rem !important;
+}
+
+.left-small-padding {
+  padding-left: 1rem !important;
+}
+
+.left-medium-padding {
+  padding-left: 2.5rem !important;
+}
+
+.left-large-padding {
+  padding-left: 5rem !important;
+}
+
+.bottom-small-padding {
+  padding-bottom: 1rem !important;
+}
+
+.bottom-medium-padding {
+  padding-bottom: 2.5rem !important;
+}
+
+.bottom-medium-margin {
+  margin-bottom: 2.5rem !important;
+}
+
+.bottom-small-margin {
+  margin-bottom: 1rem !important;
+}
+
+.station-card-height {
+  min-height: 14.5rem;
+  max-height: 14.5rem;
+}
+
+.ui.header > i.icon {
+  font-size: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+
+.ui.cards {
+  display: flex;
+  justify-content: center;
+}
+
+i.icon.blue {
+  width: 300px;
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+i.icon.arrow.up,
+i.icon.arrow.down {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 4rem;
+  right: 2rem;
+}
+
+.about {
+  text-align: center;
+}
+
+/* Latest reading icon colors */
+#station i.icon,
+#station i.icon.arrow.up,
+#station i.icon.arrow.down {
+  color: blueviolet;
+}
+
+#weather i.icon,
+#weather i.icon.arrow.up,
+#weather i.icon.arrow.down {
+  color: red !important;
+}
+
+#temperature i.icon.temperature.low,
+#temperature i.icon.arrow.up,
+#temperature i.icon.arrow.down {
+  color: dodgerblue !important;
+}
+
+#wind i.icon.wind,
+#wind i.icon.arrow.up,
+#wind i.icon.arrow.down {
+  color: forestgreen !important;
+}
+
+#pressure i.icon.cloud.sun,
+#pressure i.icon.arrow.up,
+#pressure i.icon.arrow.down {
+  color: orange !important;
+}
+
+/* Card style changes */
+.ui.inverted.card,
+.ui.inverted.cards > .card {
+  margin-bottom: 1.5rem;
+}

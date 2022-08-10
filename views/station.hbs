@@ -6,6 +6,7 @@
   </h2>
 
   <table>
+    <tbody>
     {{!-- Trends and Latest Data --}}
     <div class="ui five column stackable grid">
 
@@ -27,13 +28,94 @@
 
       <div id="weather" class="column">
         <div class="ui fluid inverted card">
-          <div class="middle aligned content station-card-height"></div>
+          <div class="middle aligned content station-card-height">
+            <h3 class="ui header top-medium-padding">
+              Weather
+              {{#if station.latestWeather}}
+                {{#if_eq station.latestWeather 'Clear'}}
+                  <i class="cloud rainbow icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Partial Clouds'}}
+                  <i class="cloud sun icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Cloudy'}}
+                  <i class="cloud icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Light Showers'}}
+                  <i class="cloud sun rain icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Heavy Showers'}}
+                  <i class="cloud showers heavy icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Rain'}}
+                  <i class="cloud rain icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Snow'}}
+                  <i class="snowflake icon"></i>
+                {{/if_eq}}
+                {{#if_eq station.latestWeather 'Thunder'}}
+                  <i class="poo storm icon"></i>
+                {{/if_eq}}
+              {{/if}}
+            </h3>
+            <p class="description">
+              {{station.latestWeather}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="temperature" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height">
+            <h3 class="ui header top-medium-padding">
+                Temp
+                <i class="temperature low icon"></i>
+            </h3>
+            <p class="description">
+              {{station.temperature}} °C
+              <br>
+              {{station.fahrenheitTemp}} F
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="wind" class="column">
+          <div class="ui fluid inverted card">
+              <div class="middle aligned content station-card-height">
+                  <h3 class="ui header top-medium-padding">
+                    Wind
+                    <i class="wind icon"></i>
+                  </h3>
+                  <p class="description">
+                    {{station.wind}} bft
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <div id="pressure" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height">
+              <h3 class="ui header top-medium-padding">
+                Pressure
+                <i class="cloud sun icon"></i>
+              </h3>
+              <p class="description">
+                  {{station.pressure}} hpa
+              </p>
+          </div>
         </div>
       </div>
 
     </div>
-  </table>
 
-  {{> listreadings}}
-  {{> addreading}}
+      {{!-- Displays readings for each station --}}
+      {{> listreadings}}
+
+      {{!-- Add reading form --}}
+      {{> addreading}}
+    </tbody>
+  </table>
 </section>

@@ -46,12 +46,24 @@ const stationsStore = {
     const station = this.getStation(id);
     station.readings.push(reading);
 
-    let duration = 0;
-    for (let i = 0; i < station.readings.length; i++) {
-      duration += station.readings[i].duration;
-    }
+    // let duration = 0;
+    // for (let i = 0; i < station.readings.length; i++) {
+    //   duration += station.readings[i].duration;
+    // }
 
-    station.duration = duration;
+    // station.duration = duration;
+    // let title;
+    // let latestWeather;
+    // let temperature;
+    // let windSpeed;
+    // let pressure;
+
+    station.title = station.readings.slice(-1).title;
+    // station.latestWeather = station.readings.slice(-1).latestWeather;
+    station.temperature = station.readings.slice(-1).temperature;
+    station.windSpeed = station.readings.slice(-1).windSpeed;
+    station.pressure = station.readings.slice(-1).pressure;
+
     this.store.save();
   },
 
@@ -69,9 +81,10 @@ const stationsStore = {
   },
 
   updateReading(reading, updatedReading) {
-    reading.title = updatedReading.title;
-    reading.artist = updatedReading.artist;
-    reading.duration = updatedReading.duration;
+    reading.code = updatedReading.code;
+    reading.temperature = updatedReading.temperature;
+    reading.windSpeed = updatedReading.windSpeed;
+    reading.pressure = updatedReading.pressure;
     this.store.save();
   },
 };

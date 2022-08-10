@@ -3,16 +3,20 @@
 <form class="ui stacked segment form" action="/reading/{{station.id}}/updatereading/{{reading.id}}" method="POST">
   <div class="two fields">
     <div class="field">
-      <label>Title</label>
-      <input placeholder="Title" type="text" name="title" value="{{reading.title}}">
+      <label>Code</label>
+      <input placeholder="00" type="number" name="code" value="{{reading.code}}">
     </div>
     <div class="field">
-      <label>Artist</label>
-      <input placeholder="Artist" type="text" name="artist" value="{{reading.artist}}">
+      <label>Temp</label>
+      <input placeholder="00" type="number" name="temperature" value="{{reading.temperature}}">
     </div>
     <div class="field">
-      <label>Duration</label>
-      <input placeholder="00" type="number" name="duration" value="{{reading.duration}}">
+      <label>Wind Speed</label>
+      <input placeholder="00" type="number" name="windSpeed" value="{{reading.windSpeed}}">
+    </div>
+    <div class="field">
+      <label>Pressure</label>
+      <input placeholder="00" type="number" name="pressure" value="{{reading.pressure}}">
     </div>
   </div>
   <button class="ui blue submit button">Update Reading</button>
