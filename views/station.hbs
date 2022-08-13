@@ -14,13 +14,13 @@
         <div class="ui fluid inverted card">
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
-              {{station.title}}
+              {{station.name}}
               <i class="marker icon"></i>
             </h3>
             <p class="description">
-              Lat: {{station.latitude}}
+              Lat: {{station.lat}}
               <br>
-              Lng: {{station.longitude}}
+              Lng: {{station.lng}}
             </p>
           </div>
         </div>
@@ -31,35 +31,14 @@
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
               Weather
-              {{#if station.latestWeather}}
-                {{#if_eq station.latestWeather 'Clear'}}
+              {{#if stationSummary.latestWeather}}
+                {{#if_eq stationSummary.latestWeather 'Clear'}}
                   <i class="cloud rainbow icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Partial Clouds'}}
-                  <i class="cloud sun icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Cloudy'}}
-                  <i class="cloud icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Light Showers'}}
-                  <i class="cloud sun rain icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Heavy Showers'}}
-                  <i class="cloud showers heavy icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Rain'}}
-                  <i class="cloud rain icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Snow'}}
-                  <i class="snowflake icon"></i>
-                {{/if_eq}}
-                {{#if_eq station.latestWeather 'Thunder'}}
-                  <i class="poo storm icon"></i>
                 {{/if_eq}}
               {{/if}}
             </h3>
             <p class="description">
-              {{station.latestWeather}}
+              {{stationSummary.latestWeather}}
             </p>
           </div>
         </div>

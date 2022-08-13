@@ -24,7 +24,7 @@ const dashboard = {
     const newStation = {
       id: uuid.v1(),
       userid: loggedInUser.id,
-      title: request.body.title,
+      name: request.body.name,
       lat: request.body.lat,
       lng: request.body.lng,
       readings: [],

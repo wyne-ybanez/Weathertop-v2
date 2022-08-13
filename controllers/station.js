@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger.js");
 const stationAnalytics = require("../utils/station-analytics.js");
+const conversions = require("../utils/conversions.js");
 const stationsStore = require("../models/station-store.js");
 const axios = require("axios");
 const uuid = require("uuid");
@@ -11,20 +12,24 @@ const station = {
   // Station Index
   index(request, response) {
     const stationId = request.params.id;
+    const station = stationsStore.getStation(stationId);
     logger.debug("Station Id = ", stationId);
 
-    const station = stationsStore.getStation(stationId);
-
+    // Delete these when required
     let shortestReading = stationAnalytics.getShortestReading(station);
     console.log(shortestReading);
 
     const duration = stationAnalytics.getStationDuration(station);
     console.log(duration);
+    // ---------------------------
 
     const viewData = {
-      title: "Station",
+      name: station.name,
       station: stationsStore.getStation(stationId),
+      latitude: station.lat,
+      longitude: station.lng,
       stationSummary: {
+        latestWeather: station.readings.slice(-1),
         shortestReading: stationAnalytics.getShortestReading(station),
         duration: stationAnalytics.getStationDuration(station),
       },

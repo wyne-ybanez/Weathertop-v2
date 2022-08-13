@@ -6,9 +6,9 @@ const JsonStore = require("./json-store");
 
 const stationsStore = {
   store: new JsonStore("./models/station-store.json", {
-    stationsCollection: [],
+    stationCollection: [],
   }),
-  collection: "stationsCollection",
+  collection: "stationCollection",
 
   // Station functions
 
@@ -59,7 +59,7 @@ const stationsStore = {
     // let pressure;
 
     station.title = station.readings.slice(-1).title;
-    // station.latestWeather = station.readings.slice(-1).latestWeather;
+    station.latestWeather = station.readings.slice(-1).latestWeather;
     station.temperature = station.readings.slice(-1).temperature;
     station.windSpeed = station.readings.slice(-1).windSpeed;
     station.pressure = station.readings.slice(-1).pressure;
