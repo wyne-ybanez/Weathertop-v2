@@ -33,8 +33,9 @@ const conversions = {
           weather = "Thunder";
           break;
         default:
-          console.log("Invalid code input.");
-          logger.debug("Invalid code input");
+          weather = "";
+          console.log("Invalid code input. " + weatherCode);
+          logger.debug("Invalid code input " + weatherCode);
           break;
       }
       return weather;
@@ -43,16 +44,17 @@ const conversions = {
   },
 
   processConversions(station) {
-    // Initiate latestReadings
     let latestReading;
 
     if (station.readings.length > 0) {
       // Get the latest reading
-      latestReading = station.readings.slice(-1);
+      latestReading = station.readings[station.readings.length - 1];
+      console.log(latestReading);
 
       // Station Conversions
-      station.latestWeather = convertCodeToWeather(latestReading.code);
+      station.latestWeather = conversions.convertCodeToWeather(latestReading.code);
       console.log(station.latestWeather);
+
       //   station.temperature = latestReading.temperature;
       //   station.wind = convertToBeaufort(latestReading.windSpeed);
       //   station.pressure = latestReading.pressure;

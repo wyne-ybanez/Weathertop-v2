@@ -13,15 +13,13 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
+    let latestWeather = "";
     logger.debug("Station Id = ", stationId);
 
-    // Delete these when required
-    let shortestReading = stationAnalytics.getShortestReading(station);
-    console.log(shortestReading);
-
-    const duration = stationAnalytics.getStationDuration(station);
-    console.log(duration);
-    // ---------------------------
+    // if there is a reading, then there is a code to create the latestWeather
+    if (station.readings.length > 0) {
+      latestWeather = stationAnalytics.getLatestWeather(station);
+    }
 
     const viewData = {
       name: station.name,
@@ -29,7 +27,9 @@ const station = {
       latitude: station.lat,
       longitude: station.lng,
       stationSummary: {
-        latestWeather: station.readings.slice(-1),
+        // latestWeather: station.readings.slice(-1).latestWeather,
+        // latestWeather: conversions.processConversions(station),
+        latestWeather: latestWeather,
         shortestReading: stationAnalytics.getShortestReading(station),
         duration: stationAnalytics.getStationDuration(station),
       },
@@ -66,10 +66,10 @@ const station = {
 
     const newReading = {
       id: uuid.v1(),
-      code: request.body.code,
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      pressure: request.body.pressure,
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
     };
     stationsStore.addReading(stationId, newReading);
     logger.debug("New Reading = ", newReading);

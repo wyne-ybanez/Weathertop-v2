@@ -32,13 +32,11 @@
             <h3 class="ui header top-medium-padding">
               Weather
               {{#if stationSummary.latestWeather}}
-                {{#if_eq stationSummary.latestWeather 'Clear'}}
-                  <i class="cloud rainbow icon"></i>
-                {{/if_eq}}
+                  <i id="latestWeather"></i>
               {{/if}}
             </h3>
             <p class="description">
-              {{stationSummary.latestWeather}}
+                {{stationSummary.latestWeather}}
             </p>
           </div>
         </div>
