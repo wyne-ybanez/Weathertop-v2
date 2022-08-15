@@ -67,26 +67,33 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1000
-        },
-        {
-          "id": "9a0ab2b0-1cc9-11ed-952b-9f30361a2c60",
-          "code": 300,
-          "temperature": 12,
-          "windSpeed": 12,
-          "pressure": 12
         }
       ]
     },
     {
-      "id": "92ccc150-1cc9-11ed-952b-9f30361a2c60",
+      "id": "668a9e20-1ccc-11ed-8275-4bb753dc3105",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Cork",
       "lat": "12",
       "lng": "12",
       "readings": [
         {
-          "id": "2eb97130-1cca-11ed-a1f6-d9dfd5bb5a26",
+          "id": "c350b340-1cce-11ed-8d94-3f044c7ee6d3",
           "code": 400,
+          "temperature": 12,
+          "windSpeed": 12,
+          "pressure": 12
+        },
+        {
+          "id": "c62fde60-1cce-11ed-8d94-3f044c7ee6d3",
+          "code": 500,
+          "temperature": 12,
+          "windSpeed": 12,
+          "pressure": 12
+        },
+        {
+          "id": "60684e90-1ccf-11ed-bdfc-291bd07ae9af",
+          "code": 300,
           "temperature": 12,
           "windSpeed": 12,
           "pressure": 12

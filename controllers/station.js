@@ -14,11 +14,13 @@ const station = {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     let latestWeather = "";
+    let latestWeatherIcon = "";
     logger.debug("Station Id = ", stationId);
 
-    // if there is a reading, then there is a code to create the latestWeather
+    // if there are readings, then there is a code to create the latestWeather & Icon
     if (station.readings.length > 0) {
       latestWeather = stationAnalytics.getLatestWeather(station);
+      latestWeatherIcon = conversions.setLatestWeatherIcon(latestWeather);
     }
 
     const viewData = {
@@ -27,9 +29,8 @@ const station = {
       latitude: station.lat,
       longitude: station.lng,
       stationSummary: {
-        // latestWeather: station.readings.slice(-1).latestWeather,
-        // latestWeather: conversions.processConversions(station),
         latestWeather: latestWeather,
+        latestWeatherIcon: latestWeatherIcon,
         shortestReading: stationAnalytics.getShortestReading(station),
         duration: stationAnalytics.getStationDuration(station),
       },

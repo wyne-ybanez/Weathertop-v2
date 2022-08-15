@@ -43,6 +43,40 @@ const conversions = {
     return weather;
   },
 
+  // Set Weather Icons
+  setLatestWeatherIcon(latestWeather) {
+    let latestWeatherIcon = "";
+
+    if (latestWeather) {
+      if (latestWeather == "Clear") {
+        latestWeatherIcon = "cloud rainbow icon";
+      }
+      if (latestWeather == "Partial clouds") {
+        latestWeatherIcon = "cloud sun icon";
+      }
+      if (latestWeather == "Cloudy") {
+        latestWeatherIcon = "cloud icon";
+      }
+      if (latestWeather == "Light Showers") {
+        latestWeatherIcon = "cloud sun rain icon";
+      }
+      if (latestWeather == "Heavy Showers") {
+        latestWeatherIcon = "cloud showers heavy icon";
+      }
+      if (latestWeather == "Rain") {
+        latestWeatherIcon = "cloud rain icon";
+      }
+      if (latestWeather == "Snow") {
+        latestWeatherIcon = "snowflake icon";
+      }
+      if (latestWeather == "Thunder") {
+        latestWeatherIcon = "poo storm icon";
+      }
+      return latestWeatherIcon;
+    }
+  },
+
+  // Process all conversions
   processConversions(station) {
     let latestReading;
 

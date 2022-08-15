@@ -41,44 +41,6 @@ const stationAnalytics = {
     return latestWeather;
   },
 
-  setLatestWeatherIcon() {
-    let icon;
-    let latestReading = station.readings[0];
-    let latestWeatherIcon = document.getElementById("latestWeather");
-
-    if (station.readings.length > 0) {
-      latestReading = station.readings[station.readings.length - 1];
-    }
-
-    if (latestReading.code) {
-      if (latestReading.code == 100) {
-        icon = "cloud rainbow icon";
-      }
-      if (latestReading.code == 200) {
-        icon = "cloud sun icon";
-      }
-      if (latestReading.code == 300) {
-        icon = "cloud icon";
-      }
-      if (latestReading.code == 400) {
-        icon = "cloud sun rain icon";
-      }
-      if (latestReading.code == 500) {
-        icon = "cloud showers heavy icon";
-      }
-      if (latestReading.code == 600) {
-        icon = "cloud rain icon";
-      }
-      if (latestReading.code == 700) {
-        icon = "snowflake icon";
-      }
-      if (latestReading.code == 800) {
-        icon = "poo storm icon";
-      }
-      latestWeatherIcon.classList.add(icon);
-    }
-  },
-
   getStationDuration(station) {
     let stationDuration = 0;
     for (let i = 0; i < station.readings.length; i++) {

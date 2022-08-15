@@ -31,8 +31,8 @@
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
               Weather
-              {{#if stationSummary.latestWeather}}
-                  <i id="latestWeather"></i>
+              {{#if stationSummary.latestWeatherIcon}}
+                  <i id="latestWeatherIcon" class="{{stationSummary.latestWeatherIcon}}"></i>
               {{/if}}
             </h3>
             <p class="description">
