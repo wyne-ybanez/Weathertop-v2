@@ -13,14 +13,21 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
-    let latestWeather = "";
-    let latestWeatherIcon = "";
     logger.debug("Station Id = ", stationId);
 
-    // if there are readings, then there is a code to create the latestWeather & Icon
+    let latestWeather = "";
+    let latestWeatherIcon = "";
+    let latestTemperature = "";
+    let latestWindSpeed = "";
+    let latestPressure = "";
+
+    // if there are readings, then there are values for station summary
     if (station.readings.length > 0) {
       latestWeather = stationAnalytics.getLatestWeather(station);
       latestWeatherIcon = conversions.setLatestWeatherIcon(latestWeather);
+      latestTemperature = stationAnalytics.getLatestTemperature(station);
+      latestWindSpeed = "";
+      latestPressure = "";
     }
 
     const viewData = {
@@ -31,8 +38,9 @@ const station = {
       stationSummary: {
         latestWeather: latestWeather,
         latestWeatherIcon: latestWeatherIcon,
-        shortestReading: stationAnalytics.getShortestReading(station),
-        duration: stationAnalytics.getStationDuration(station),
+        latestTemperature: latestTemperature,
+        latestWindSpeed: latestWindSpeed,
+        latestPressure: latestPressure,
       },
     };
     response.render("station", viewData);

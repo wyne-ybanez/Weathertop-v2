@@ -29,7 +29,7 @@ const stationAnalytics = {
         latestReading = station.readings[station.readings.length - 1];
       }
       logger.info("Latest Reading is " + latestReading);
-      logger.info("Latest Reading code is " + latestReading.code);
+      logger.debug("Latest Reading code is " + latestReading.code);
 
       if (!latestReading.code) {
         latestWeather = "";
@@ -39,6 +39,26 @@ const stationAnalytics = {
       logger.info("Latest Weather is " + latestWeather);
     }
     return latestWeather;
+  },
+
+  getLatestTemperature(station) {
+    let latestTemperature;
+    let latestReading;
+
+    if (station.readings) {
+      latestReading = station.readings[0];
+
+      if (station.readings.length > 1) {
+        latestReading = station.readings[station.readings.length - 1];
+      }
+      logger.info("Latest Reading is " + latestReading);
+      logger.debug("Latest Temperature is " + latestReading.temperature);
+
+      if (latestReading.temperature) {
+        latestTemperature = latestReading.temperature;
+      }
+      return latestTemperature;
+    }
   },
 
   getStationDuration(station) {

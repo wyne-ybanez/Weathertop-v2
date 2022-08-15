@@ -87,14 +87,7 @@
         {
           "id": "c62fde60-1cce-11ed-8d94-3f044c7ee6d3",
           "code": 500,
-          "temperature": 12,
-          "windSpeed": 12,
-          "pressure": 12
-        },
-        {
-          "id": "60684e90-1ccf-11ed-bdfc-291bd07ae9af",
-          "code": 300,
-          "temperature": 12,
+          "temperature": 1234,
           "windSpeed": 12,
           "pressure": 12
         }
