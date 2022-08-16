@@ -27,8 +27,8 @@ const station = {
       latestWeather = stationAnalytics.getLatestWeather(station);
       latestWeatherIcon = conversions.setLatestWeatherIcon(latestWeather);
       latestTemperature = stationAnalytics.getLatestTemperature(station);
-      latestWindSpeed = "";
-      latestPressure = "";
+      latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
+      latestPressure = stationAnalytics.getLatestPressure(station);
       fahrenheitValue = conversions.convertToFahrenheit(latestTemperature);
     }
 
