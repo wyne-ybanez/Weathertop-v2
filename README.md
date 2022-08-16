@@ -281,11 +281,3 @@ screen size is minimized directly on the browser. It is not responsive for mobil
 ## Acknowledgements
 
 - Thanks to the WIT lecturers and students on Slack for their guidance on this project.
-
-## Citations:
-
-- Finding the last item in an array list:
-  - https://stackoverflow.com/questions/687833/how-to-get-the-last-value-of-an-arraylist#:~:text=The%20size()%20method%20returns,to%20retrieve%20the%20last%20element.
-
-- Sorting a List of Objects according to alphabetical order:
-  - https://mkyong.com/java8/java-8-how-to-sort-list-with-stream-sorted/

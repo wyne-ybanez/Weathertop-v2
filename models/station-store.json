@@ -88,6 +88,13 @@
           "id": "c62fde60-1cce-11ed-8d94-3f044c7ee6d3",
           "code": 500,
           "temperature": 1234,
+          "windSpeed": 32,
+          "pressure": 12
+        },
+        {
+          "id": "63294ed0-1d89-11ed-af5b-e57387b7bccd",
+          "code": 700,
+          "temperature": 12,
           "windSpeed": 12,
           "pressure": 12
         }

@@ -11,15 +11,16 @@ const { report } = require("../routes.js");
 const station = {
   // Station Index
   index(request, response) {
+    let latestWeather;
+    let latestWeatherIcon;
+    let latestTemperature;
+    let latestWindSpeed;
+    let latestPressure;
+    let fahrenheitValue;
+
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     logger.debug("Station Id = ", stationId);
-
-    let latestWeather = "";
-    let latestWeatherIcon = "";
-    let latestTemperature = "";
-    let latestWindSpeed = "";
-    let latestPressure = "";
 
     // if there are readings, then there are values for station summary
     if (station.readings.length > 0) {
@@ -28,6 +29,7 @@ const station = {
       latestTemperature = stationAnalytics.getLatestTemperature(station);
       latestWindSpeed = "";
       latestPressure = "";
+      fahrenheitValue = conversions.convertToFahrenheit(latestTemperature);
     }
 
     const viewData = {
@@ -41,6 +43,7 @@ const station = {
         latestTemperature: latestTemperature,
         latestWindSpeed: latestWindSpeed,
         latestPressure: latestPressure,
+        fahrenheitValue: fahrenheitValue,
       },
     };
     response.render("station", viewData);

@@ -1,8 +1,8 @@
 {{> menu}}
 
-<section class="ui center aligned middle aligned segment">
-  <h2 class="ui header">
-    {{station.title}}
+<section>
+  <h2 class="ui header top-medium-padding">
+    {{station.name}}
   </h2>
 
   <table>
@@ -52,7 +52,7 @@
             <p class="description">
               {{stationSummary.latestTemperature}} °C
               <br>
-              {{station.fahrenheitTemp}} F
+              {{stationSummary.fahrenheitValue}} F
             </p>
           </div>
         </div>

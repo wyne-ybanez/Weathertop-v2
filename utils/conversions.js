@@ -3,7 +3,12 @@
 const logger = require("./logger.js");
 
 const conversions = {
-  // Convert Code to weather
+  /* 
+    // Convert Code to weather
+    
+    @param weatherCode (int)
+    @return weather (string)
+  */
   convertCodeToWeather(weatherCode) {
     let weather = "";
     while (weatherCode != 0) {
@@ -43,7 +48,12 @@ const conversions = {
     return weather;
   },
 
-  // Set Weather Icons
+  /* 
+    Set Weather Icons
+
+    @param latestWeather (string)
+    @return latestWeatherIcon (strong)
+  */
   setLatestWeatherIcon(latestWeather) {
     let latestWeatherIcon = "";
 
@@ -74,6 +84,18 @@ const conversions = {
       }
       return latestWeatherIcon;
     }
+  },
+
+  /*
+    Converts Celcius to Farenheit
+
+    @param celcius value (double)
+    @return farenheit (double)
+  */
+  convertToFahrenheit(celciusValue) {
+    // Formula for converting celcius to fahrenheit = ( X * 1.8 ) + 32
+    let fahrenheitValue = celciusValue * 1.8 + 32;
+    return fahrenheitValue;
   },
 
   // Process all conversions
