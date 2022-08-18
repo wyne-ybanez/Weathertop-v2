@@ -17,6 +17,7 @@ const station = {
     let latestWindSpeed;
     let latestPressure;
     let fahrenheitValue;
+    let BeaufortValue;
 
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
@@ -29,7 +30,6 @@ const station = {
       latestTemperature = stationAnalytics.getLatestTemperature(station);
       latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
       latestPressure = stationAnalytics.getLatestPressure(station);
-      fahrenheitValue = conversions.convertToFahrenheit(latestTemperature);
     }
 
     const viewData = {
@@ -43,7 +43,9 @@ const station = {
         latestTemperature: latestTemperature,
         latestWindSpeed: latestWindSpeed,
         latestPressure: latestPressure,
-        fahrenheitValue: fahrenheitValue,
+
+        fahrenheitValue: conversions.convertToFahrenheit(latestTemperature),
+        BeaufortValue: conversions.convertToBeaufort(latestWindSpeed),
       },
     };
     response.render("station", viewData);
@@ -81,6 +83,7 @@ const station = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
     stationsStore.addReading(stationId, newReading);

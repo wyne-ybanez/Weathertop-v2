@@ -43,28 +43,54 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1000
+        },
+        {
+          "id": "5bd4dc30-1f1e-11ed-b709-4b7c1ea1c661",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 4.5,
+          "windDirection": 300,
+          "pressure": 300
+        },
+        {
+          "id": "6bd36750-1f1e-11ed-b709-4b7c1ea1c661",
+          "code": 300,
+          "temperature": 13.53,
+          "windSpeed": 12.6,
+          "windDirection": 300,
+          "pressure": 300
+        },
+        {
+          "id": "7a056fd0-1f1e-11ed-b709-4b7c1ea1c661",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 333.33,
+          "windDirection": 12,
+          "pressure": 121
         }
       ]
     },
     {
-      "id": "668a9e20-1ccc-11ed-8275-4bb753dc3105",
+      "id": "e47d0840-1f1f-11ed-a77b-f76072f6cb7d",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Cork",
+      "name": "Test",
       "lat": "12",
       "lng": "12",
       "readings": [
         {
-          "id": "c350b340-1cce-11ed-8d94-3f044c7ee6d3",
-          "code": 400,
+          "id": "e7d86840-1f1f-11ed-a77b-f76072f6cb7d",
+          "code": 300,
           "temperature": 12,
           "windSpeed": 12,
+          "windDirection": 12,
           "pressure": 12
         },
         {
-          "id": "c62fde60-1cce-11ed-8d94-3f044c7ee6d3",
-          "code": 500,
-          "temperature": 1234,
-          "windSpeed": 32,
+          "id": "f28f2cb0-1f1f-11ed-a77b-f76072f6cb7d",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 118,
+          "windDirection": 12,
           "pressure": 12
         }
       ]
