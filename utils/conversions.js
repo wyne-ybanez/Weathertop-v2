@@ -3,8 +3,8 @@
 const logger = require("./logger.js");
 
 const conversions = {
-  /* 
-    // Convert Code to weather
+  /** 
+    Convert Code to weather
     
     @param weatherCode (int)
     @return weather (string)
@@ -48,7 +48,7 @@ const conversions = {
     return weather;
   },
 
-  /* 
+  /**  
     Set Weather Icons
 
     @param latestWeather (string)
@@ -86,7 +86,7 @@ const conversions = {
     }
   },
 
-  /*
+  /** 
     Converts Celcius to Farenheit
 
     @param celcius value (double)
@@ -98,7 +98,7 @@ const conversions = {
     return fahrenheitValue;
   },
 
-  /*
+  /** 
     kM/hr to Beaufort Conversion
     
     @param windSpeed (int or double)
@@ -156,7 +156,7 @@ const conversions = {
     return BeaufortValue;
   },
 
-  /*
+  /** 
     Wind Direction compass.
     Converts wind degree range to compass direction.
 
@@ -204,6 +204,24 @@ const conversions = {
       compassDirection = "North";
     }
     return compassDirection;
+  },
+
+  /**
+    Wind Chill Calculator.
+    Takes wind direction value from reading.
+    
+    @params windSpeed, temperature (both are expected to be doubles)
+    @return String value for wind chill.
+  */
+  windChillCalculator(windSpeed, temperature) {
+    const exponent = 0.16;
+    let windChillValue =
+      13.12 +
+      0.6215 * temperature -
+      11.37 * Math.pow(windSpeed, exponent) +
+      0.3965 * temperature * Math.pow(windSpeed, exponent);
+    let windChillValueRounded = Math.round(windChillValue * 100.0) / 100.0;
+    return windChillValueRounded;
   },
 
   // Process all conversions

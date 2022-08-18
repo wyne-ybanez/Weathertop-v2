@@ -7,6 +7,7 @@ const stationsStore = require("../models/station-store.js");
 const axios = require("axios");
 const uuid = require("uuid");
 const { report } = require("../routes.js");
+const { getLatestWindDirection } = require("../utils/station-analytics.js");
 
 const station = {
   // Station Index
@@ -16,8 +17,7 @@ const station = {
     let latestTemperature;
     let latestWindSpeed;
     let latestPressure;
-    let fahrenheitValue;
-    let BeaufortValue;
+    let latestWindDirection;
 
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
@@ -30,6 +30,7 @@ const station = {
       latestTemperature = stationAnalytics.getLatestTemperature(station);
       latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
       latestPressure = stationAnalytics.getLatestPressure(station);
+      latestWindDirection = stationAnalytics.getLatestWindDirection(station);
     }
 
     const viewData = {
@@ -41,9 +42,9 @@ const station = {
         latestWeather: latestWeather,
         latestWeatherIcon: latestWeatherIcon,
         latestTemperature: latestTemperature,
-        latestWindSpeed: latestWindSpeed,
         latestPressure: latestPressure,
 
+        windCompass: conversions.convertToCompassDirection(latestWindDirection),
         fahrenheitValue: conversions.convertToFahrenheit(latestTemperature),
         BeaufortValue: conversions.convertToBeaufort(latestWindSpeed),
       },

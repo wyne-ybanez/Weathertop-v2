@@ -79,6 +79,25 @@ const stationAnalytics = {
     }
   },
 
+  getLatestWindDirection(station) {
+    let latestWindDirection;
+    let latestReading;
+
+    if (station.readings) {
+      latestReading = station.readings[0];
+
+      if (station.readings.length > 1) {
+        latestReading = station.readings[station.readings.length - 1];
+      }
+      logger.debug("Latest WindDirection is " + latestReading.windDirection);
+
+      if (latestReading.windSpeed) {
+        latestWindDirection = latestReading.windDirection;
+      }
+      return latestWindDirection;
+    }
+  },
+
   getLatestPressure(station) {
     let latestPressure;
     let latestReading;
