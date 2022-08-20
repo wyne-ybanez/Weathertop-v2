@@ -51,22 +51,6 @@
           "windSpeed": 4.5,
           "windDirection": 300,
           "pressure": 300
-        },
-        {
-          "id": "6bd36750-1f1e-11ed-b709-4b7c1ea1c661",
-          "code": 300,
-          "temperature": 13.53,
-          "windSpeed": 12.6,
-          "windDirection": 300,
-          "pressure": 300
-        },
-        {
-          "id": "7a056fd0-1f1e-11ed-b709-4b7c1ea1c661",
-          "code": 400,
-          "temperature": 12,
-          "windSpeed": 333.33,
-          "windDirection": 12,
-          "pressure": 121
         }
       ]
     },

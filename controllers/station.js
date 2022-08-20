@@ -44,6 +44,7 @@ const station = {
         latestTemperature: latestTemperature,
         latestPressure: latestPressure,
 
+        windChill: conversions.windChillCalculator(latestWindSpeed, latestTemperature),
         windCompass: conversions.convertToCompassDirection(latestWindDirection),
         fahrenheitValue: conversions.convertToFahrenheit(latestTemperature),
         BeaufortValue: conversions.convertToBeaufort(latestWindSpeed),
