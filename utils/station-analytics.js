@@ -117,13 +117,44 @@ const stationAnalytics = {
     }
   },
 
-  getStationDuration(station) {
-    let stationDuration = 0;
-    for (let i = 0; i < station.readings.length; i++) {
-      let reading = station.readings[i];
-      stationDuration = stationDuration + reading.duration;
+  //=== Min Values
+  /**
+      Get minimum Temperature reading.
+     
+      @param  readings (Array)
+      @return Reading minTempReading, the reading with the minimum temp value
+  */
+  getMinTemperature(readings) {
+    let minTempReading = null;
+    if (readings.length > 0) {
+      minTempReading = readings[0];
+      for (const reading of readings) {
+        if (reading.temperature < minTempReading.temperature) {
+          minTempReading = reading;
+        }
+      }
     }
-    return stationDuration;
+    return minTempReading.temperature;
+  },
+
+  //=== Max Values
+  /**
+      Get maximum Temperature reading.
+     
+      @param  readings (Array)
+      @return Reading maxTempReading, the reading with the maximum temp value
+  */
+  getMaxTemperature(readings) {
+    let maxTempReading = null;
+    if (readings.length > 0) {
+      maxTempReading = readings[0];
+      for (const reading of readings) {
+        if (reading.temperature > maxTempReading.temperature) {
+          maxTempReading = reading;
+        }
+      }
+    }
+    return maxTempReading.temperature;
   },
 };
 

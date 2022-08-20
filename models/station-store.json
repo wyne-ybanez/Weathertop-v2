@@ -59,29 +59,12 @@
       ]
     },
     {
-      "id": "e47d0840-1f1f-11ed-a77b-f76072f6cb7d",
+      "id": "9020be60-209e-11ed-be61-7bf060d3d0fc",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Test",
-      "lat": "12",
-      "lng": "12",
-      "readings": [
-        {
-          "id": "eadd6bc0-209c-11ed-b518-d1de8542132c",
-          "code": 700,
-          "temperature": 12.2,
-          "windSpeed": 12.2,
-          "windDirection": 100,
-          "pressure": 120
-        },
-        {
-          "id": "f28da6f0-209c-11ed-b518-d1de8542132c",
-          "code": 400,
-          "temperature": 300,
-          "windSpeed": 300,
-          "windDirection": 300,
-          "pressure": 2000
-        }
-      ]
+      "lat": 12,
+      "lng": 12,
+      "readings": []
     }
   ]
 }

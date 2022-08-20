@@ -48,6 +48,8 @@ const station = {
         windCompass: conversions.convertToCompassDirection(latestWindDirection),
         fahrenheitValue: conversions.convertToFahrenheit(latestTemperature),
         BeaufortValue: conversions.convertToBeaufort(latestWindSpeed),
+        minTemperature: stationAnalytics.getMinTemperature(station.readings),
+        maxTemperature: stationAnalytics.getMaxTemperature(station.readings),
       },
     };
     response.render("station", viewData);
