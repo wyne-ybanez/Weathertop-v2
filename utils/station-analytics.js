@@ -137,12 +137,50 @@ const stationAnalytics = {
     return minTempReading.temperature;
   },
 
+  /**
+      Get minimum Wind Speed reading.
+     
+      @param  readings (Array)
+      @return Reading minWindReading, the reading with the minimum windSpeed value
+  */
+  getMinWindSpeed(readings) {
+    let minWindReading = null;
+    if (readings.length > 0) {
+      minWindReading = readings[0];
+      for (const reading of readings) {
+        if (reading.windSpeed < minWindReading.windSpeed) {
+          minWindReading = reading;
+        }
+      }
+    }
+    return minWindReading.windSpeed;
+  },
+
+  /**
+      Get minimum Pressure reading.
+     
+      @param  readings (Array)
+      @return Reading minWindReading, the reading with the minimum windSpeed value
+  */
+  getMinPressure(readings) {
+    let minPressureReading = null;
+    if (readings.length > 0) {
+      minPressureReading = readings[0];
+      for (const reading of readings) {
+        if (reading.pressure < minPressureReading.pressure) {
+          minPressureReading = reading;
+        }
+      }
+    }
+    return minPressureReading.pressure;
+  },
+
   //=== Max Values
   /**
       Get maximum Temperature reading.
      
       @param  readings (Array)
-      @return Reading maxTempReading, the reading with the maximum temp value
+      @return maxTempReading, the reading with the maximum temp value
   */
   getMaxTemperature(readings) {
     let maxTempReading = null;
@@ -155,6 +193,44 @@ const stationAnalytics = {
       }
     }
     return maxTempReading.temperature;
+  },
+
+  /**
+      Get maximum Wind Speed reading.
+     
+      @param  readings (Array)
+      @return maxWindSpeed, the reading with the maximum windSpeed value
+  */
+  getMaxWindSpeed(readings) {
+    let maxWindReading = null;
+    if (readings.length > 0) {
+      maxWindReading = readings[0];
+      for (const reading of readings) {
+        if (reading.windSpeed > maxWindReading.windSpeed) {
+          maxWindReading = reading;
+        }
+      }
+    }
+    return maxWindReading.windSpeed;
+  },
+
+  /**
+      Get maximum Pressure reading.
+     
+      @param  readings (Array)
+      @return maxPressureReading, the reading with the maximum Pressure value
+  */
+  getMaxPressure(readings) {
+    let maxPressureReading = null;
+    if (readings.length > 0) {
+      maxPressureReading = readings[0];
+      for (const reading of readings) {
+        if (reading.pressure > maxPressureReading.pressure) {
+          maxPressureReading = reading;
+        }
+      }
+    }
+    return maxPressureReading.pressure;
   },
 };
 

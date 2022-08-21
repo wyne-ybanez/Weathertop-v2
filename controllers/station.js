@@ -7,7 +7,7 @@ const stationsStore = require("../models/station-store.js");
 const axios = require("axios");
 const uuid = require("uuid");
 const { report } = require("../routes.js");
-const { getLatestWindDirection } = require("../utils/station-analytics.js");
+const { getLatestWindDirection, getMaxWindSpeed } = require("../utils/station-analytics.js");
 
 const station = {
   // Station Index
@@ -18,6 +18,18 @@ const station = {
     let latestWindSpeed;
     let latestPressure;
     let latestWindDirection;
+
+    let windChill;
+    let windCompass;
+    let fahrenheitValue;
+    let BeaufortValue;
+
+    let minTemperature;
+    let maxTemperature;
+    let minWindSpeed;
+    let maxWindSpeed;
+    let minPressure;
+    let maxPressure;
 
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
@@ -31,6 +43,20 @@ const station = {
       latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
       latestPressure = stationAnalytics.getLatestPressure(station);
       latestWindDirection = stationAnalytics.getLatestWindDirection(station);
+
+      // Converted Values
+      windChill = conversions.windChillCalculator(latestWindSpeed, latestTemperature);
+      windCompass = conversions.convertToCompassDirection(latestWindDirection);
+      fahrenheitValue = conversions.convertToFahrenheit(latestTemperature);
+      BeaufortValue = conversions.convertToBeaufort(latestWindSpeed);
+
+      // Min Max values
+      minTemperature = stationAnalytics.getMinTemperature(station.readings);
+      maxTemperature = stationAnalytics.getMaxTemperature(station.readings);
+      minWindSpeed = stationAnalytics.getMinWindSpeed(station.readings);
+      maxWindSpeed = stationAnalytics.getMaxWindSpeed(station.readings);
+      minPressure = stationAnalytics.getMinPressure(station.readings);
+      maxPressure = stationAnalytics.getMaxPressure(station.readings);
     }
 
     const viewData = {
@@ -39,17 +65,25 @@ const station = {
       latitude: station.lat,
       longitude: station.lng,
       stationSummary: {
+        // Latest Station Values
         latestWeather: latestWeather,
         latestWeatherIcon: latestWeatherIcon,
         latestTemperature: latestTemperature,
         latestPressure: latestPressure,
 
-        windChill: conversions.windChillCalculator(latestWindSpeed, latestTemperature),
-        windCompass: conversions.convertToCompassDirection(latestWindDirection),
-        fahrenheitValue: conversions.convertToFahrenheit(latestTemperature),
-        BeaufortValue: conversions.convertToBeaufort(latestWindSpeed),
-        minTemperature: stationAnalytics.getMinTemperature(station.readings),
-        maxTemperature: stationAnalytics.getMaxTemperature(station.readings),
+        // Converted Values
+        windChill: windChill,
+        windCompass: windCompass,
+        fahrenheitValue: fahrenheitValue,
+        BeaufortValue: BeaufortValue,
+
+        // Min Max values
+        minTemperature: minTemperature,
+        maxTemperature: maxTemperature,
+        minWindSpeed: minWindSpeed,
+        maxWindSpeed: maxWindSpeed,
+        minPressure: minPressure,
+        maxPressure: maxPressure,
       },
     };
     response.render("station", viewData);
