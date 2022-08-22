@@ -9,21 +9,21 @@ const uuid = require("uuid");
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-    const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInMember = accounts.getCurrentMember(request);
     const viewData = {
       title: "WeatherTop Dashboard",
-      user: loggedInUser,
-      stations: stationsStore.getUserStations(loggedInUser.id),
+      member: loggedInMember,
+      stations: stationsStore.getMemberStations(loggedInMember.id),
     };
     logger.info("about to render", stationsStore.getAllStations());
     response.render("dashboard", viewData);
   },
 
   addStation(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInMember = accounts.getCurrentMember(request);
     const newStation = {
       id: uuid.v1(),
-      userid: loggedInUser.id,
+      memberid: loggedInMember.id,
       name: request.body.name,
       lat: Number(request.body.lat),
       lng: Number(request.body.lng),

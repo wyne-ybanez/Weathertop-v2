@@ -20,8 +20,8 @@ const stationsStore = {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getUserStations(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+  getMemberStations(memberid) {
+    return this.store.findBy(this.collection, { memberid: memberid });
   },
 
   addStation(station) {

@@ -1,5 +1,5 @@
 {
-  "users": [
+  "members": [
     {
       "firstName": "homer",
       "lastName": "simpson",
@@ -13,6 +13,13 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstName": "Wyne",
+      "lastName": "Ybanez",
+      "email": "wyne@ybanez.com",
+      "password": "secret",
+      "id": "b38d6480-2241-11ed-9e37-578e0560250b"
     }
   ]
 }

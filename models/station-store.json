@@ -2,7 +2,7 @@
   "stationCollection": [
     {
       "id": "01",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Tramore",
       "lat": "12",
       "lng": "12",
@@ -35,7 +35,7 @@
     },
     {
       "id": "05",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Dunmore",
       "lat": "12",
       "lng": "12",
@@ -60,7 +60,7 @@
     },
     {
       "id": "e06748f0-2240-11ed-9e37-578e0560250b",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Test",
       "lat": 123123,
       "lng": 213123213,
@@ -80,6 +80,40 @@
           "windSpeed": 14,
           "windDirection": 3000,
           "pressure": 12300
+        }
+      ]
+    },
+    {
+      "id": "bbc37180-2241-11ed-9e37-578e0560250b",
+      "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
+      "name": "Test",
+      "lat": 12.21,
+      "lng": 12.23,
+      "readings": [
+        {
+          "id": "c0dea9f0-2241-11ed-9e37-578e0560250b",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 12,
+          "windDirection": 12,
+          "pressure": 12
+        }
+      ]
+    },
+    {
+      "id": "ce11b900-2241-11ed-9e37-578e0560250b",
+      "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
+      "name": "Test 2",
+      "lat": 111.11,
+      "lng": 222.22,
+      "readings": [
+        {
+          "id": "6b118690-2242-11ed-9e37-578e0560250b",
+          "code": 400,
+          "temperature": 200,
+          "windSpeed": 200,
+          "windDirection": 200,
+          "pressure": 200
         }
       ]
     }
