@@ -46,6 +46,7 @@ const stationsStore = {
     const station = this.getStation(id);
     station.readings.push(reading);
 
+    station.date = station.readings.slice(-1).date;
     station.title = station.readings.slice(-1).title;
     station.latestWeather = station.readings.slice(-1).latestWeather;
     station.temperature = station.readings.slice(-1).temperature;

@@ -115,9 +115,12 @@ const station = {
     logger.info("rendering new reading");
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
+    const date = new Date();
+    // const dateFormatted = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
     const newReading = {
       id: uuid.v1(),
+      date: date.toISOString(),
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
