@@ -34,7 +34,14 @@
           "windDirection": 101,
           "date": "2021-06-25T07:20:42.138Z"
         }
-      ]
+      ],
+      "latestWeather": "Snow",
+      "temperature": 8,
+      "wind": 0,
+      "pressure": 1005,
+      "windCompass": "East",
+      "windChill": 9.89,
+      "fahrenheitTemp": 46.4
     },
     {
       "id": "05",
@@ -61,7 +68,14 @@
           "windDirection": 102,
           "date": "2021-03-25T07:20:42.138Z"
         }
-      ]
+      ],
+      "latestWeather": "Partial clouds",
+      "temperature": 0.5,
+      "wind": 1,
+      "pressure": 1000,
+      "windCompass": "East South East",
+      "windChill": -0.22,
+      "fahrenheitTemp": 32.9
     },
     {
       "id": "e06748f0-2240-11ed-9e37-578e0560250b",
@@ -79,7 +93,14 @@
           "windDirection": 300,
           "pressure": 1004
         }
-      ]
+      ],
+      "latestWeather": "Partial clouds",
+      "temperature": 12,
+      "wind": 3,
+      "pressure": 1004,
+      "windCompass": "West North West",
+      "windChill": 10.74,
+      "fahrenheitTemp": 53.6
     },
     {
       "id": "bbc37180-2241-11ed-9e37-578e0560250b",
@@ -114,6 +135,14 @@
           "pressure": 200
         }
       ]
+    },
+    {
+      "id": "e367eea0-2318-11ed-ba58-6f11d3f6a09f",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Test ",
+      "lat": 12,
+      "lng": 12,
+      "readings": []
     }
   ]
 }

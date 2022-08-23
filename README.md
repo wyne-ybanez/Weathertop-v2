@@ -254,6 +254,10 @@ Here is a link that can explain this process further. [Click Here](https://help.
 
 ## Credits
 
+### Bug Fixes:
+- Formatting JS Date: 
+  - https://stackoverflow.com/questions/12945003/format-date-as-yyyy-mm-ddthhmmss-sssz
+
 ### Content
 
 Content for the About page was taken from these websites
