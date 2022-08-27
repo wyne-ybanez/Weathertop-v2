@@ -4,20 +4,13 @@ const conversions = require("../utils/conversions.js");
 const logger = require("./logger.js");
 
 const stationAnalytics = {
-  getShortestReading(station) {
-    // Algorithm for the shortest reading
-    let shortestReading = null;
-    if (station.readings.length > 0) {
-      shortestReading = station.readings[0];
-      for (let i = 1; i < station.readings.length; i++) {
-        if (station.readings[i].duration < shortestReading.duration) {
-          shortestReading = station.readings[i];
-        }
-      }
-    }
-    return shortestReading;
-  },
-
+  //=== Latest Values
+  /**
+      Get Latest Weather
+     
+      @param  station
+      @return latestWeather, converted code to string
+  */
   getLatestWeather(station) {
     let latestWeather;
     let latestReading;
@@ -41,6 +34,12 @@ const stationAnalytics = {
     return latestWeather;
   },
 
+  /**
+      Get Latest Temperature
+     
+      @param  station
+      @return latestTemperature
+  */
   getLatestTemperature(station) {
     let latestTemperature;
     let latestReading;
@@ -60,6 +59,12 @@ const stationAnalytics = {
     }
   },
 
+  /**
+      Get Latest WindSpeed
+     
+      @param  station
+      @return latestWindSpeed
+  */
   getLatestWindSpeed(station) {
     let latestWindSpeed;
     let latestReading;
@@ -79,6 +84,12 @@ const stationAnalytics = {
     }
   },
 
+  /**
+      Get Latest WindDirection
+     
+      @param  station
+      @return latestWindDirection
+  */
   getLatestWindDirection(station) {
     let latestWindDirection;
     let latestReading;
@@ -98,6 +109,12 @@ const stationAnalytics = {
     }
   },
 
+  /**
+      Get Latest Pressure
+     
+      @param  station
+      @return latestPressure
+  */
   getLatestPressure(station) {
     let latestPressure;
     let latestReading;
@@ -231,6 +248,26 @@ const stationAnalytics = {
       }
     }
     return maxPressureReading.pressure;
+  },
+
+  //=== Process Analytics
+
+  /**
+  Process station analytics for latest reading.
+ 
+  @param station
+  @return max/min Temperature, max/min WindSpeed, max/min Pressure
+ */
+  processAnalytics(station) {
+    if (station.readings.length > 0) {
+      // Analytics: Max & Min Values (Temperature, Wind, Pressure)
+      station.maxTemperature = stationAnalytics.getMaxTemperature(station.readings);
+      station.minTemperature = stationAnalytics.getMinTemperature(station.readings);
+      station.maxWindSpeed = stationAnalytics.getMaxWindSpeed(station.readings);
+      station.minWindSpeed = stationAnalytics.getMinWindSpeed(station.readings);
+      station.maxPressure = stationAnalytics.getMaxPressure(station.readings);
+      station.minPressure = stationAnalytics.getMinPressure(station.readings);
+    }
   },
 };
 

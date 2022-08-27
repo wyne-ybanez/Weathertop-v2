@@ -98,14 +98,6 @@ const station = {
     response.redirect("/station/" + stationId);
   },
 
-  // addReading(request, response) {
-  //   const stationId = request.params.id;
-  //   const station = stationsStore.getStation(stationId);
-  //   logger.debug("New Reading = ", newReading);
-  //   stationsStore.addReading(stationId, newReading);
-  //   response.redirect("/station/" + stationId);
-  // },
-
   /* 
     Add Reading
     Obtain station ID and lat/lng values

@@ -135,14 +135,6 @@
           "pressure": 200
         }
       ]
-    },
-    {
-      "id": "e367eea0-2318-11ed-ba58-6f11d3f6a09f",
-      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Test ",
-      "lat": 12,
-      "lng": 12,
-      "readings": []
     }
   ]
 }

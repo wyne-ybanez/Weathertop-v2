@@ -232,16 +232,15 @@ const conversions = {
     // Get the latest reading, which is the last position of the array
     if (station.readings.length > 0) {
       latestReading = station.readings[station.readings.length - 1];
-      console.log(latestReading);
 
-      // Thus, begin conversions
       station.latestWeather = conversions.convertCodeToWeather(latestReading.code);
+      station.latestWeatherIcon = conversions.setLatestWeatherIcon(station.latestWeather);
       station.temperature = latestReading.temperature;
-      station.wind = conversions.convertToBeaufort(latestReading.windSpeed);
+      station.BeaufortValue = conversions.convertToBeaufort(latestReading.windSpeed);
       station.pressure = latestReading.pressure;
       station.windCompass = conversions.convertToCompassDirection(latestReading.windDirection);
       station.windChill = conversions.windChillCalculator(latestReading.windSpeed, latestReading.temperature);
-      station.fahrenheitTemp = conversions.convertToFahrenheit(latestReading.temperature);
+      station.fahrenheitValue = conversions.convertToFahrenheit(latestReading.temperature);
     }
   },
 };

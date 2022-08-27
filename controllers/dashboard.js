@@ -18,34 +18,15 @@ const dashboard = {
     // For each station, output the Conversions & Analytics
     for (let station of stations) {
       processConversions(station);
-      // processAnalytics(station);
+      processAnalytics(station);
     }
+
+    console.log(stations);
 
     const viewData = {
       title: "WeatherTop Dashboard",
       member: loggedInMember,
       stations: stations,
-      // stationSummary: {
-      //   // Latest Station Values
-      //   latestWeather: latestWeather,
-      //   latestWeatherIcon: latestWeatherIcon,
-      //   latestTemperature: latestTemperature,
-      //   latestPressure: latestPressure,
-
-      //   // Converted Values
-      //   windChill: windChill,
-      //   windCompass: windCompass,
-      //   fahrenheitValue: fahrenheitValue,
-      //   BeaufortValue: BeaufortValue,
-
-      //   // Min Max values
-      //   minTemperature: minTemperature,
-      //   maxTemperature: maxTemperature,
-      //   minWindSpeed: minWindSpeed,
-      //   maxWindSpeed: maxWindSpeed,
-      //   minPressure: minPressure,
-      //   maxPressure: maxPressure,
-      // },
     };
     logger.info("about to render", stationsStore.getAllStations());
     response.render("dashboard", viewData);
