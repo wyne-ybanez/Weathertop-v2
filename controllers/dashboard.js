@@ -14,19 +14,21 @@ const dashboard = {
     const loggedInMember = accounts.getCurrentMember(request);
     const stations = stationsStore.getMemberStations(loggedInMember.id);
 
+    // Station sorting
+    const sortedStations = stations.sort((a, b) => (a.name > b.name ? 1 : -1));
+    console.log("Sorted Stations by Name: ", sortedStations, "--------------");
+
     // Loop through all the stations,
     // For each station, output the Conversions & Analytics
-    for (let station of stations) {
+    for (let station of sortedStations) {
       processConversions(station);
       processAnalytics(station);
     }
 
-    console.log(stations);
-
     const viewData = {
       title: "WeatherTop Dashboard",
       member: loggedInMember,
-      stations: stations,
+      stations: sortedStations,
     };
     logger.info("about to render", stationsStore.getAllStations());
     response.render("dashboard", viewData);

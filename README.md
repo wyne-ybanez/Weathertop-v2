@@ -252,11 +252,14 @@ Here is a link that can explain this process further. [Click Here](https://help.
    - Deploy the project on the heroku dashboard by linking the project to the github repo.
    - You can also push the changes to heroku by typing `git push heroku main` in the terminal.
 
-## Credits
+## References
 
-### Bug Fixes:
+### External Solutions:
 - Formatting JS Date: 
   - https://stackoverflow.com/questions/12945003/format-date-as-yyyy-mm-ddthhmmss-sssz
+
+- Sorting Stations:
+  - https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
 
 ### Content
 

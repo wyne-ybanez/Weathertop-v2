@@ -41,7 +41,16 @@
       "pressure": 1005,
       "windCompass": "East",
       "windChill": 9.89,
-      "fahrenheitTemp": 46.4
+      "fahrenheitTemp": 46.4,
+      "latestWeatherIcon": "snowflake icon",
+      "BeaufortValue": 0,
+      "fahrenheitValue": 46.4,
+      "maxTemperature": 8,
+      "minTemperature": 0.5,
+      "maxWindSpeed": 3.5,
+      "minWindSpeed": 1,
+      "maxPressure": 1005,
+      "minPressure": 1002
     },
     {
       "id": "05",
@@ -75,7 +84,16 @@
       "pressure": 1000,
       "windCompass": "East South East",
       "windChill": -0.22,
-      "fahrenheitTemp": 32.9
+      "fahrenheitTemp": 32.9,
+      "latestWeatherIcon": "cloud sun icon",
+      "BeaufortValue": 1,
+      "fahrenheitValue": 32.9,
+      "maxTemperature": 8,
+      "minTemperature": 0.5,
+      "maxWindSpeed": 3.5,
+      "minWindSpeed": 1,
+      "maxPressure": 1000,
+      "minPressure": 999
     },
     {
       "id": "e06748f0-2240-11ed-9e37-578e0560250b",
@@ -92,15 +110,30 @@
           "windSpeed": 12,
           "windDirection": 300,
           "pressure": 1004
+        },
+        {
+          "id": "b15f4620-2600-11ed-ab2b-8d1c53fed113",
+          "date": "2022-08-27T12:06:33.600Z",
+          "code": 300,
+          "temperature": 12,
+          "windSpeed": 12,
+          "windDirection": 1231,
+          "pressure": 1003
         }
       ],
-      "latestWeather": "Partial clouds",
-      "temperature": 12,
       "wind": 3,
-      "pressure": 1004,
       "windCompass": "West North West",
       "windChill": 10.74,
-      "fahrenheitTemp": 53.6
+      "fahrenheitTemp": 53.6,
+      "latestWeatherIcon": "cloud sun icon",
+      "BeaufortValue": 3,
+      "fahrenheitValue": 53.6,
+      "maxTemperature": 12,
+      "minTemperature": 12,
+      "maxWindSpeed": 12,
+      "minWindSpeed": 12,
+      "maxPressure": 1004,
+      "minPressure": 1004
     },
     {
       "id": "bbc37180-2241-11ed-9e37-578e0560250b",
