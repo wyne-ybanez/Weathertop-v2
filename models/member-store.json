@@ -19,7 +19,9 @@
       "lastName": "Ybanez",
       "email": "wyne@ybanez.com",
       "password": "secret",
-      "id": "b38d6480-2241-11ed-9e37-578e0560250b"
+      "id": "b38d6480-2241-11ed-9e37-578e0560250b",
+      "firstname": "Tester",
+      "lastname": "Ybanez"
     }
   ]
 }

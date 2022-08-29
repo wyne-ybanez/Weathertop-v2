@@ -1,6 +1,6 @@
 "use strict";
 
-const memberstore = require("../models/member-store");
+const memberStore = require("../models/member-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 
@@ -34,13 +34,13 @@ const accounts = {
   register(request, response) {
     const member = request.body;
     member.id = uuid.v1();
-    memberstore.addMember(member);
+    memberStore.addMember(member);
     logger.info(`registering ${member.email}`);
     response.redirect("/");
   },
 
   authenticate(request, response) {
-    const member = memberstore.getMemberByEmail(request.body.email);
+    const member = memberStore.getMemberByEmail(request.body.email);
     if (member) {
       response.cookie("member", member.email);
       logger.info(`logging in ${member.email}`);
@@ -52,7 +52,40 @@ const accounts = {
 
   getCurrentMember(request) {
     const memberEmail = request.cookies.member;
-    return memberstore.getMemberByEmail(memberEmail);
+    return memberStore.getMemberByEmail(memberEmail);
+  },
+
+  account(request, response) {
+    const loggedInMember = accounts.getCurrentMember(request);
+    const viewData = {
+      member: loggedInMember,
+    };
+    console.log();
+    response.render("accounts", viewData);
+  },
+
+  /**
+   * Update user account details.
+   *
+   * @param firstname User desired first name
+   * @param lastname  User desired last name
+   * @param email     User desired email
+   * @param password  User desired password
+   */
+  updateDetails(request, response) {
+    // Get the member in question
+    let member = accounts.getCurrentMember(request);
+
+    const updatedMember = {
+      firstname: request.body.firstname,
+      lastname: request.body.lastname,
+      email: request.body.email,
+      password: request.body.password,
+    };
+
+    logger.debug(`Updating Member ${member}`);
+    memberStore.updateMember(member, updatedMember);
+    response.redirect("/accounts");
   },
 };
 

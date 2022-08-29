@@ -23,6 +23,14 @@ const memberStore = {
   getMemberByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
+
+  updateMember(member, updatedMember) {
+    member.firstname = updatedMember.firstname;
+    member.lastname = updatedMember.lastname;
+    member.email = updatedMember.email;
+    member.password = updatedMember.password;
+    this.store.save();
+  },
 };
 
 module.exports = memberStore;
