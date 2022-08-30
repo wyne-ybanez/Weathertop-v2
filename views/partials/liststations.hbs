@@ -29,12 +29,14 @@
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
               Weather
-              {{#if latestWeatherIcon}}
+              {{#if readings}}
                 <i id="latestWeatherIcon" class="{{latestWeatherIcon}}"></i>
               {{/if}}
             </h3>
             <p class="description">
+              {{#if readings}}
                 {{latestWeather}}
+              {{/if}}
             </p>
           </div>
         </div>
@@ -49,6 +51,7 @@
                 <i class="temperature low icon"></i>
             </h3>
             <p class="description">
+              {{#if readings}}
                 {{temperature}} °C
                 <br>
                 {{fahrenheitValue}} F
@@ -56,6 +59,7 @@
                 Max: {{maxTemperature}}
                 <br>
                 Min: {{minTemperature}}
+              {{/if}}
             </p>
           </div>
         </div>
@@ -70,15 +74,17 @@
                     <i class="wind icon"></i>
                   </h3>
                   <p class="description">
-                    {{BeaufortValue}} bft
-                    <br>
-                    {{windCompass}}
-                    <br>
-                    Feels like {{windChill}}
-                    <br>
-                    Max: {{maxWindSpeed}}
-                    <br>
-                    Min: {{minWindSpeed}}
+                    {{#if readings}}
+                      {{BeaufortValue}} bft
+                      <br>
+                      {{windCompass}}
+                      <br>
+                      Feels like {{windChill}}
+                      <br>
+                      Max: {{maxWindSpeed}}
+                      <br>
+                      Min: {{minWindSpeed}}
+                    {{/if}}
                   </p>
               </div>
           </div>
@@ -93,11 +99,13 @@
                 <i class="cloud sun icon"></i>
               </h3>
               <p class="description">
-                {{pressure}} hpa
-                <br>
-                Max: {{maxPressure}}
-                <br>
-                Min: {{minPressure}}
+                {{#if readings}}
+                  {{pressure}} hpa
+                  <br>
+                  Max: {{maxPressure}}
+                  <br>
+                  Min: {{minPressure}}
+                {{/if}}
               </p>
           </div>
         </div>

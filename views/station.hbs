@@ -72,6 +72,7 @@
                     <i class="wind icon"></i>
                   </h3>
                   <p class="description">
+                  {{#if stationSummary.BeaufortValue}}
                     {{stationSummary.BeaufortValue}} bft
                     <br>
                     {{stationSummary.windCompass}}
@@ -81,6 +82,7 @@
                     Max: {{stationSummary.maxWindSpeed}}
                     <br>
                     Min: {{stationSummary.minWindSpeed}}
+                  {{/if}}
                   </p>
               </div>
           </div>

@@ -5,9 +5,9 @@ the website where their entries are recorded, capturing the reading from a speci
 member can create any number of weather stations records. The web application utilises weather 
 analytics and conversions for each reading which is automatically calculated when a report is made.
 
-<!-- View the live project here: https://rocky-wildwood-27122.herokuapp.com/
+View the live project here: https://weathertop-v2.herokuapp.com/
 
-(Project is DESKTOP & LAPTOP ONLY) -->
+(Project is DESKTOP & LAPTOP ONLY) 
 
 ## Project Goal
 
@@ -65,8 +65,6 @@ The following main pages will be implemented:
 
 - Account details Page - accounts.html
   - Edit account details page - editaccount.html
-  
-- Admin Dashboard - admin.html
 
 - Error Handlers
   - Error 404 - 404.html (error 404 handling)
@@ -103,7 +101,6 @@ The following main pages will be implemented:
     * Fomantic UI (https://fomantic-ui.com/)
     * Express
     * Handlebars
-    <!-- * Play Framework (https://www.playframework.com/documentation/1.5.x/install) -->
 
 #### Colour Scheme
 
@@ -155,7 +152,7 @@ stations. This data is then recorded on ElephantSQL and is identified according 
 ## Testing
 
 The web app has been tested by creating a test account and inputting a test station and test reading.
-This data has been successfully saved and this is reflected on 'admin.html' or at 'localhost:9000/@db'
+This data has been successfully saved and this is reflected on 'localhost:4000'
 when viewing the site during development.
 
 ## Technologies used:
@@ -225,32 +222,7 @@ Here is a link that can explain this process further. [Click Here](https://help.
 
 ## Deployment
 
-1. For deployment we will be using 2 external services: 
-   - https://www.heroku.com
-   - https://www.elephantsql.com
-
-2. Sign up for Heroku and once confirmed on heroku, log in and go you your Dashboard: https://dashboard.heroku.com/apps
-
-3. On ElephanSQL, once you have authorised/signed in with GitHub, you will be asked to create a team:
-   - https://www.elephantsql.com
-   Create a Database Instance. Copy the Database connection string.
-   
-4. Test the local application connected to the Elephant SQL.
-   - in `app/conf/application.conf` change `db.default=mem` to your ElephantSQL connection string.
-   - add `jpa.dialect=org.hibernate.dialect.PostgreSQLDialect` and `jpa.ddl=update`
-   - save and restart the application
-
-5. Prepare the local application for Heroku deployment.
-   - In the project root, place this file: `java.runtime.version=11` 
-   - Edit the existing file 'conf/dependencies.yml'. Add `require: - play 1.5.3`
-   - Ensure the application.conf file has `prod.application.mode=prod`
-   - Push the changes to Github
-
-6. Deploy Application to Heroku
-   - From the command line, Login to Heroku `heroku login`
-   - Use the buildpack: `heroku create --stack heroku-18 --buildpack https://github.com/heroku/heroku-buildpack-play`
-   - Deploy the project on the heroku dashboard by linking the project to the github repo.
-   - You can also push the changes to heroku by typing `git push heroku main` in the terminal.
+The app is deployed on Heroku using this repository as the main branch: https://www.heroku.com/
 
 ## References
 
@@ -287,4 +259,4 @@ screen size is minimized directly on the browser. It is not responsive for mobil
 
 ## Acknowledgements
 
-- Thanks to the WIT lecturers and students on Slack for their guidance on this project.
+- Thanks to the SETU lecturers and students on Slack for their guidance on this project.
