@@ -96,7 +96,17 @@
       "name": "Cork",
       "lat": 12,
       "lng": 12,
-      "readings": []
+      "readings": [
+        {
+          "id": "0982a680-29da-11ed-8560-dd6f8314522c",
+          "date": "2022-09-01T09:39:55.738Z",
+          "code": 300,
+          "temperature": 12,
+          "windSpeed": 12,
+          "windDirection": 12,
+          "pressure": 12
+        }
+      ]
     }
   ]
 }

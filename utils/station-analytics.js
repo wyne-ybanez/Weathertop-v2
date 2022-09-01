@@ -233,7 +233,7 @@ const stationAnalytics = {
 
   /**
       Get maximum Pressure reading.
-     
+
       @param  readings (Array)
       @return maxPressureReading, the reading with the maximum Pressure value
   */
@@ -250,14 +250,79 @@ const stationAnalytics = {
     return maxPressureReading.pressure;
   },
 
+//=== Trends
+
+  /**
+   * Checks if latest figure for temp is rising or falling.
+   *
+   * @param readings
+   * @return boolean value for tempRising, which is either true or false.
+   */
+  temperatureTrend(readings){
+    latestTempReading = null;
+    tempRising = false;
+
+    if (readings.length > 1) {
+        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        for (const reading of readings) {
+            if (latestTempReading.temperature > reading.temperature) {
+                tempRising = true;
+            }
+        }
+    }
+    return tempRising;
+  },
+
+  /**
+   * Checks if latest figure for wind is rising or falling.
+   *
+   * @param readings
+   * @return boolean value for windRising, which is either true or false.
+   */
+  windTrend(readings){
+    latestTempReading = null;
+    windRising = false;
+
+    if (readings.length > 1) {
+        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        for (const reading of readings) {
+            if (latestTempReading.windSpeed > reading.windSpeed) {
+                windRising = true;
+            }
+        }
+    }
+    return windRising;
+  },
+
+  /**
+   * Checks if latest figure for pressure is rising or falling.
+   *
+   * @param readings
+   * @return boolean value for pressureRising, which is either true or false.
+   */
+  pressureTrend(readings){
+    latestTempReading = null;
+    pressureRising = false;
+
+    if (readings.length > 1) {
+        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        for (const reading of readings) {
+          if (latestTempReading.pressure > reading.pressure) {
+            pressureRising = true;
+          }
+        }
+    }
+    return pressureRising;
+  },
+
   //=== Process Analytics
 
   /**
-  Process station analytics for latest reading.
- 
-  @param station
-  @return max/min Temperature, max/min WindSpeed, max/min Pressure
- */
+   * Process station analytics for latest reading.
+   *
+   * @param station
+   * @return max/min Temperature, max/min WindSpeed, max/min Pressure
+   */
   processAnalytics(station) {
     if (station.readings.length > 0) {
       // Analytics: Max & Min Values (Temperature, Wind, Pressure)
@@ -267,6 +332,21 @@ const stationAnalytics = {
       station.minWindSpeed = stationAnalytics.getMinWindSpeed(station.readings);
       station.maxPressure = stationAnalytics.getMaxPressure(station.readings);
       station.minPressure = stationAnalytics.getMinPressure(station.readings);
+    }
+  },
+
+  /**
+   * Process Trend analytics for Wind, Temp and Pressure.
+   *
+   * @param station
+   * @return Boolean values depending if each trend is rising or falling.
+   */
+  processTrendAnalytics(station)
+  {
+    if (station.readings.length > 1) {
+        station.tempTrend = temperatureTrend(station.readings);
+        station.windTrend = windTrend(station.readings);
+        station.pressureTrend = pressureTrend(station.readings);
     }
   },
 };

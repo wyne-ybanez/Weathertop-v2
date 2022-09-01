@@ -5,7 +5,7 @@ const stationsStore = require("../models/station-store");
 const accounts = require("./accounts");
 const uuid = require("uuid");
 const { processConversions } = require("../utils/conversions");
-const { processAnalytics } = require("../utils/station-analytics");
+const { processAnalytics, processTrendAnalytics } = require("../utils/station-analytics");
 // const { response } = require("express");
 
 const dashboard = {
@@ -23,6 +23,7 @@ const dashboard = {
     for (let station of sortedStations) {
       processConversions(station);
       processAnalytics(station);
+      processTrendAnalytics(station);
     }
 
     const viewData = {
