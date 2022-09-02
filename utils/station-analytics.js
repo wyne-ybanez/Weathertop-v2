@@ -250,7 +250,7 @@ const stationAnalytics = {
     return maxPressureReading.pressure;
   },
 
-//=== Trends
+  //=== Trends
 
   /**
    * Checks if latest figure for temp is rising or falling.
@@ -258,17 +258,17 @@ const stationAnalytics = {
    * @param readings
    * @return boolean value for tempRising, which is either true or false.
    */
-  temperatureTrend(readings){
+  temperatureTrend(readings) {
     let latestTempReading = null;
     let tempRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = readings[readings.length - 1]; // Get latest reading
-        for (const reading of readings) {
-            if (latestTempReading.temperature > reading.temperature) {
-                tempRising = true;
-            }
+      latestTempReading = readings[readings.length - 1]; // Get latest reading
+      for (const reading of readings) {
+        if (latestTempReading.temperature > reading.temperature) {
+          tempRising = true;
         }
+      }
     }
     return tempRising;
   },
@@ -279,17 +279,17 @@ const stationAnalytics = {
    * @param readings
    * @return boolean value for windRising, which is either true or false.
    */
-  windTrend(readings){
+  windTrend(readings) {
     let latestTempReading = null;
     let windRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = readings[readings.length - 1]; // Get latest reading
-        for (const reading of readings) {
-            if (latestTempReading.windSpeed > reading.windSpeed) {
-                windRising = true;
-            }
+      latestTempReading = readings[readings.length - 1]; // Get latest reading
+      for (const reading of readings) {
+        if (latestTempReading.windSpeed > reading.windSpeed) {
+          windRising = true;
         }
+      }
     }
     return windRising;
   },
@@ -300,17 +300,17 @@ const stationAnalytics = {
    * @param readings
    * @return boolean value for pressureRising, which is either true or false.
    */
-  pressureTrend(readings){
+  pressureTrend(readings) {
     let latestTempReading = null;
     let pressureRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = readings[readings.length - 1]; // Get latest reading
-        for (const reading of readings) {
-          if (latestTempReading.pressure > reading.pressure) {
-            pressureRising = true;
-          }
+      latestTempReading = readings[readings.length - 1]; // Get latest reading
+      for (const reading of readings) {
+        if (latestTempReading.pressure > reading.pressure) {
+          pressureRising = true;
         }
+      }
     }
     return pressureRising;
   },
@@ -343,9 +343,14 @@ const stationAnalytics = {
    */
   processTrendAnalytics(station) {
     if (station.readings.length > 1) {
-        station.tempTrend = stationAnalytics.temperatureTrend(station.readings);
-        station.windTrend = stationAnalytics.windTrend(station.readings);
-        station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
+      station.trends = true;
+      station.tempTrend = stationAnalytics.temperatureTrend(station.readings);
+      station.windTrend = stationAnalytics.windTrend(station.readings);
+      station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
+    }
+
+    if (station.readings.length <= 1) {
+      station.trends = false;
     }
   },
 };

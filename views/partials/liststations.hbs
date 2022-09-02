@@ -4,27 +4,29 @@
       {{name}}
     </h2>
 
-     <!--  Trends and Latest Data  -->
-     <div class="ui stackable five column grid">
+    <!--  Trends and Latest Data  -->
+    <div class="ui stackable five column grid">
 
-        <div id="station" class="column">
-          <div class="ui fluid inverted card">
-            <div class="middle aligned content station-card-height">
-              <h3 class="ui header top-medium-padding">
-                {{name}}
-                <i class="marker icon"></i>
-              </h3>
-              <p class="description">
-                Lat: {{lat}}
-                <br>
-                Lng: {{lng}}
-              </p>
-            </div>
+      <div id="station" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height">
+            <h3 class="ui header top-medium-padding">
+              {{name}}
+              <i class="marker icon"></i>
+            </h3>
+            <p class="description">
+              Lat:
+              {{lat}}
+              <br />
+              Lng:
+              {{lng}}
+            </p>
           </div>
         </div>
+      </div>
 
-        {{!-- Latest Weather --}}
-        <div id="weather" class="column">
+      {{! Latest Weather }}
+      <div id="weather" class="column">
         <div class="ui fluid inverted card">
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
@@ -42,90 +44,121 @@
         </div>
       </div>
 
-      {{!-- Latest Temp --}}
+      {{! Latest Temp }}
       <div id="temperature" class="column">
         <div class="ui fluid inverted card">
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
-                Temp
-                <i class="temperature low icon"></i>
+              Temp
+              <i class="temperature low icon"></i>
             </h3>
             <p class="description">
               {{#if readings}}
-                {{temperature}} °C
-                <br>
-                {{fahrenheitValue}} F
-                <br>
-                Max: {{maxTemperature}}
-                <br>
-                Min: {{minTemperature}}
+                {{temperature}}
+                °C
+                <br />
+                {{fahrenheitValue}}
+                F
+                <br />
+                Max:
+                {{maxTemperature}}
+                <br />
+                Min:
+                {{minTemperature}}
               {{/if}}
             </p>
             <!--  Temperature Trends  -->
-            {{#if tempTrend}}
+            {{#if trends}}
+              {{#if tempTrend}}
                 <i class="right floated arrow up icon"></i>
-              {{else if}}
+              {{/if}}
+              {{#unless tempTrend}}
                 <i class="right floated arrow down icon"></i>
-              {{else}}
+              {{/unless}}
             {{/if}}
           </div>
         </div>
       </div>
 
-      {{!-- Latest Wind --}}
+      {{! Latest Wind }}
       <div id="wind" class="column">
-          <div class="ui fluid inverted card">
-              <div class="middle aligned content station-card-height">
-                  <h3 class="ui header top-medium-padding">
-                    Wind
-                    <i class="wind icon"></i>
-                  </h3>
-                  <p class="description">
-                    {{#if readings}}
-                      {{BeaufortValue}} bft
-                      <br>
-                      {{windCompass}}
-                      <br>
-                      Feels like {{windChill}}
-                      <br>
-                      Max: {{maxWindSpeed}}
-                      <br>
-                      Min: {{minWindSpeed}}
-                    {{/if}}
-                  </p>
-              </div>
-          </div>
-      </div>
-
-      {{!-- Latest Pressure --}}
-      <div id="pressure" class="column">
         <div class="ui fluid inverted card">
           <div class="middle aligned content station-card-height">
-              <h3 class="ui header top-medium-padding">
-                Pressure
-                <i class="cloud sun icon"></i>
-              </h3>
-              <p class="description">
-                {{#if readings}}
-                  {{pressure}} hpa
-                  <br>
-                  Max: {{maxPressure}}
-                  <br>
-                  Min: {{minPressure}}
-                {{/if}}
-              </p>
+            <h3 class="ui header top-medium-padding">
+              Wind
+              <i class="wind icon"></i>
+            </h3>
+            <p class="description">
+              {{#if readings}}
+                {{BeaufortValue}}
+                bft
+                <br />
+                {{windCompass}}
+                <br />
+                Feels like
+                {{windChill}}
+                <br />
+                Max:
+                {{maxWindSpeed}}
+                <br />
+                Min:
+                {{minWindSpeed}}
+              {{/if}}
+            </p>
+            <!--  Temperature Trends  -->
+            {{#if trends}}
+              {{#if windTrend}}
+                <i class="right floated arrow up icon"></i>
+              {{/if}}
+              {{#unless windTrend}}
+                <i class="right floated arrow down icon"></i>
+              {{/unless}}
+            {{/if}}
           </div>
         </div>
       </div>
 
+      {{! Latest Pressure }}
+      <div id="pressure" class="column">
+        <div class="ui fluid inverted card">
+          <div class="middle aligned content station-card-height">
+            <h3 class="ui header top-medium-padding">
+              Pressure
+              <i class="cloud sun icon"></i>
+            </h3>
+            <p class="description">
+              {{#if readings}}
+                {{pressure}}
+                hpa
+                <br />
+                Max:
+                {{maxPressure}}
+                <br />
+                Min:
+                {{minPressure}}
+              {{/if}}
+            </p>
+            <!--  Temperature Trends  -->
+              {{#if trends }}
+                {{#if pressureTrend }}
+                    <i class="right floated arrow up icon"></i>
+                {{/if}}
+                {{#unless pressureTrend}}
+                    <i class="right floated arrow down icon"></i>
+                {{/unless}}
+              {{/if}}
+          </div>
+        </div>
       </div>
 
-    {{!-- Explore Station --}}
+    </div>
+
+    {{! Explore Station }}
     <a href="/station/{{id}}" class="ui icon button">
       <i class="icon folder open"></i>
     </a>
 
-    {{!-- Delete Station --}}
+    {{! Delete Station }}
     <a href="/dashboard/deletestation/{{id}}" class="ui icon button">
       <i class="icon trash"></i>
     </a>

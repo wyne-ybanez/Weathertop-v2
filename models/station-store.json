@@ -91,47 +91,40 @@
       ]
     },
     {
-      "id": "89144b60-2ab1-11ed-8301-b5fae290a53e",
+      "id": "2cd6c860-2ac9-11ed-b5ad-63dcfcc62fd9",
       "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
       "name": "Cork",
       "lat": 12,
       "lng": 12,
       "readings": [
         {
-          "id": "99a50460-2ab1-11ed-8301-b5fae290a53e",
-          "date": "2022-09-02T11:22:59.366Z",
-          "code": 400,
-          "temperature": 12,
-          "windSpeed": 12,
-          "windDirection": 12,
-          "pressure": 12
+          "id": "2ff657e0-2ac9-11ed-b5ad-63dcfcc62fd9",
+          "date": "2022-09-02T14:11:49.982Z",
+          "code": 300,
+          "temperature": 300,
+          "windSpeed": 300,
+          "windDirection": null,
+          "pressure": 300
         }
       ],
-      "latestWeatherIcon": "cloud sun rain icon",
-      "BeaufortValue": 3,
-      "windCompass": "North East",
-      "windChill": 10.74,
-      "fahrenheitValue": 53.6,
-      "maxTemperature": 12,
-      "minTemperature": 12,
-      "maxWindSpeed": 12,
-      "minWindSpeed": 12,
-      "maxPressure": 12,
-      "minPressure": 12,
-      "latestWeather": "Light Showers",
-      "temperature": 12,
-      "pressure": 12,
-      "tempTrend": true,
-      "windTrend": true,
-      "pressureTrend": false
-    },
-    {
-      "id": "af122d30-2ab3-11ed-a025-350717a334ad",
-      "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
-      "name": "Test",
-      "lat": 12,
-      "lng": 12,
-      "readings": []
+      "latestWeatherIcon": "cloud sun icon",
+      "BeaufortValue": 11,
+      "windCompass": "South South West",
+      "windChill": 295.99,
+      "fahrenheitValue": 392,
+      "maxTemperature": 500,
+      "minTemperature": 200,
+      "maxWindSpeed": 500,
+      "minWindSpeed": 200,
+      "maxPressure": 500,
+      "minPressure": 200,
+      "tempTrend": false,
+      "windTrend": false,
+      "pressureTrend": false,
+      "latestWeather": "Partial clouds",
+      "temperature": 200,
+      "pressure": 200,
+      "trends": true
     }
   ]
 }
