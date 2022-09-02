@@ -112,7 +112,7 @@ const station = {
 
     const newReading = {
       id: uuid.v1(),
-      date: date.toISOString(),
+      date: date.toISOString().replace("T", " ").replace("Z", ""),
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
