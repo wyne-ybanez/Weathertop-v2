@@ -259,11 +259,11 @@ const stationAnalytics = {
    * @return boolean value for tempRising, which is either true or false.
    */
   temperatureTrend(readings){
-    latestTempReading = null;
-    tempRising = false;
+    let latestTempReading = null;
+    let tempRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        latestTempReading = readings[readings.length - 1]; // Get latest reading
         for (const reading of readings) {
             if (latestTempReading.temperature > reading.temperature) {
                 tempRising = true;
@@ -280,11 +280,11 @@ const stationAnalytics = {
    * @return boolean value for windRising, which is either true or false.
    */
   windTrend(readings){
-    latestTempReading = null;
-    windRising = false;
+    let latestTempReading = null;
+    let windRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        latestTempReading = readings[readings.length - 1]; // Get latest reading
         for (const reading of readings) {
             if (latestTempReading.windSpeed > reading.windSpeed) {
                 windRising = true;
@@ -301,11 +301,11 @@ const stationAnalytics = {
    * @return boolean value for pressureRising, which is either true or false.
    */
   pressureTrend(readings){
-    latestTempReading = null;
-    pressureRising = false;
+    let latestTempReading = null;
+    let pressureRising = false;
 
     if (readings.length > 1) {
-        latestTempReading = station.readings[station.readings.length - 1]; // Get latest reading
+        latestTempReading = readings[readings.length - 1]; // Get latest reading
         for (const reading of readings) {
           if (latestTempReading.pressure > reading.pressure) {
             pressureRising = true;
@@ -341,12 +341,11 @@ const stationAnalytics = {
    * @param station
    * @return Boolean values depending if each trend is rising or falling.
    */
-  processTrendAnalytics(station)
-  {
+  processTrendAnalytics(station) {
     if (station.readings.length > 1) {
-        station.tempTrend = temperatureTrend(station.readings);
-        station.windTrend = windTrend(station.readings);
-        station.pressureTrend = pressureTrend(station.readings);
+        station.tempTrend = stationAnalytics.temperatureTrend(station.readings);
+        station.windTrend = stationAnalytics.windTrend(station.readings);
+        station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
     }
   },
 };

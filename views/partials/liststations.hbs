@@ -61,6 +61,13 @@
                 Min: {{minTemperature}}
               {{/if}}
             </p>
+            <!--  Temperature Trends  -->
+            {{#if tempTrend}}
+                <i class="right floated arrow up icon"></i>
+              {{else if}}
+                <i class="right floated arrow down icon"></i>
+              {{else}}
+            {{/if}}
           </div>
         </div>
       </div>
