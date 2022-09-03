@@ -1,32 +1,36 @@
 <form class="ui raised segment form" action="/station/{{station.id}}/addreading" method="POST">
   <div class="three fields">
-    {{!-- Code --}}
+    {{! Code }}
     <div class="field">
       <label>Code</label>
-      <input placeholder="00" type="number" step="100" min="100" max="800" name="code">
+      <input placeholder="00" type="number" step="100" min="100" max="800" name="code" />
     </div>
-    {{!-- Temp --}}
+    {{! Temp }}
     <div class="field">
       <label>Temp</label>
-      <input placeholder="0.0" type="number" step=".01" name="temperature">
+      <input placeholder="0.0" type="number" step=".01" name="temperature" />
     </div>
-    {{!-- Wind Speed --}}
+    {{! Wind Speed }}
     <div class="field">
       <label>Wind Speed</label>
-      <input placeholder="0.0" type="number" step=".01" name="windSpeed">
+      <input placeholder="0.0" type="number" step=".01" name="windSpeed" />
     </div>
   </div>
   <div class="three fields">
-    {{!-- Wind Direction--}}
+    {{! Wind Direction}}
     <div class="field">
       <label>Wind Direction</label>
-      <input placeholder="000deg" type="number" step=".01" name="windDirection">
+      <input placeholder="000deg" type="number" step=".01" name="windDirection" />
     </div>
-    {{!-- Pressure --}}
+    {{! Pressure }}
     <div class="field">
       <label>Pressure</label>
-      <input placeholder="000hpa" type="number" name="pressure">
+      <input placeholder="000hpa" type="number" name="pressure" />
     </div>
   </div>
   <button class="ui blue submit button">Add Reading</button>
+</form>
+
+<form class="form" action="/station/{{station.id}}/addAutoReading">
+  <button class="ui green submit button"> Auto Generate Reading </button>
 </form>

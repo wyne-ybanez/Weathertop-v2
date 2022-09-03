@@ -8,6 +8,7 @@ const axios = require("axios");
 const uuid = require("uuid");
 const { report } = require("../routes.js");
 const { getLatestWindDirection, getMaxWindSpeed } = require("../utils/station-analytics.js");
+const { roundNearest100 } = require("../utils/conversions.js");
 
 const station = {
   // Station Index
@@ -99,16 +100,13 @@ const station = {
   },
 
   /* 
-    Add Reading
-    Obtain station ID and lat/lng values
-    Request API data for location.
+    Add Reading Manually
   */
   addreading(request, response) {
     logger.info("rendering new reading");
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
-    // const dateFormatted = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
     const newReading = {
       id: uuid.v1(),
@@ -119,26 +117,45 @@ const station = {
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
+
     stationsStore.addReading(stationId, newReading);
     logger.debug("New Reading = ", newReading);
     response.redirect("/station/" + stationId);
+  },
 
-    // THIS IS NOT YET REQUIRED FOR BASELINE => EDIT
-    //     let report = {};
-    //     const lat = station.lat;
-    //     const lng = station.lng;
-    //     const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
-    // `;
-    //     const result = await axios.get(requestUrl);
-    //     if (result.status == 200) {
-    //       const reading = result.data.current;
-    //       report.code = reading.weather[0].id;
-    //       report.temperature = reading.temp;
-    //       report.windSpeed = reading.wind_speed;
-    //       report.pressure = reading.pressure;
-    //       // report.windDirection = reading.wind_deg;
-    //     }
-    //     console.log(report);
+  /* 
+    Add Reading Automatically
+    Obtain station ID and lat/lng values
+    Request API data for location.
+  */
+  async addAutoReading(request, response) {
+    const stationId = request.params.id;
+    const station = stationsStore.getStation(stationId);
+    const date = new Date();
+
+    let report = {};
+    const lat = station.lat;
+    const lng = station.lng;
+    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
+    `;
+    const result = await axios.get(requestUrl);
+
+    if (result.status == 200) {
+      const reading = result.data.current;
+      let code;
+
+      report.date = date.toISOString().replace("T", " ").replace("Z", "");
+      report.id = uuid.v1();
+      code = reading.weather[0].id;
+      report.temperature = reading.temp;
+      report.windSpeed = reading.wind_speed;
+      report.pressure = reading.pressure;
+      report.windDirection = reading.wind_deg;
+      report.code = roundNearest100(code);
+    }
+
+    stationsStore.addReading(stationId, report);
+    response.redirect("/station/" + stationId);
   },
 };
 

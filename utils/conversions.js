@@ -3,6 +3,11 @@
 const logger = require("./logger.js");
 
 const conversions = {
+  // Utility rounding to nearest number
+  roundNearest100(num) {
+    return Math.round(num / 100) * 100;
+  },
+
   /** 
     Convert Code to weather
     

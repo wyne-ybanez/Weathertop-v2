@@ -126,11 +126,73 @@
       "maxWindSpeed": 300,
       "minWindSpeed": 12,
       "maxPressure": 300,
-      "minPressure": 21,
+      "minPressure": 12,
       "tempTrend": false,
       "windTrend": false,
       "pressureTrend": false,
-      "trends": true
+      "trends": true,
+      "latestWeather": "Light Showers",
+      "temperature": 12,
+      "pressure": 12
+    },
+    {
+      "id": "07028fd0-2ae1-11ed-87ee-9b33b21dd017",
+      "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
+      "name": "Test",
+      "lat": 12,
+      "lng": 12,
+      "readings": [
+        {
+          "id": "16730bc0-2ae1-11ed-87ee-9b33b21dd017",
+          "date": "2022-09-02 17:02:54.640",
+          "code": 300,
+          "temperature": 300,
+          "windSpeed": 300,
+          "windDirection": 300,
+          "pressure": 300
+        },
+        {
+          "id": "14271db0-2b96-11ed-8a04-0194bf96fa7a",
+          "date": "2022-09-03 14:38:30.155",
+          "code": 400,
+          "temperature": 12,
+          "windSpeed": 12,
+          "windDirection": 12,
+          "pressure": 12
+        },
+        {
+          "date": "2022-09-03 14:47:26.870",
+          "id": "543fb230-2b97-11ed-9377-1bf3a72c612a",
+          "temperature": 28.68,
+          "windSpeed": 4.35,
+          "pressure": 1012,
+          "windDirection": 207,
+          "code": 800
+        },
+        {
+          "date": "2022-09-03 14:48:31.340",
+          "id": "7aaa4a70-2b97-11ed-9377-1bf3a72c612a",
+          "temperature": 28.68,
+          "windSpeed": 4.35,
+          "pressure": 1012,
+          "windDirection": 207,
+          "code": 800
+        }
+      ],
+      "trends": true,
+      "BeaufortValue": 1,
+      "windCompass": "South South West",
+      "windChill": 30.95,
+      "fahrenheitValue": 83.624,
+      "maxTemperature": 300,
+      "minTemperature": 12,
+      "maxWindSpeed": 300,
+      "minWindSpeed": 4.35,
+      "maxPressure": 1012,
+      "minPressure": 12,
+      "tempTrend": true,
+      "windTrend": false,
+      "pressureTrend": true
     }
   ]
 }
