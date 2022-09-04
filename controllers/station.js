@@ -9,6 +9,8 @@ const uuid = require("uuid");
 const { report } = require("../routes.js");
 const { getLatestWindDirection, getMaxWindSpeed } = require("../utils/station-analytics.js");
 const { roundNearest100 } = require("../utils/conversions.js");
+const { processConversions } = require("../utils/conversions");
+const { processAnalytics, processTrendAnalytics } = require("../utils/station-analytics");
 
 const station = {
   // Station Index
@@ -19,18 +21,6 @@ const station = {
     let latestWindSpeed;
     let latestPressure;
     let latestWindDirection;
-
-    let windChill;
-    let windCompass;
-    let fahrenheitValue;
-    let BeaufortValue;
-
-    let minTemperature;
-    let maxTemperature;
-    let minWindSpeed;
-    let maxWindSpeed;
-    let minPressure;
-    let maxPressure;
 
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
@@ -44,21 +34,12 @@ const station = {
       latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
       latestPressure = stationAnalytics.getLatestPressure(station);
       latestWindDirection = stationAnalytics.getLatestWindDirection(station);
-
-      // Converted Values
-      windChill = conversions.windChillCalculator(latestWindSpeed, latestTemperature);
-      windCompass = conversions.convertToCompassDirection(latestWindDirection);
-      fahrenheitValue = conversions.convertToFahrenheit(latestTemperature);
-      BeaufortValue = conversions.convertToBeaufort(latestWindSpeed);
-
-      // Min Max values
-      minTemperature = stationAnalytics.getMinTemperature(station.readings);
-      maxTemperature = stationAnalytics.getMaxTemperature(station.readings);
-      minWindSpeed = stationAnalytics.getMinWindSpeed(station.readings);
-      maxWindSpeed = stationAnalytics.getMaxWindSpeed(station.readings);
-      minPressure = stationAnalytics.getMinPressure(station.readings);
-      maxPressure = stationAnalytics.getMaxPressure(station.readings);
     }
+
+    // Process conversions, Analytivs and Trends for station
+    processConversions(station);
+    processAnalytics(station);
+    processTrendAnalytics(station);
 
     const viewData = {
       name: station.name,
@@ -71,20 +52,6 @@ const station = {
         latestWeatherIcon: latestWeatherIcon,
         latestTemperature: latestTemperature,
         latestPressure: latestPressure,
-
-        // Converted Values
-        windChill: windChill,
-        windCompass: windCompass,
-        fahrenheitValue: fahrenheitValue,
-        BeaufortValue: BeaufortValue,
-
-        // Min Max values
-        minTemperature: minTemperature,
-        maxTemperature: maxTemperature,
-        minWindSpeed: minWindSpeed,
-        maxWindSpeed: maxWindSpeed,
-        minPressure: minPressure,
-        maxPressure: maxPressure,
       },
     };
     response.render("station", viewData);
@@ -152,8 +119,19 @@ const station = {
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
       report.code = roundNearest100(code);
+
+      report.tempTrend = [];
+      report.trendLabels = [];
+
+      const trends = result.data.daily;
+      for (let i = 0; i < trends.length; i++) {
+        report.tempTrend.push(trends[i].temp.day);
+        const date = new Date(trends[i].dt * 1000);
+        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
+      }
     }
 
+    console.log("REPORT: ", report);
     stationsStore.addReading(stationId, report);
     response.redirect("/station/" + stationId);
   },

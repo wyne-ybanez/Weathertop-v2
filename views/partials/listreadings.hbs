@@ -44,3 +44,33 @@
     {{/each}}
   </tbody>
 </table>
+
+{{!-- Chart --}}
+<div class="ui raised segment" id="chart"></div>
+
+<script>
+  const data = {
+    labels: [
+      {{#each report.trendLabels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Temperature", type: "line",
+        values: [
+          {{#each report.tempTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+
+  const chart = new frappe.Chart("#chart", {
+    title: "Temperature Trend",
+    data: data,
+    type: 'line',
+    height: 250,
+  })
+</script>

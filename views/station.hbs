@@ -31,12 +31,12 @@
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
               Weather
-              {{#if stationSummary.latestWeatherIcon}}
-                  <i id="latestWeatherIcon" class="{{stationSummary.latestWeatherIcon}}"></i>
+              {{#if station.latestWeatherIcon}}
+                  <i id="latestWeatherIcon" class="{{station.latestWeatherIcon}}"></i>
               {{/if}}
             </h3>
             <p class="description">
-                {{stationSummary.latestWeather}}
+                {{station.latestWeather}}
             </p>
           </div>
         </div>
@@ -53,11 +53,11 @@
               {{#if stationSummary.latestTemperature}}
                 {{stationSummary.latestTemperature}} °C
                 <br>
-                {{stationSummary.fahrenheitValue}} F
+                {{station.fahrenheitValue}} F
                 <br>
-                Max: {{stationSummary.maxTemperature}}
+                Max: {{station.maxTemperature}}
                 <br>
-                Min: {{stationSummary.minTemperature}}
+                Min: {{station.minTemperature}}
               {{/if}}
             </p>
           </div>
@@ -72,16 +72,16 @@
                     <i class="wind icon"></i>
                   </h3>
                   <p class="description">
-                  {{#if stationSummary.BeaufortValue}}
-                    {{stationSummary.BeaufortValue}} bft
+                  {{#if station.BeaufortValue}}
+                    {{station.BeaufortValue}} bft
                     <br>
-                    {{stationSummary.windCompass}}
+                    {{station.windCompass}}
                     <br>
-                    Feels like {{stationSummary.windChill}}
+                    Feels like {{station.windChill}}
                     <br>
-                    Max: {{stationSummary.maxWindSpeed}}
+                    Max: {{station.maxWindSpeed}}
                     <br>
-                    Min: {{stationSummary.minWindSpeed}}
+                    Min: {{station.minWindSpeed}}
                   {{/if}}
                   </p>
               </div>
@@ -99,9 +99,9 @@
                   {{#if stationSummary.latestPressure}}
                     {{stationSummary.latestPressure}} hpa
                     <br>
-                    Max: {{stationSummary.maxPressure}}
+                    Max: {{station.maxPressure}}
                     <br>
-                    Min: {{stationSummary.minPressure}}
+                    Min: {{station.minPressure}}
                   {{/if}}
               </p>
           </div>
