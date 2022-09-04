@@ -31,12 +31,14 @@
           <div class="middle aligned content station-card-height">
             <h3 class="ui header top-medium-padding">
               Weather
-              {{#if station.latestWeatherIcon}}
+              {{#if station.readings}}
                   <i id="latestWeatherIcon" class="{{station.latestWeatherIcon}}"></i>
               {{/if}}
             </h3>
             <p class="description">
+              {{#if station.readings}}
                 {{station.latestWeather}}
+              {{/if}}
             </p>
           </div>
         </div>
@@ -60,6 +62,15 @@
                 Min: {{station.minTemperature}}
               {{/if}}
             </p>
+            <!--  Temperature Trends  -->
+            {{#if station.trends}}
+              {{#if station.tempTrend}}
+                <i class="right floated arrow up icon"></i>
+              {{/if}}
+              {{#unless station.tempTrend}}
+                <i class="right floated arrow down icon"></i>
+              {{/unless}}
+            {{/if}}
           </div>
         </div>
       </div>
@@ -72,7 +83,7 @@
                     <i class="wind icon"></i>
                   </h3>
                   <p class="description">
-                  {{#if station.BeaufortValue}}
+                  {{#if station.readings}}
                     {{station.BeaufortValue}} bft
                     <br>
                     {{station.windCompass}}
@@ -84,6 +95,15 @@
                     Min: {{station.minWindSpeed}}
                   {{/if}}
                   </p>
+                  <!--  Wind Trends  -->
+                  {{#if station.trends}}
+                    {{#if station.windTrend}}
+                      <i class="right floated arrow up icon"></i>
+                    {{/if}}
+                    {{#unless station.windTrend}}
+                      <i class="right floated arrow down icon"></i>
+                    {{/unless}}
+                  {{/if}}
               </div>
           </div>
       </div>
@@ -104,6 +124,15 @@
                     Min: {{station.minPressure}}
                   {{/if}}
               </p>
+              <!--  Temperature Trends  -->
+              {{#if station.trends}}
+                {{#if station.pressureTrend}}
+                  <i class="right floated arrow up icon"></i>
+                {{/if}}
+                {{#unless station.pressureTrend}}
+                  <i class="right floated arrow down icon"></i>
+                {{/unless}}
+              {{/if}}
           </div>
         </div>
       </div>

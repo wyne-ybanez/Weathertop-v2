@@ -105,7 +105,7 @@
                 {{minWindSpeed}}
               {{/if}}
             </p>
-            <!--  Temperature Trends  -->
+            <!--  Wind Trends  -->
             {{#if trends}}
               {{#if windTrend}}
                 <i class="right floated arrow up icon"></i>
@@ -138,15 +138,15 @@
                 {{minPressure}}
               {{/if}}
             </p>
-            <!--  Temperature Trends  -->
-              {{#if trends }}
-                {{#if pressureTrend }}
-                    <i class="right floated arrow up icon"></i>
-                {{/if}}
-                {{#unless pressureTrend}}
-                    <i class="right floated arrow down icon"></i>
-                {{/unless}}
+            <!--  Pressure Trends  -->
+            {{#if trends}}
+              {{#if pressureTrend}}
+                <i class="right floated arrow up icon"></i>
               {{/if}}
+              {{#unless pressureTrend}}
+                <i class="right floated arrow down icon"></i>
+              {{/unless}}
+            {{/if}}
           </div>
         </div>
       </div>

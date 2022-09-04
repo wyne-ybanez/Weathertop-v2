@@ -51,7 +51,7 @@
 <script>
   const data = {
     labels: [
-      {{#each report.trendLabels}}
+      {{#each station.readings.trendLabels}}
         "{{this}}",
       {{/each}}
     ],
@@ -59,8 +59,8 @@
       {
         name: "Temperature", type: "line",
         values: [
-          {{#each report.tempTrend}}
-            {{this}},
+          {{#each station.readings.tempTrend}}
+            "{{this}}",
           {{/each}}
         ]
       }

@@ -114,26 +114,35 @@
           "windSpeed": 12,
           "windDirection": 12,
           "pressure": 12
+        },
+        {
+          "id": "140cbc31-2c78-11ed-929d-6de26b74aa9b",
+          "date": "2022-09-04 17:36:15.738",
+          "code": 200,
+          "temperature": 200,
+          "windSpeed": 200,
+          "windDirection": 200,
+          "pressure": 200
         }
       ],
-      "latestWeatherIcon": "cloud sun rain icon",
-      "BeaufortValue": 3,
-      "windCompass": "North East",
-      "windChill": 10.74,
-      "fahrenheitValue": 53.6,
+      "latestWeatherIcon": "cloud sun icon",
+      "BeaufortValue": 11,
+      "windCompass": "South South West",
+      "windChill": 295.99,
+      "fahrenheitValue": 392,
       "maxTemperature": 300,
       "minTemperature": 12,
       "maxWindSpeed": 300,
       "minWindSpeed": 12,
       "maxPressure": 300,
       "minPressure": 12,
-      "tempTrend": false,
-      "windTrend": false,
-      "pressureTrend": false,
+      "tempTrend": true,
+      "windTrend": true,
+      "pressureTrend": true,
       "trends": true,
-      "latestWeather": "Light Showers",
-      "temperature": 12,
-      "pressure": 12
+      "latestWeather": "Partial clouds",
+      "temperature": 200,
+      "pressure": 200
     },
     {
       "id": "07028fd0-2ae1-11ed-87ee-9b33b21dd017",
@@ -143,13 +152,13 @@
       "lng": 12,
       "readings": [
         {
-          "date": "2022-09-04 16:07:40.486",
-          "id": "b3f14610-2c6b-11ed-a609-15d966fcf66c",
-          "temperature": 31.49,
-          "windSpeed": 3.68,
-          "pressure": 1010,
-          "windDirection": 184,
           "code": 800,
+          "date": "2022-09-04 17:42:52.444",
+          "id": "0090d4b0-2c79-11ed-895f-e1f668f9b06a",
+          "temperature": 28.05,
+          "windSpeed": 5.1,
+          "pressure": 1011,
+          "windDirection": 199,
           "tempTrend": [
             30.95,
             31.06,
@@ -172,13 +181,13 @@
           ]
         },
         {
-          "date": "2022-09-04 16:46:51.669",
-          "id": "2d2ace20-2c71-11ed-9a3c-5970b3ecb3a3",
-          "temperature": 28.95,
-          "windSpeed": 4.74,
-          "pressure": 1010,
-          "windDirection": null,
-          "code": 400,
+          "code": 800,
+          "date": "2022-09-04 17:45:03.512",
+          "id": "4f314f50-2c79-11ed-82fd-2bb9e912b3c6",
+          "temperature": 28.05,
+          "windSpeed": 5.1,
+          "pressure": 1011,
+          "windDirection": 199,
           "tempTrend": [
             30.95,
             31.06,
@@ -199,26 +208,81 @@
             "10/8/2022",
             "11/8/2022"
           ]
+        },
+        {
+          "id": "c90dc060-2c79-11ed-8de8-9b035dce8a2a",
+          "date": "2022-09-04 17:48:28.959",
+          "code": 200,
+          "temperature": 200,
+          "windSpeed": 200,
+          "windDirection": 200,
+          "pressure": 200,
+          "tempTrend": [
+            30.95,
+            31.06,
+            29.36,
+            30.7,
+            32.11,
+            25.78,
+            31.14,
+            31.53
+          ],
+          "tempLabels": [
+            "4/8/2022",
+            "5/8/2022",
+            "6/8/2022",
+            "7/8/2022",
+            "8/8/2022",
+            "9/8/2022",
+            "10/8/2022",
+            "11/8/2022"
+          ]
+        },
+        {
+          "code": 800,
+          "date": "2022-09-04 23:02:23.118",
+          "id": "a3248920-2ca5-11ed-8de8-9b035dce8a2a",
+          "temperature": 25.57,
+          "windSpeed": 3.55,
+          "pressure": 1013,
+          "windDirection": 209,
+          "tempTrend": [
+            31.34,
+            29.42,
+            29.45,
+            32.09,
+            27.4,
+            23.56,
+            31.15,
+            32.19
+          ],
+          "trendLabels": [
+            "5/8/2022",
+            "6/8/2022",
+            "7/8/2022",
+            "8/8/2022",
+            "9/8/2022",
+            "10/8/2022",
+            "11/8/2022",
+            "12/8/2022"
+          ]
         }
       ],
       "trends": true,
-      "BeaufortValue": 1,
-      "windCompass": "South",
-      "windChill": 31.25,
-      "fahrenheitValue": 84.11,
-      "maxTemperature": 31.49,
-      "minTemperature": 28.95,
-      "maxWindSpeed": 4.74,
-      "minWindSpeed": 3.68,
-      "maxPressure": 1010,
-      "minPressure": 1010,
-      "tempTrend": false,
+      "BeaufortValue": 11,
+      "windCompass": "South South West",
+      "windChill": 295.99,
+      "fahrenheitValue": 392,
+      "maxTemperature": 200,
+      "minTemperature": 28.05,
+      "maxWindSpeed": 200,
+      "minWindSpeed": 5.1,
+      "maxPressure": 1011,
+      "minPressure": 200,
+      "tempTrend": true,
       "windTrend": true,
       "pressureTrend": false,
-      "latestWeatherIcon": "poo storm icon",
-      "latestWeather": "Thunder",
-      "temperature": 28.95,
-      "pressure": 1010
+      "latestWeatherIcon": "cloud sun icon"
     }
   ]
 }

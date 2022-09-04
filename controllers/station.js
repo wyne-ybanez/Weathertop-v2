@@ -69,12 +69,47 @@ const station = {
   /* 
     Add Reading Manually
   */
-  addreading(request, response) {
+  async addreading(request, response) {
     logger.info("rendering new reading");
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
 
+    // API Call
+    let report = {};
+    const lat = station.lat;
+    const lng = station.lng;
+    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
+    `;
+    const result = await axios.get(requestUrl);
+
+    if (result.status == 200) {
+      const reading = result.data.current;
+      let code;
+
+      code = reading.weather[0].id;
+      report.code = roundNearest100(code);
+      report.date = date.toISOString().replace("T", " ").replace("Z", "");
+      report.id = uuid.v1();
+      report.temperature = reading.temp;
+      report.windSpeed = reading.wind_speed;
+      report.pressure = reading.pressure;
+      report.windDirection = reading.wind_deg;
+
+      report.tempTrend = [];
+      report.trendLabels = [];
+
+      const trends = result.data.daily;
+      for (let i = 0; i < trends.length; i++) {
+        report.tempTrend.push(trends[i].temp.day);
+        const date = new Date(trends[i].dt * 1000);
+        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
+      }
+    }
+
+    console.log("NEW REPORT: ", report);
+
+    // New Reading Data
     const newReading = {
       id: uuid.v1(),
       date: date.toISOString().replace("T", " ").replace("Z", ""),
@@ -83,6 +118,8 @@ const station = {
       windSpeed: Number(request.body.windSpeed),
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
+      tempTrend: report.tempTrend,
+      tempLabels: report.trendLabels,
     };
 
     stationsStore.addReading(stationId, newReading);
@@ -111,14 +148,14 @@ const station = {
       const reading = result.data.current;
       let code;
 
+      code = reading.weather[0].id;
+      report.code = roundNearest100(code);
       report.date = date.toISOString().replace("T", " ").replace("Z", "");
       report.id = uuid.v1();
-      code = reading.weather[0].id;
       report.temperature = reading.temp;
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
-      report.code = roundNearest100(code);
 
       report.tempTrend = [];
       report.trendLabels = [];
