@@ -31,45 +31,45 @@ to help the user begin recording reports.
 
 Features planned:
 
-- Website Title and purpose immediately communicated.
-- Navigation Menu.
-- ElephantSQL database to store records and users profiles.
-- Login functionality.
-- Logout functionality.
-- CRUD functionality for records and profiles.
-- Registered user station creation and management.
-- Admin dashboard for reviewing data.
+- Website Title and purpose immediately communicated
+- Navigation Menu
+- stored JSON database to save data records and users profiles
+- Login functionality
+- Logout functionality
+- CRUD functionality for records and profiles
+- Registered user station creation and management
+- Trend Graphs 
+- Map markers for each station owned by the user
 
 ### Structure
 
 The following main pages will be implemented:
 
-- Base Page - main.html
+- Base Page - main.hbs
 
-- Sign Up Page - signup.html
+- Sign Up Page - signup.hbs
 
-- Log In Page - login.html
+- Log In Page - login.hbs
 
-- About page, explains the web app and its purpose - about.html
+- About page, explains the web app and its purpose - about.hbs
 
-- Home page, displays what the app is about - start.html
+- Home page, displays what the app is about - index.hbs
   - Menu should the user have logged in - menu.html
-  - Menu if there is no user session ID - welcomemenu.html
 
 - Dashboard, displays user records (Stations), allows users to add stations and delete stations - dashboard.html
   - Create station - addstation.html
 
 - Station details - station.html
-  - Displays a list of the readings relating to the station - listreadings.html
-  - Create a report and record it in the station's readings list - addreading.html
+  - Displays a list of the readings relating to the station - listreadings.hbs
+  - Create a report and record it in the station's readings list - addreading.hbs
 
-- Account details Page - accounts.html
-  - Edit account details page - editaccount.html
+- Account details Page - accounts.hbs
+  - Edit account details page - editaccount.hbs
 
 - Error Handlers
-  - Error 404 - 404.html (error 404 handling)
-  - Error 500 - 500.html (error 500 handling)
-  
+  - Error 404 - 404.hbs (error 404 handling)
+  - Error 500 - 500.hbs (error 500 handling)
+
 ### Skeleton
 
 - Start Page: <br>
@@ -106,8 +106,8 @@ The following main pages will be implemented:
 
 - Main Colors
     * White
-    * Fomantic Blue 
-    * Fomantic Red (for 'delete' buttons)
+    * Fomantic Blue
+    * Fomantic Green
 
 - Secondary Colors, used for icons
     * blueviolet
@@ -126,7 +126,7 @@ The following main pages will be implemented:
 ### Simple Design:
 
 The web app incorporates a simple design which is easy to understand and traverse as the user
-explores the website. 
+explores the website.
 
 The website is also responsive for mobile display.
 
@@ -138,16 +138,14 @@ easy to understand, easy to use application.
 
 ### Efficiency:
 
-The web app incorporates a utilities folder with the follow files: 'Conversions' and 'StationAnalytics'.
+The web app incorporates a utilities folder with the follow files: 'conversions' and 'station-analytics'.
 This utilities folder is utilised in the web app for automatic calculations. The user's readings
 will be converted to its relevant data as per the user's input. Hence, it is an efficient system 
 as the user will not need to do this from scratch.
 
 ### Convenience:
 
-The web app also incorporates a database and is deployed through Heroku. Hence, many users can access
-the site, create accounts and begin recording their own weather readings through their respective 
-stations. This data is then recorded on ElephantSQL and is identified according to the user's member_id.
+The web app also incorporates and runs its own database record. It is also deployed through Heroku. Hence, many users can access the site, create accounts and begin recording their own weather readings through their respective stations. This data is then recorded in a JSON file within the models directory and is identified according to the user's member_id.
 
 ## Testing
 

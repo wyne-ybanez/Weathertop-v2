@@ -25,8 +25,8 @@ const memberStore = {
   },
 
   updateMember(member, updatedMember) {
-    member.firstname = updatedMember.firstname;
-    member.lastname = updatedMember.lastname;
+    member.firstName = updatedMember.firstName;
+    member.lastName = updatedMember.lastName;
     member.email = updatedMember.email;
     member.password = updatedMember.password;
     this.store.save();

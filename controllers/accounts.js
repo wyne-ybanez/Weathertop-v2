@@ -77,8 +77,8 @@ const accounts = {
     let member = accounts.getCurrentMember(request);
 
     const updatedMember = {
-      firstname: request.body.firstname,
-      lastname: request.body.lastname,
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
       email: request.body.email,
       password: request.body.password,
     };
