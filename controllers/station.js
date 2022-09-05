@@ -82,29 +82,36 @@ const station = {
     const lng = station.lng;
     const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
     `;
-    const result = await axios.get(requestUrl);
+    try {
+      const result = await axios.get(requestUrl);
 
-    if (result.status == 200) {
-      const reading = result.data.current;
+      if (result.status == 200) {
+        const reading = result.data.current;
 
-      let code;
-      code = reading.weather[0].id;
-      report.code = roundNearest100(code);
-      report.date = date.toISOString().replace("T", " ").replace("Z", "");
-      report.id = uuid.v1();
-      report.temperature = reading.temp;
-      report.windSpeed = reading.wind_speed;
-      report.pressure = reading.pressure;
-      report.windDirection = reading.wind_deg;
+        let code;
+        code = reading.weather[0].id;
+        report.code = roundNearest100(code);
+        report.date = date.toISOString().replace("T", " ").replace("Z", "");
+        report.id = uuid.v1();
+        report.temperature = reading.temp;
+        report.windSpeed = reading.wind_speed;
+        report.pressure = reading.pressure;
+        report.windDirection = reading.wind_deg;
+        report.tempTrend = [];
+        report.trendLabels = [];
+
+        const trends = result.data.daily;
+        for (let i = 0; i < trends.length; i++) {
+          report.tempTrend.push(trends[i].temp.day);
+          const date = new Date(trends[i].dt * 1000);
+          report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
+        }
+      }
+    } catch {
+    // if API call fails, set labels and trends to empty array
+      console.log(report);
       report.tempTrend = [];
       report.trendLabels = [];
-
-      const trends = result.data.daily;
-      for (let i = 0; i < trends.length; i++) {
-        report.tempTrend.push(trends[i].temp.day);
-        const date = new Date(trends[i].dt * 1000);
-        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
-      }
     }
 
     // New Reading Data
@@ -117,7 +124,7 @@ const station = {
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
       tempTrend: report.tempTrend,
-      tempLabels: report.trendLabels,
+      trendLabels: report.trendLabels,
     };
 
     stationsStore.addReading(stationId, newReading);
@@ -140,29 +147,36 @@ const station = {
     const lng = station.lng;
     const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
     `;
-    const result = await axios.get(requestUrl);
+    try {
+      const result = await axios.get(requestUrl);
 
-    if (result.status == 200) {
-      const reading = result.data.current;
+      if (result.status == 200) {
+        const reading = result.data.current;
 
-      let code;
-      code = reading.weather[0].id;
-      report.code = roundNearest100(code);
-      report.date = date.toISOString().replace("T", " ").replace("Z", "");
-      report.id = uuid.v1();
-      report.temperature = reading.temp;
-      report.windSpeed = reading.wind_speed;
-      report.pressure = reading.pressure;
-      report.windDirection = reading.wind_deg;
+        let code;
+        code = reading.weather[0].id;
+        report.code = roundNearest100(code);
+        report.date = date.toISOString().replace("T", " ").replace("Z", "");
+        report.id = uuid.v1();
+        report.temperature = reading.temp;
+        report.windSpeed = reading.wind_speed;
+        report.pressure = reading.pressure;
+        report.windDirection = reading.wind_deg;
+        report.tempTrend = [];
+        report.trendLabels = [];
+
+        const trends = result.data.daily;
+        for (let i = 0; i < trends.length; i++) {
+          report.tempTrend.push(trends[i].temp.day);
+          const date = new Date(trends[i].dt * 1000);
+          report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
+        }
+      }
+    } catch {
+      // if API call fails, set labels and trends to empty array
+      console.log(report);
       report.tempTrend = [];
       report.trendLabels = [];
-
-      const trends = result.data.daily;
-      for (let i = 0; i < trends.length; i++) {
-        report.tempTrend.push(trends[i].temp.day);
-        const date = new Date(trends[i].dt * 1000);
-        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
-      }
     }
 
     stationsStore.addReading(stationId, report);
