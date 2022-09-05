@@ -48,29 +48,31 @@
 {{!-- Chart --}}
 <div class="ui raised segment" id="chart"></div>
 
-<script>
-  const data = {
-    labels: [
-      {{#each station.readings.trendLabels}}
-        "{{this}}",
-      {{/each}}
-    ],
-    datasets: [
-      {
-        name: "Temperature", type: "line",
-        values: [
-          {{#each station.readings.tempTrend}}
-            "{{this}}",
-          {{/each}}
-        ]
-      }
-    ]
-  }
+{{#each station.readings}}
+  <script>
+    const data = {
+      labels: [
+        {{#each trendLabels}}
+          "{{this}}",
+        {{/each}}
+      ],
+      datasets: [
+        {
+          name: "Temperature", type: "line",
+          values: [
+            {{#each tempTrend}}
+              "{{this}}",
+            {{/each}}
+          ]
+        }
+      ]
+    }
 
-  const chart = new frappe.Chart("#chart", {
-    title: "Temperature Trend",
-    data: data,
-    type: 'line',
-    height: 250,
-  })
-</script>
+    const chart = new frappe.Chart("#chart", {
+      title: "Temperature Trend",
+      data: data,
+      type: 'line',
+      height: 250,
+    })
+  </script>
+{{/each}}

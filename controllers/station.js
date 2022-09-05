@@ -66,8 +66,9 @@ const station = {
     response.redirect("/station/" + stationId);
   },
 
-  /* 
+  /*
     Add Reading Manually
+    - Makes API Call to add report labels & trends to trend graph
   */
   async addreading(request, response) {
     logger.info("rendering new reading");
@@ -85,8 +86,8 @@ const station = {
 
     if (result.status == 200) {
       const reading = result.data.current;
-      let code;
 
+      let code;
       code = reading.weather[0].id;
       report.code = roundNearest100(code);
       report.date = date.toISOString().replace("T", " ").replace("Z", "");
@@ -95,7 +96,6 @@ const station = {
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
-
       report.tempTrend = [];
       report.trendLabels = [];
 
@@ -106,8 +106,6 @@ const station = {
         report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
       }
     }
-
-    console.log("NEW REPORT: ", report);
 
     // New Reading Data
     const newReading = {
@@ -127,10 +125,10 @@ const station = {
     response.redirect("/station/" + stationId);
   },
 
-  /* 
+  /*
     Add Reading Automatically
-    Obtain station ID and lat/lng values
-    Request API data for location.
+    - Obtain station ID and lat/lng values
+    - Request API data for location.
   */
   async addAutoReading(request, response) {
     const stationId = request.params.id;
@@ -146,8 +144,8 @@ const station = {
 
     if (result.status == 200) {
       const reading = result.data.current;
-      let code;
 
+      let code;
       code = reading.weather[0].id;
       report.code = roundNearest100(code);
       report.date = date.toISOString().replace("T", " ").replace("Z", "");
@@ -156,7 +154,6 @@ const station = {
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
-
       report.tempTrend = [];
       report.trendLabels = [];
 
@@ -168,8 +165,8 @@ const station = {
       }
     }
 
-    console.log("REPORT: ", report);
     stationsStore.addReading(stationId, report);
+    logger.debug("New Reading = ", report);
     response.redirect("/station/" + stationId);
   },
 };
