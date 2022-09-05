@@ -66,32 +66,28 @@ The following main pages will be implemented:
 - Account details Page - accounts.hbs
   - Edit account details page - editaccount.hbs
 
-- Error Handlers
-  - Error 404 - 404.hbs (error 404 handling)
-  - Error 500 - 500.hbs (error 500 handling)
-
 ### Skeleton
 
 - Start Page: <br>
-  ![Start](public/readMeImages/weathertop-start.png)
+  ![Start](public/images/weathertop-start.png)
 
 - Register: <br>
-  ![Register](public/readMeImages/weathertop-signup.png)
+  ![Register](public/images/weathertop-signup.png)
 
 - Log In: <br>
-  ![LogIn](public/readMeImages/weathertop-login.png)
+  ![LogIn](public/images/weathertop-login.png)
 
 - Profile: <br>
-  ![Account](public/readMeImages/weathertop-account.png)
+  ![Account](public/images/weathertop-account.png)
 
 - Dashboard: <br>
-  ![Dashboard](public/readMeImages/weathertop-dashboard.png)
+  ![Dashboard](public/images/weathertop-dashboard.png)
 
 - About: <br>
-  ![About](public/readMeImages/weathertop-about.png)
+  ![About](public/images/weathertop-about.png)
 
 - Station: <br>
-  ![Station](public/readMeImages/weathertop-station.png)
+  ![Station](public/images/weathertop-station.png)
 
 ### Surface
 
@@ -254,6 +250,7 @@ Content for the About page was taken from these websites
 screen size is minimized directly on the browser. It is not responsive for mobile phones.
 - I would like to add a footer for the webapp.
 - I would like to add toasts to the website to make it more user-friendly.
+- Error 404, error 500 handlers
 
 ## Acknowledgements
 
