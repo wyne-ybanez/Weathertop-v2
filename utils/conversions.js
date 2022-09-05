@@ -8,12 +8,12 @@ const conversions = {
     return Math.round(num / 100) * 100;
   },
 
-  /** 
-    Convert Code to weather
-    
-    @param weatherCode (int)
-    @return weather (string)
-  */
+  /**
+   *  Convert Code to weather
+   *
+   *  @param weatherCode (int)
+   *  @return weather (string)
+   */
   convertCodeToWeather(weatherCode) {
     let weather = "";
     while (weatherCode != 0) {
@@ -53,12 +53,12 @@ const conversions = {
     return weather;
   },
 
-  /**  
-    Set Weather Icons
-
-    @param latestWeather (string)
-    @return latestWeatherIcon (strong)
-  */
+  /**
+   *  Set Weather Icons
+   *
+   *  @param latestWeather (string)
+   * @return latestWeatherIcon (strong)
+   */
   setLatestWeatherIcon(latestWeather) {
     let latestWeatherIcon = "";
 
@@ -91,24 +91,24 @@ const conversions = {
     }
   },
 
-  /** 
-    Converts Celcius to Farenheit
-
-    @param celcius value (double)
-    @return farenheit (double)
-  */
+  /**
+   *  Converts Celcius to Farenheit
+   *
+   * @param celcius value (double)
+   * @return farenheit (double)
+   */
   convertToFahrenheit(celciusValue) {
     // Formula for converting celcius to fahrenheit = ( X * 1.8 ) + 32
     let fahrenheitValue = celciusValue * 1.8 + 32;
     return fahrenheitValue;
   },
 
-  /** 
-    kM/hr to Beaufort Conversion
-    
-    @param windSpeed (int or double)
-    @return int for Beaufort value
-  */
+  /**
+   *  kM/hr to Beaufort Conversion
+   *
+   * @param windSpeed (int or double)
+   * @return int for Beaufort value
+   */
   convertToBeaufort(windSpeed) {
     let BeaufortValue = 11;
     let BeaufortLabel = new Map();
@@ -161,13 +161,13 @@ const conversions = {
     return BeaufortValue;
   },
 
-  /** 
-    Wind Direction compass.
-    Converts wind degree range to compass direction.
-
-    @param windDirection (double)
-    @return String value for the Compass direction.
-  */
+  /**
+   *  Wind Direction compass.
+   * Converts wind degree range to compass direction.
+   *
+   * @param windDirection (double)
+   * @return String value for the Compass direction.
+   */
   convertToCompassDirection(windDirection) {
     let compassDirection;
 
@@ -212,12 +212,12 @@ const conversions = {
   },
 
   /**
-    Wind Chill Calculator.
-    Takes wind direction value from reading.
-    
-    @params windSpeed, temperature (both are expected to be doubles)
-    @return String value for wind chill.
-  */
+   *  Wind Chill Calculator.
+   *  Takes wind direction value from reading.
+   *
+   * @params windSpeed, temperature (both are expected to be doubles)
+   * @return String value for wind chill.
+   */
   windChillCalculator(windSpeed, temperature) {
     const exponent = 0.16;
     let windChillValue =

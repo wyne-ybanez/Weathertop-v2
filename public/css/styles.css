@@ -4,6 +4,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+#map {
+  height: 25rem;
+}
+
 .header h1,
 .header h2 {
   font-weight: 700;

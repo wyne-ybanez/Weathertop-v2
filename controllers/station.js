@@ -13,7 +13,11 @@ const { processConversions } = require("../utils/conversions");
 const { processAnalytics, processTrendAnalytics } = require("../utils/station-analytics");
 
 const station = {
-  // Station Index
+  /*
+    Station Index
+    - Performs calculations for latestWeather data
+    - Processes conversions and analytics
+  */
   index(request, response) {
     let latestWeather;
     let latestWeatherIcon;
@@ -57,7 +61,10 @@ const station = {
     response.render("station", viewData);
   },
 
-  // Delete Reading
+  /*
+    Delete Reading
+    - Takes StationID and ReadingID as arguments
+  */
   deleteReading(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
@@ -68,6 +75,7 @@ const station = {
 
   /*
     Add Reading Manually
+    - Gets Data from add reading form
     - Makes API Call to add report labels & trends to trend graph
   */
   async addreading(request, response) {
@@ -108,7 +116,7 @@ const station = {
         }
       }
     } catch {
-    // if API call fails, set labels and trends to empty array
+      // if API call fails, set labels and trends to empty array
       console.log(report);
       report.tempTrend = [];
       report.trendLabels = [];
@@ -135,7 +143,7 @@ const station = {
   /*
     Add Reading Automatically
     - Obtain station ID and lat/lng values
-    - Request API data for location.
+    - Request API for location data, then adds to readings
   */
   async addAutoReading(request, response) {
     const stationId = request.params.id;

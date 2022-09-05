@@ -6,11 +6,11 @@ const logger = require("./logger.js");
 const stationAnalytics = {
   //=== Latest Values
   /**
-      Get Latest Weather
-     
-      @param  station
-      @return latestWeather, converted code to string
-  */
+   *   Get Latest Weather
+   *
+   *   @param  station
+   *   @return latestWeather, converted code to string
+   */
   getLatestWeather(station) {
     let latestWeather;
     let latestReading;
@@ -35,11 +35,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get Latest Temperature
-     
-      @param  station
-      @return latestTemperature
-  */
+   *   Get Latest Temperature
+   *
+   *   @param  station
+   *   @return latestTemperature
+   */
   getLatestTemperature(station) {
     let latestTemperature;
     let latestReading;
@@ -60,11 +60,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get Latest WindSpeed
-     
-      @param  station
-      @return latestWindSpeed
-  */
+   *   Get Latest WindSpeed
+   *
+   *   @param  station
+   *   @return latestWindSpeed
+   */
   getLatestWindSpeed(station) {
     let latestWindSpeed;
     let latestReading;
@@ -85,11 +85,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get Latest WindDirection
-     
-      @param  station
-      @return latestWindDirection
-  */
+   *   Get Latest WindDirection
+   *
+   *   @param  station
+   *   @return latestWindDirection
+   */
   getLatestWindDirection(station) {
     let latestWindDirection;
     let latestReading;
@@ -110,11 +110,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get Latest Pressure
-     
-      @param  station
-      @return latestPressure
-  */
+   *   Get Latest Pressure
+   *
+   *   @param  station
+   *   @return latestPressure
+   */
   getLatestPressure(station) {
     let latestPressure;
     let latestReading;
@@ -136,11 +136,11 @@ const stationAnalytics = {
 
   //=== Min Values
   /**
-      Get minimum Temperature reading.
-     
-      @param  readings (Array)
-      @return Reading minTempReading, the reading with the minimum temp value
-  */
+   *   Get minimum Temperature reading.
+   *
+   *  @param  readings (Array)
+   *  @return Reading minTempReading, the reading with the minimum temp value
+   */
   getMinTemperature(readings) {
     let minTempReading = null;
     if (readings.length > 0) {
@@ -155,11 +155,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get minimum Wind Speed reading.
-     
-      @param  readings (Array)
-      @return Reading minWindReading, the reading with the minimum windSpeed value
-  */
+   *   Get minimum Wind Speed reading.
+   *
+   *  @param  readings (Array)
+   *  @return Reading minWindReading, the reading with the minimum windSpeed value
+   */
   getMinWindSpeed(readings) {
     let minWindReading = null;
     if (readings.length > 0) {
@@ -174,11 +174,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get minimum Pressure reading.
-     
-      @param  readings (Array)
-      @return Reading minWindReading, the reading with the minimum windSpeed value
-  */
+   *  Get minimum Pressure reading.
+   *
+   *  @param  readings (Array)
+   *  @return Reading minWindReading, the reading with the minimum windSpeed value
+   */
   getMinPressure(readings) {
     let minPressureReading = null;
     if (readings.length > 0) {
@@ -194,11 +194,11 @@ const stationAnalytics = {
 
   //=== Max Values
   /**
-      Get maximum Temperature reading.
-     
-      @param  readings (Array)
-      @return maxTempReading, the reading with the maximum temp value
-  */
+   *  Get maximum Temperature reading.
+   *
+   *  @param  readings (Array)
+   *  @return maxTempReading, the reading with the maximum temp value
+   */
   getMaxTemperature(readings) {
     let maxTempReading = null;
     if (readings.length > 0) {
@@ -213,11 +213,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get maximum Wind Speed reading.
-     
-      @param  readings (Array)
-      @return maxWindSpeed, the reading with the maximum windSpeed value
-  */
+   * Get maximum Wind Speed reading.
+   *
+   * @param  readings (Array)
+   * @return maxWindSpeed, the reading with the maximum windSpeed value
+   */
   getMaxWindSpeed(readings) {
     let maxWindReading = null;
     if (readings.length > 0) {
@@ -232,11 +232,11 @@ const stationAnalytics = {
   },
 
   /**
-      Get maximum Pressure reading.
-
-      @param  readings (Array)
-      @return maxPressureReading, the reading with the maximum Pressure value
-  */
+   * Get maximum Pressure reading.
+   *
+   * @param  readings (Array)
+   * @return maxPressureReading, the reading with the maximum Pressure value
+   */
   getMaxPressure(readings) {
     let maxPressureReading = null;
     if (readings.length > 0) {

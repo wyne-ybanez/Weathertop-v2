@@ -9,6 +9,7 @@ const { processAnalytics, processTrendAnalytics } = require("../utils/station-an
 // const { response } = require("express");
 
 const dashboard = {
+  // Index
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInMember = accounts.getCurrentMember(request);
@@ -35,6 +36,7 @@ const dashboard = {
     response.render("dashboard", viewData);
   },
 
+  // Add Station
   addStation(request, response) {
     const loggedInMember = accounts.getCurrentMember(request);
     const newStation = {
@@ -50,6 +52,7 @@ const dashboard = {
     response.redirect("/dashboard");
   },
 
+  // Delete Station
   deleteStation(request, response) {
     const stationId = request.params.id;
     logger.debug(`Deleting station ${stationId}`);
