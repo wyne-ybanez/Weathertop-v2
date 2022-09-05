@@ -10,6 +10,10 @@
       <th></th>
     </tr>
   </thead>
+
+  {{!-- Chart --}}
+  <div class="ui raised segment" id="chart"></div>
+  
   <tbody>
     {{#each station.readings}}
       <tr>
@@ -44,9 +48,6 @@
     {{/each}}
   </tbody>
 </table>
-
-{{!-- Chart --}}
-<div class="ui raised segment" id="chart"></div>
 
 {{#each station.readings}}
   <script>
