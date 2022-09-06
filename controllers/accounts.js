@@ -52,6 +52,7 @@ const accounts = {
 
   getCurrentMember(request) {
     const memberEmail = request.cookies.member;
+    console.log(memberEmail);
     return memberStore.getMemberByEmail(memberEmail);
   },
 
@@ -83,6 +84,8 @@ const accounts = {
       password: request.body.password,
     };
 
+    response.cookie("member", updatedMember.email);
+    
     logger.debug(`Updating Member ${member}`);
     memberStore.updateMember(member, updatedMember);
     response.redirect("/accounts");
