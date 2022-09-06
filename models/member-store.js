@@ -29,6 +29,7 @@ const memberStore = {
     member.lastName = updatedMember.lastName;
     member.email = updatedMember.email;
     member.password = updatedMember.password;
+    member.id = member.id;
     this.store.save();
   },
 };

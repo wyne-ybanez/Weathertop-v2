@@ -38,7 +38,7 @@ Features planned:
 - Logout functionality
 - CRUD functionality for records and profiles
 - Registered user station creation and management
-- Trend Graphs 
+- Trend Graphs
 - Map markers for each station owned by the user
 
 ### Structure
@@ -221,7 +221,7 @@ The app is deployed on Heroku using this repository as the main branch: https://
 ## References
 
 ### External Solutions:
-- Formatting JS Date: 
+- Formatting JS Date:
   - https://stackoverflow.com/questions/12945003/format-date-as-yyyy-mm-ddthhmmss-sssz
 
 - Sorting Stations:

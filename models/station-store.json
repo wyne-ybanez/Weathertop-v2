@@ -312,6 +312,85 @@
       "latestWeather": "Thunder",
       "temperature": 31.73,
       "pressure": 1012
+    },
+    {
+      "id": "e5c19af0-2e2d-11ed-b660-c394b5317122",
+      "memberid": "dd1ceda0-2e2d-11ed-b660-c394b5317122",
+      "name": "Cork",
+      "lat": 12,
+      "lng": 12,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2022-09-06 21:50:22.509",
+          "id": "e8910ea0-2e2d-11ed-b660-c394b5317122",
+          "temperature": 25.62,
+          "windSpeed": 2.55,
+          "pressure": 1012,
+          "windDirection": 123,
+          "tempTrend": [
+            30.48,
+            31.2,
+            31.66,
+            29.57,
+            25.12,
+            28.64,
+            30.26,
+            31.81
+          ],
+          "trendLabels": [
+            "6/8/2022",
+            "7/8/2022",
+            "8/8/2022",
+            "9/8/2022",
+            "10/8/2022",
+            "11/8/2022",
+            "12/8/2022",
+            "13/8/2022"
+          ]
+        },
+        {
+          "code": 800,
+          "date": "2022-09-06 21:50:25.934",
+          "id": "ea8abbc0-2e2d-11ed-b660-c394b5317122",
+          "temperature": 25.62,
+          "windSpeed": 2.55,
+          "pressure": 1012,
+          "windDirection": 123,
+          "tempTrend": [
+            30.48,
+            31.2,
+            31.66,
+            29.57,
+            25.12,
+            28.64,
+            30.26,
+            31.81
+          ],
+          "trendLabels": [
+            "6/8/2022",
+            "7/8/2022",
+            "8/8/2022",
+            "9/8/2022",
+            "10/8/2022",
+            "11/8/2022",
+            "12/8/2022",
+            "13/8/2022"
+          ]
+        }
+      ],
+      "trends": false,
+      "latestWeatherIcon": "poo storm icon",
+      "BeaufortValue": 1,
+      "windCompass": "East South East",
+      "windChill": 27.64,
+      "fahrenheitValue": 78.116,
+      "maxTemperature": 25.62,
+      "minTemperature": 25.62,
+      "maxWindSpeed": 2.55,
+      "minWindSpeed": 2.55,
+      "maxPressure": 1012,
+      "minPressure": 1012
     }
   ]
 }

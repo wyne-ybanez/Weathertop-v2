@@ -60,7 +60,7 @@ const accounts = {
     const viewData = {
       member: loggedInMember,
     };
-    console.log();
+    console.log(loggedInMember);
     response.render("accounts", viewData);
   },
 
@@ -76,7 +76,7 @@ const accounts = {
     // Get the member in question
     let member = accounts.getCurrentMember(request);
 
-    const updatedMember = {
+    let updatedMember = {
       firstName: request.body.firstName,
       lastName: request.body.lastName,
       email: request.body.email,
