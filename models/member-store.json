@@ -20,6 +20,13 @@
       "id": "b38d6480-2241-11ed-9e37-578e0560250b",
       "firstName": "wyner",
       "lastName": "wyner"
+    },
+    {
+      "firstName": "wyne",
+      "lastName": "ybanez",
+      "email": "wyne@ybanez.com",
+      "password": "secret",
+      "id": "e31a74d0-2fa3-11ed-9333-8f038665ce01"
     }
   ]
 }
