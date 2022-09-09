@@ -73,26 +73,15 @@ const accounts = {
    * @param email     User desired email
    * @param password  User desired password
    */
-  async updateDetails(request, response) {
-    // Get the member in question
-    let member = await accounts.getCurrentMember(request);
-
-    let updatedMember = await {
-      firstName: request.body.firstName,
-      lastName: request.body.lastName,
-      email: request.body.email,
-      password: request.body.password,
-      // Member ID remains the same
-      id: member.id,
-    };
-
+  updateDetails(request, response) {
+    let member = accounts.getCurrentMember(request);
+    let updatedMember = request.body;
+    memberStore.updateMember(member, updatedMember);
     console.log(updatedMember);
 
     // Changes cookie to new details
     response.cookie("member", updatedMember.email);
-
     logger.debug(`Updating Member ${member}`);
-    memberStore.updateMember(member, updatedMember);
     response.redirect("/accounts");
   },
 };
