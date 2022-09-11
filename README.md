@@ -218,6 +218,10 @@ Here is a link that can explain this process further. [Click Here](https://help.
 
 The app is deployed on Heroku using this repository as the main branch: https://www.heroku.com/
 
+## Bugs
+
+* There is an error 500 bug that occurs when a new user updates their account details. This bug requires a future fix but for the moment, an error may occur when submitting account detail updates.
+
 ## References
 
 ### External Solutions:
