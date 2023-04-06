@@ -766,23 +766,81 @@
             "12/3/2023",
             "13/3/2023"
           ]
+        },
+        {
+          "code": 800,
+          "date": "2023-04-06 16:47:31.394",
+          "id": "b94f2fa0-d49a-11ed-8b43-b504880a181f",
+          "temperature": 12.57,
+          "windSpeed": 3.6,
+          "pressure": 1019,
+          "windDirection": 330,
+          "tempTrend": [
+            11.38,
+            11.01,
+            11.15,
+            10.08,
+            11.23,
+            8.44,
+            9.68,
+            10.32
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
+          ]
+        },
+        {
+          "code": 800,
+          "date": "2023-04-06 16:47:32.858",
+          "id": "ba28edd0-d49a-11ed-8b43-b504880a181f",
+          "temperature": 12.57,
+          "windSpeed": 3.6,
+          "pressure": 1019,
+          "windDirection": 330,
+          "tempTrend": [
+            11.38,
+            11.01,
+            11.15,
+            10.08,
+            11.23,
+            8.44,
+            9.68,
+            10.32
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
+          ]
         }
       ],
-      "trends": false,
-      "latestWeather": "Thunder",
-      "temperature": 11.12,
-      "pressure": 1019,
+      "trends": true,
       "latestWeatherIcon": "poo storm icon",
       "BeaufortValue": 1,
-      "windCompass": "North West",
-      "windChill": 11.4,
-      "fahrenheitValue": 52.016,
-      "maxTemperature": 11.12,
+      "windCompass": "North North West",
+      "windChill": 13.09,
+      "fahrenheitValue": 54.626000000000005,
+      "maxTemperature": 12.57,
       "minTemperature": 11.12,
       "maxWindSpeed": 3.84,
-      "minWindSpeed": 3.84,
+      "minWindSpeed": 3.6,
       "maxPressure": 1019,
-      "minPressure": 1019
+      "minPressure": 1019,
+      "tempTrend": true,
+      "windTrend": false,
+      "pressureTrend": false
     },
     {
       "id": "995d3030-d48a-11ed-a73d-53f075c9a0a5",
