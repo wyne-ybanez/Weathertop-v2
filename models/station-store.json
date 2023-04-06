@@ -740,66 +740,8 @@
       "readings": [
         {
           "code": 800,
-          "date": "2023-04-06 13:13:06.372",
-          "id": "c539dbd0-d47c-11ed-a73d-53f075c9a0a5",
-          "temperature": 11.12,
-          "windSpeed": 3.84,
-          "pressure": 1019,
-          "windDirection": 313,
-          "tempTrend": [
-            11.17,
-            11.01,
-            11.15,
-            10.08,
-            11.23,
-            8.44,
-            9.68,
-            10.32
-          ],
-          "trendLabels": [
-            "6/3/2023",
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023"
-          ]
-        },
-        {
-          "code": 800,
-          "date": "2023-04-06 16:47:31.394",
-          "id": "b94f2fa0-d49a-11ed-8b43-b504880a181f",
-          "temperature": 12.57,
-          "windSpeed": 3.6,
-          "pressure": 1019,
-          "windDirection": 330,
-          "tempTrend": [
-            11.38,
-            11.01,
-            11.15,
-            10.08,
-            11.23,
-            8.44,
-            9.68,
-            10.32
-          ],
-          "trendLabels": [
-            "6/3/2023",
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023"
-          ]
-        },
-        {
-          "code": 800,
-          "date": "2023-04-06 16:47:32.858",
-          "id": "ba28edd0-d49a-11ed-8b43-b504880a181f",
+          "date": "2023-04-06 17:10:58.112",
+          "id": "ffb2b810-d49d-11ed-824a-37a896d6355c",
           "temperature": 12.57,
           "windSpeed": 3.6,
           "pressure": 1019,
@@ -826,19 +768,18 @@
           ]
         }
       ],
-      "trends": true,
-      "latestWeatherIcon": "poo storm icon",
+      "trends": false,
       "BeaufortValue": 1,
       "windCompass": "North North West",
       "windChill": 13.09,
       "fahrenheitValue": 54.626000000000005,
       "maxTemperature": 12.57,
-      "minTemperature": 11.12,
-      "maxWindSpeed": 3.84,
+      "minTemperature": 12.57,
+      "maxWindSpeed": 3.6,
       "minWindSpeed": 3.6,
       "maxPressure": 1019,
       "minPressure": 1019,
-      "tempTrend": true,
+      "tempTrend": false,
       "windTrend": false,
       "pressureTrend": false
     },
@@ -880,6 +821,171 @@
         }
       ],
       "trends": false
+    },
+    {
+      "id": "f4670e00-d49a-11ed-8b43-b504880a181f",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Waterford",
+      "lat": 52.2583,
+      "lng": -7.1119,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2023-04-06 16:49:14.877",
+          "id": "f6f81920-d49a-11ed-8b43-b504880a181f",
+          "temperature": 13.36,
+          "windSpeed": 2.57,
+          "pressure": 1017,
+          "windDirection": 300,
+          "tempTrend": [
+            10.43,
+            11,
+            10.36,
+            11.34,
+            11.61,
+            8.73,
+            9.53,
+            10.21
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
+          ]
+        }
+      ],
+      "trends": false,
+      "latestWeather": "Clear",
+      "temperature": 13.36,
+      "pressure": 1017,
+      "latestWeatherIcon": "cloud rainbow icon",
+      "BeaufortValue": 1,
+      "windCompass": "West North West",
+      "windChill": 14.36,
+      "fahrenheitValue": 56.048,
+      "maxTemperature": 13.36,
+      "minTemperature": 13.36,
+      "maxWindSpeed": 2.57,
+      "minWindSpeed": 2.57,
+      "maxPressure": 1017,
+      "minPressure": 1017
+    },
+    {
+      "id": "2863c540-d49b-11ed-8b43-b504880a181f",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Douglas",
+      "lat": 51.8711,
+      "lng": -8.4242,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2023-04-06 17:10:47.310",
+          "id": "f952a390-d49d-11ed-824a-37a896d6355c",
+          "temperature": 12.49,
+          "windSpeed": 3.6,
+          "pressure": 1019,
+          "windDirection": 330,
+          "tempTrend": [
+            11.2,
+            10.66,
+            10.86,
+            9.97,
+            10.98,
+            8.54,
+            9.52,
+            10.23
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
+          ]
+        }
+      ],
+      "trends": false,
+      "latestWeatherIcon": "cloud rainbow icon",
+      "BeaufortValue": 1,
+      "windCompass": "North North West",
+      "windChill": 13.01,
+      "fahrenheitValue": 54.482,
+      "maxTemperature": 12.49,
+      "minTemperature": 12.49,
+      "maxWindSpeed": 3.6,
+      "minWindSpeed": 3.6,
+      "maxPressure": 1019,
+      "minPressure": 1019,
+      "tempTrend": false,
+      "windTrend": false,
+      "pressureTrend": false,
+      "latestWeather": "Clear",
+      "temperature": 12.49,
+      "pressure": 1019
+    },
+    {
+      "id": "9f43bf30-d49b-11ed-8b43-b504880a181f",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Manila",
+      "lat": 14.5995,
+      "lng": 120.9842,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2023-04-06 16:54:01.440",
+          "id": "a1bc1230-d49b-11ed-8b43-b504880a181f",
+          "temperature": 27.49,
+          "windSpeed": 2.06,
+          "pressure": 1010,
+          "windDirection": 130,
+          "tempTrend": [
+            29.96,
+            30.55,
+            31.96,
+            30.24,
+            29.94,
+            30.1,
+            30.14,
+            25.5
+          ],
+          "trendLabels": [
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023",
+            "14/3/2023"
+          ]
+        }
+      ],
+      "trends": false,
+      "latestWeatherIcon": "cloud rainbow icon",
+      "BeaufortValue": 1,
+      "windCompass": "South East",
+      "windChill": 29.68,
+      "fahrenheitValue": 81.482,
+      "maxTemperature": 27.49,
+      "minTemperature": 27.49,
+      "maxWindSpeed": 2.06,
+      "minWindSpeed": 2.06,
+      "maxPressure": 1010,
+      "minPressure": 1010,
+      "tempTrend": true,
+      "windTrend": false,
+      "pressureTrend": false,
+      "latestWeather": "Clear",
+      "temperature": 27.49,
+      "pressure": 1010
     }
   ]
 }
