@@ -120,3 +120,24 @@ i.icon.arrow.down {
 .ui.inverted.cards > .card {
   margin-bottom: 1.5rem;
 }
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+  .only.mobile {
+    display: none;
+  }
+}
+
+/* Mobiles and Tablets */
+@media (max-width: 768px) {
+  .only.computer {
+    display: none;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .ui.stackable.five.column.grid .column {
+      width: 50% !important;
+    }
+}

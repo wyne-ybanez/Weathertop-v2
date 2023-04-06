@@ -1,4 +1,4 @@
-<nav class="ui right menu">
+<nav class="ui right menu only computer">
   <header class="ui header item"><a href="/dashboard">WeatherTop V2</a></header>
   <div class="ui secondary menu">
     <p class="item">WeatherTop Services Inc.</p>
@@ -11,6 +11,24 @@
   </div>
 </nav>
 
+{{!-- Mobile menu --}}
+<nav class="ui stackable menu only mobile right menu">
+  <header class="ui header item"><a href="/dashboard">WeatherTop V2</a></header>
+  <a class="item">
+    <i class="sidebar icon" onclick="toggleMenu()"></i>
+  </a>
+  <div class="ui container" id="Hamburger">
+    <a class="item" href="/dashboard">Home</a>
+    <a class="item" href="/about">About</a>
+    <a class="item" href="/accounts">Account</a>
+    <a class="item" href="/logout">Logout</a>
+  </div>
+</nav>
+
 <script>
   $("#{{id}}").addClass("active item");
+
+function toggleMenu() {
+  $('#Hamburger').toggle();
+}
 </script>
