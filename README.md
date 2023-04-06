@@ -7,7 +7,10 @@ analytics and conversions for each reading which is automatically calculated whe
 
 View the live project here: https://weathertop-v2.herokuapp.com/
 
-(Project is DESKTOP & LAPTOP ONLY) 
+<strong>Test Account:</strong>
+
+User: `Homer@Simpson.com`
+Password: `secret`
 
 ## Project Goal
 
@@ -250,8 +253,6 @@ Content for the About page was taken from these websites
 
 ## Future Implementations
 
-- I would like to make the web app truly responsive, for the mean time, it is only responsive if the 
-screen size is minimized directly on the browser. It is not responsive for mobile phones.
 - I would like to add a footer for the webapp.
 - I would like to add toasts to the website to make it more user-friendly.
 - Error 404, error 500 handlers
