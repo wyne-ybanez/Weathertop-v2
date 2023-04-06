@@ -4,6 +4,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+hr {
+  width: 99.5%;
+  color: #e1e1e1;
+}
+
 #map {
   height: 25rem;
 }
@@ -41,12 +46,48 @@ body {
   padding-bottom: 2.5rem !important;
 }
 
+.right-small-margin {
+  margin-right: 1rem !important;
+}
+
+.right-medium-margin {
+  margin-right: 2.5rem !important;
+}
+
+.right-large-margin {
+  margin-right: 5rem !important;
+}
+
+.left-small-margin {
+  margin-left: 1rem !important;
+}
+
+.left-medium-margin {
+  margin-left: 2.5rem !important;
+}
+
+.left-large-margin {
+ margin-left: 5rem !important;
+}
+
 .bottom-medium-margin {
   margin-bottom: 2.5rem !important;
 }
 
 .bottom-small-margin {
   margin-bottom: 1rem !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.list-unstlyed {
+  list-style: none;
 }
 
 .station-card-height {
@@ -82,6 +123,10 @@ i.icon.arrow.down {
 
 .about {
   text-align: center;
+}
+
+.strong {
+  font-weight: 700;
 }
 
 /* Latest reading icon colors */
@@ -133,11 +178,21 @@ i.icon.arrow.down {
   .only.computer {
     display: none;
   }
+
+  .ui.grid > .column:not(.row),
+  .ui.grid > .row > .column {
+    padding: 0 !important;
+  }
 }
 
 /* Tablets */
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
   .ui.stackable.five.column.grid .column {
-      width: 50% !important;
-    }
+    width: 50%;
+    padding-bottom: 0;
+  }
+
+  .ui.grid>.column:not(.row) {
+    padding-top: 0;
+  }
 }

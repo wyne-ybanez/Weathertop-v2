@@ -1,4 +1,5 @@
-<table class="ui celled table raised segment">
+{{!-- Desktop Table --}}
+<table class="ui celled table raised segment only computer">
   <thead>
     <tr>
       <th>Date/Time</th>
@@ -13,7 +14,7 @@
 
   {{!-- Chart --}}
   <div class="ui raised segment" id="chart"></div>
-  
+
   <tbody>
     {{#each station.readings}}
       <tr>
@@ -24,7 +25,7 @@
           {{code}}
         </td>
         <td>
-          {{temperature}}
+          {{temperature}} °C
         </td>
         <td>
           {{windSpeed}}
@@ -48,6 +49,40 @@
     {{/each}}
   </tbody>
 </table>
+
+{{!-- Mobile Table --}}
+<div class="ui fluid card raised segment only mobile">
+  {{#each station.readings}}
+    <ul>
+      <li class="list-unstlyed">
+        <span class="strong">Date/Time:</span> {{date}}
+      </li>
+      <li class="list-unstlyed">
+        <span class="strong">Code:</span> {{code}}
+        </li>
+      <li class="list-unstlyed">
+        <span class="strong">Temp:</span> {{temperature}} °C
+        </li>
+      <li class="list-unstlyed">
+        <span class="strong">Wind Speed:</span> {{windSpeed}}
+        </li>
+      <li class="list-unstlyed">
+        <span class="strong">Pressure:</span> {{pressure}}
+      </li>
+    </ul>
+    <div class="flex ml-auto bottom-small-margin">
+    {{!-- Edit Reading --}}
+      <a href="/reading/{{../station.id}}/editreading/{{id}}" class="ui icon button">
+        <i class="pencil alternate icon"></i>
+      </a>
+    {{!-- Delete Reading --}}
+      <a href="/station/{{../station.id}}/deletereading/{{id}}" class="ui icon button right-small-margin">
+        <i class="icon trash"></i>
+      </a>
+    </div>
+    <hr>
+  {{/each}}
+</div>
 
 {{#each station.readings}}
   <script>

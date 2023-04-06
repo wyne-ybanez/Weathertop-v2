@@ -157,7 +157,7 @@
           "temperature": 32.06,
           "windSpeed": 1.44,
           "pressure": 1010,
-          "windDirection": 216,
+          "windDirection": null,
           "tempTrend": [
             31.65,
             30.12,
