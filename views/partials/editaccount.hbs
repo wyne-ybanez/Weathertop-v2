@@ -1,4 +1,4 @@
-<div class="column">
+<div class="column top-small-margin">
     <form class="ui segment raised form" action="/edit" method="POST">
         <h3 class="ui header">Edit your details:</h3>
         <div class="two fields">
@@ -18,6 +18,19 @@
         <div class="field">
             <label>Password</label>
             <input placeholder="Password" type="password" name="password">
+        </div>
+        
+        <div class="field">
+            <label>Avatar</label>
+            <select id="avatar" name="avatar">
+                <option value="chad">Chad</option>
+                <option value="molly">Molly</option>
+                <option value="elyse">Elyse</option>
+                <option value="kristy">kristy</option>
+                <option value="steve">Steve</option>
+                <option value="veronika">Veronika</option>
+                <option value="normal">Normal Avatar</option>
+            </select>
         </div>
         <button class="ui blue submit button">Submit</button>
     </form>

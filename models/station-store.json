@@ -250,91 +250,6 @@
       "pressureTrend": false
     },
     {
-      "id": "854b3040-2fa5-11ed-bb82-bf8007c85e37",
-      "memberid": "e31a74d0-2fa3-11ed-9333-8f038665ce01",
-      "name": "Leitrim",
-      "lat": 56.12,
-      "lng": 7.42,
-      "readings": [
-        {
-          "code": 500,
-          "date": "2022-09-08 18:39:16.769",
-          "id": "8b5bec40-2fa5-11ed-bb82-bf8007c85e37",
-          "temperature": 16.09,
-          "windSpeed": 11.49,
-          "pressure": 1010,
-          "windDirection": 99,
-          "tempTrend": [
-            18.07,
-            14.27,
-            16.15,
-            15.54,
-            17.23,
-            15.42,
-            15.31,
-            15.04
-          ],
-          "trendLabels": [
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022",
-            "13/8/2022",
-            "14/8/2022",
-            "15/8/2022"
-          ]
-        },
-        {
-          "code": 500,
-          "date": "2022-09-08 18:39:18.882",
-          "id": "8c988af0-2fa5-11ed-bb82-bf8007c85e37",
-          "temperature": 16.99,
-          "windSpeed": 10.81,
-          "pressure": 1010,
-          "windDirection": 104,
-          "tempTrend": [
-            18.07,
-            14.27,
-            16.6,
-            16.31,
-            17.32,
-            17.61,
-            16.82,
-            17.72
-          ],
-          "trendLabels": [
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022",
-            "13/8/2022",
-            "14/8/2022",
-            "15/8/2022"
-          ]
-        }
-      ],
-      "trends": true,
-      "latestWeatherIcon": "cloud showers heavy icon",
-      "BeaufortValue": 2,
-      "windCompass": "East South East",
-      "windChill": 16.9,
-      "fahrenheitValue": 62.581999999999994,
-      "maxTemperature": 16.99,
-      "minTemperature": 16.09,
-      "maxWindSpeed": 11.49,
-      "minWindSpeed": 10.81,
-      "maxPressure": 1010,
-      "minPressure": 1010,
-      "latestWeather": "Heavy Showers",
-      "temperature": 16.99,
-      "pressure": 1010,
-      "tempTrend": true,
-      "windTrend": false,
-      "pressureTrend": false
-    },
-    {
       "id": "9b4054b0-301e-11ed-91a9-29435e3f6e6a",
       "memberid": "94b33cc0-301e-11ed-91a9-29435e3f6e6a",
       "name": "Cork",
@@ -840,6 +755,59 @@
             8.44,
             9.68,
             10.32
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
+          ]
+        }
+      ],
+      "trends": false,
+      "latestWeather": "Thunder",
+      "temperature": 11.12,
+      "pressure": 1019,
+      "latestWeatherIcon": "poo storm icon",
+      "BeaufortValue": 1,
+      "windCompass": "North West",
+      "windChill": 11.4,
+      "fahrenheitValue": 52.016,
+      "maxTemperature": 11.12,
+      "minTemperature": 11.12,
+      "maxWindSpeed": 3.84,
+      "minWindSpeed": 3.84,
+      "maxPressure": 1019,
+      "minPressure": 1019
+    },
+    {
+      "id": "995d3030-d48a-11ed-a73d-53f075c9a0a5",
+      "memberid": "8dcdbf00-d48a-11ed-a73d-53f075c9a0a5",
+      "name": "test",
+      "lat": 12,
+      "lng": 12,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2023-04-06 14:52:10.889",
+          "id": "9c5e6240-d48a-11ed-a73d-53f075c9a0a5",
+          "temperature": 41.35,
+          "windSpeed": 5.24,
+          "pressure": 1002,
+          "windDirection": 71,
+          "tempTrend": [
+            40.16,
+            40.98,
+            41.06,
+            41.55,
+            40.13,
+            40.67,
+            37.86,
+            38.66
           ],
           "trendLabels": [
             "6/3/2023",

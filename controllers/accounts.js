@@ -70,6 +70,7 @@ const accounts = {
    *
    * @param firstname User desired first name
    * @param lastname  User desired last name
+   * @param avatar    User desired avatar
    * @param email     User desired email
    * @param password  User desired password
    */
@@ -81,7 +82,6 @@ const accounts = {
 
     // Changes cookie to new details
     response.cookie("member", updatedMember.email);
-    logger.debug(`Updating Member ${member}`);
     response.redirect("/accounts");
   },
 };

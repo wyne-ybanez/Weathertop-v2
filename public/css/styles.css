@@ -18,12 +18,12 @@ hr {
   font-weight: 700;
 }
 
-.top-medium-padding {
-  padding-top: 2.5rem !important;
-}
-
 .top-small-padding {
   padding-top: 1rem !important;
+}
+
+.top-medium-padding {
+  padding-top: 2.5rem !important;
 }
 
 .left-small-padding {
@@ -70,6 +70,10 @@ hr {
  margin-left: 5rem !important;
 }
 
+.top-small-margin {
+  margin-top: 1rem !important;
+}
+
 .bottom-medium-margin {
   margin-bottom: 2.5rem !important;
 }
@@ -80,6 +84,10 @@ hr {
 
 .flex {
   display: flex !important;
+}
+
+.display-none {
+  display: none;
 }
 
 .ml-auto {
@@ -182,6 +190,10 @@ i.icon.arrow.down {
   .ui.grid > .column:not(.row),
   .ui.grid > .row > .column {
     padding: 0 !important;
+  }
+
+  .ui.segment:first-child {
+    margin-top: 1rem;
   }
 }
 

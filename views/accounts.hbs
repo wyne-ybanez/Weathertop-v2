@@ -8,12 +8,17 @@
 <div class="ui equal width stackable grid">
 
     <div class="column">
-        <div class="ui link cards">
+        <div class="ui link cards top-small-padding">
             <div class="card">
                 <div class="image">
-                    <img src="/images/profile.png">
+                    {{#if member.avatar }}
+                        <img src="/images/{{member.avatar}}.png">
+                    {{else}}
+                        <img src="/images/avatar.png">
+                    {{/if}}
                 </div>
                 <div class="content">
+                     
                     <div class="header">{{member.firstName}} {{member.lastName}}</div>
                     <div class="meta">
                         <a>User</a>
