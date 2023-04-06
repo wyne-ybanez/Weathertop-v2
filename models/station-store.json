@@ -1,234 +1,6 @@
 {
   "stationCollection": [
     {
-      "id": "01",
-      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Tramore",
-      "lat": "12",
-      "lng": "12",
-      "readings": [
-        {
-          "code": 800,
-          "date": "2022-09-05 14:11:58.314",
-          "id": "b45e1290-2d24-11ed-b67c-6594b545aa78",
-          "temperature": 32.26,
-          "windSpeed": 2.34,
-          "pressure": 1009,
-          "windDirection": 241,
-          "tempTrend": [
-            31.59,
-            28.1,
-            27.3,
-            31.62,
-            25.47,
-            24.35,
-            31.26,
-            31.43
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        },
-        {
-          "code": 800,
-          "date": "2022-09-05 14:12:00.191",
-          "id": "b5938550-2d24-11ed-b67c-6594b545aa78",
-          "temperature": 32.26,
-          "windSpeed": 2.34,
-          "pressure": 1009,
-          "windDirection": 241,
-          "tempTrend": [
-            31.59,
-            28.1,
-            27.3,
-            31.62,
-            25.47,
-            24.35,
-            31.26,
-            31.43
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        },
-        {
-          "id": "b9824bb1-2d24-11ed-b67c-6594b545aa78",
-          "date": "2022-09-05 14:12:07.080",
-          "code": 200,
-          "temperature": 200,
-          "windSpeed": 200,
-          "windDirection": 200,
-          "pressure": 200,
-          "tempTrend": [
-            31.65,
-            30.12,
-            25.13,
-            31.76,
-            31.61,
-            29.76,
-            30.16,
-            31.66
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        }
-      ],
-      "latestWeatherIcon": "cloud sun icon",
-      "BeaufortValue": 11,
-      "windCompass": "South South West",
-      "windChill": 295.99,
-      "fahrenheitValue": 392,
-      "maxTemperature": 200,
-      "minTemperature": 32.26,
-      "maxWindSpeed": 200,
-      "minWindSpeed": 2.34,
-      "maxPressure": 1009,
-      "minPressure": 200,
-      "trends": true,
-      "tempTrend": true,
-      "windTrend": true,
-      "pressureTrend": false,
-      "latestWeather": "Partial clouds",
-      "temperature": 200,
-      "pressure": 200
-    },
-    {
-      "id": "05",
-      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Dunmore",
-      "lat": "12",
-      "lng": "12",
-      "readings": [
-        {
-          "code": 800,
-          "date": "2022-09-05 14:11:43.863",
-          "id": "abc35050-2d24-11ed-b67c-6594b545aa78",
-          "temperature": 32.06,
-          "windSpeed": 1.44,
-          "pressure": 1010,
-          "windDirection": 216,
-          "tempTrend": [
-            31.65,
-            30.12,
-            25.13,
-            31.76,
-            31.61,
-            29.76,
-            30.16,
-            31.66
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        },
-        {
-          "code": 800,
-          "date": "2022-09-05 14:11:46.065",
-          "id": "ad14af80-2d24-11ed-b67c-6594b545aa78",
-          "temperature": 32.06,
-          "windSpeed": 1.44,
-          "pressure": 1010,
-          "windDirection": null,
-          "tempTrend": [
-            31.65,
-            30.12,
-            25.13,
-            31.08,
-            31.65,
-            29.76,
-            30.16,
-            31.66
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        },
-        {
-          "id": "d9a916c1-2d34-11ed-93a7-7b0a44a56c8b",
-          "date": "2022-09-05 16:07:32.822",
-          "code": 200,
-          "temperature": 200,
-          "windSpeed": 200,
-          "windDirection": 200,
-          "pressure": 200,
-          "tempTrend": [
-            31.38,
-            30.12,
-            25.13,
-            31.76,
-            31.61,
-            29.76,
-            30.16,
-            31.66
-          ],
-          "trendLabels": [
-            "5/8/2022",
-            "6/8/2022",
-            "7/8/2022",
-            "8/8/2022",
-            "9/8/2022",
-            "10/8/2022",
-            "11/8/2022",
-            "12/8/2022"
-          ]
-        }
-      ],
-      "latestWeather": "Partial clouds",
-      "latestWeatherIcon": "cloud sun icon",
-      "temperature": 200,
-      "BeaufortValue": 11,
-      "pressure": 200,
-      "windCompass": "South South West",
-      "windChill": 295.99,
-      "fahrenheitValue": 392,
-      "maxTemperature": 200,
-      "minTemperature": 32.06,
-      "maxWindSpeed": 200,
-      "minWindSpeed": 1.44,
-      "maxPressure": 1010,
-      "minPressure": 200,
-      "trends": true,
-      "tempTrend": true,
-      "windTrend": true,
-      "pressureTrend": false
-    },
-    {
       "id": "75b188a0-2d0c-11ed-a145-8b52f0c331fe",
       "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
       "name": "Test",
@@ -1039,6 +811,45 @@
             "14/8/2022",
             "15/8/2022",
             "16/8/2022"
+          ]
+        }
+      ],
+      "trends": false
+    },
+    {
+      "id": "c0ca25a0-d47c-11ed-a73d-53f075c9a0a5",
+      "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Cork",
+      "lat": 51.9036,
+      "lng": -8.4683,
+      "readings": [
+        {
+          "code": 800,
+          "date": "2023-04-06 13:13:06.372",
+          "id": "c539dbd0-d47c-11ed-a73d-53f075c9a0a5",
+          "temperature": 11.12,
+          "windSpeed": 3.84,
+          "pressure": 1019,
+          "windDirection": 313,
+          "tempTrend": [
+            11.17,
+            11.01,
+            11.15,
+            10.08,
+            11.23,
+            8.44,
+            9.68,
+            10.32
+          ],
+          "trendLabels": [
+            "6/3/2023",
+            "7/3/2023",
+            "8/3/2023",
+            "9/3/2023",
+            "10/3/2023",
+            "11/3/2023",
+            "12/3/2023",
+            "13/3/2023"
           ]
         }
       ],

@@ -9,8 +9,8 @@ View the live project here: https://weathertop-v2.herokuapp.com/
 
 <strong>Test Account:</strong>
 
-User: `Homer@Simpson.com`
-Password: `secret`
+- User: `homer@simpson.com`
+- Password: `secret`
 
 ## Project Goal
 
