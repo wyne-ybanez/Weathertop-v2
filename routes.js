@@ -28,6 +28,9 @@ router.post("/station/:id/addreading", station.addreading);
 router.get("/station/:id/addAutoReading", station.addAutoReading);
 router.get("/station/:id/deletereading/:readingid", station.deleteReading);
 
+router.get("/station/:id/editStation", station.editStation);
+router.post("/station/:id/updateStation", station.updateStation);
+
 router.get("/reading/:id/editreading/:readingid", reading.index);
 router.post("/reading/:id/updatereading/:readingid", reading.update);
 

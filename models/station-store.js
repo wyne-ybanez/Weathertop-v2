@@ -29,6 +29,11 @@ const stationsStore = {
     this.store.save();
   },
 
+  updateStation(station, updatedStation) {
+    station.name = updatedStation.name;
+    this.store.save();
+  },
+
   removeStation(id) {
     const station = this.getStation(id);
     this.store.remove(this.collection, station);

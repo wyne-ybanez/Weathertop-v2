@@ -1,9 +1,15 @@
 {{> menu}}
 
 <section>
-  <h2 class="ui header top-medium-padding bottom-small-padding">
-    {{station.name}}
-  </h2>
+  <div class="flex">
+    <h2 class="ui header top-medium-padding bottom-small-padding">
+      {{station.name}}
+    </h2>
+    {{!-- Edit Station Name --}}
+    <a href="/station/{{station.id}}/editStation/" class="ui icon button left-small-margin h-min align-center">
+      <i class="pencil alternate icon"></i> Rename
+    </a>
+  </div>
 
   <table>
     <tbody>

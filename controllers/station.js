@@ -62,6 +62,34 @@ const station = {
   },
 
   /*
+    Edit Station
+    - Rename station
+  */
+  editStation(request, response) {
+    const stationId = request.params.id;
+    const viewData = {
+      title: "Edit Station",
+      station: stationsStore.getStation(stationId),
+    };
+    response.render("editstation", viewData);
+  },
+
+  /*
+    Update Station
+    - Rename station
+  */
+  updateStation(request, response) {
+    const stationId = request.params.id;
+    const station = stationsStore.getStation(stationId);
+    const updatedStation = {
+      name: request.body.name,
+    };
+
+    stationsStore.updateStation(station, updatedStation);
+    response.redirect("/station/" + stationId);
+  },
+
+  /*
     Delete Reading
     - Takes StationID and ReadingID as arguments
   */

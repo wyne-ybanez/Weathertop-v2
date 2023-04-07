@@ -781,7 +781,11 @@
       "minPressure": 1019,
       "tempTrend": false,
       "windTrend": false,
-      "pressureTrend": false
+      "pressureTrend": false,
+      "latestWeather": "Clear",
+      "latestWeatherIcon": "cloud rainbow icon",
+      "temperature": 12.57,
+      "pressure": 1019
     },
     {
       "id": "995d3030-d48a-11ed-a73d-53f075c9a0a5",

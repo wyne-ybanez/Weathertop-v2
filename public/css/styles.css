@@ -82,6 +82,14 @@ hr {
   margin-bottom: 1rem !important;
 }
 
+.h-min {
+  height: min-content;
+}
+
+.align-center {
+  align-self: center;
+}
+
 .flex {
   display: flex !important;
 }

@@ -1,0 +1,15 @@
+{{> menu}}
+
+<div class="column top-small-margin">
+    <form class="ui segment raised form" action="/station/{{station.id}}/updateStation" method="POST">
+        <h3 class="ui header">Edit your Station's Name:</h3>
+        <div class="two fields">
+            <div class="field">
+                <label>New Station Name</label>
+                <input placeholder="Station Name" type="text" name="name">
+            </div>
+        </div>
+        <button class="ui blue button">Update</button>
+        <a href="/station/{{station.id}}/" class="ui gray button">Back</a>
+    </form>
+</div>
