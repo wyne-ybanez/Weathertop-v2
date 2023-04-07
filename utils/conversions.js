@@ -19,13 +19,13 @@ const conversions = {
     while (weatherCode != 0) {
       switch (weatherCode) {
         case 100:
-          weather = "Thunder";
+          weather = "Thunderstorm";
           break;
         case 200:
-          weather = "Snow";
+          weather = "Thunder";
           break;
         case 300:
-          weather = "Rain";
+          weather = "Drizzle Rain";
           break;
         case 400:
           weather = "Heavy Showers";
@@ -34,10 +34,10 @@ const conversions = {
           weather = "Light Showers";
           break;
         case 600:
-          weather = "Cloudy";
+          weather = "Snow";
           break;
         case 700:
-          weather = "Partial clouds";
+          weather = "Mists";
           break;
         case 800:
           weather = "Clear";
