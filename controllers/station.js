@@ -111,6 +111,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
+    const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
 
     // API Call
     let report = {};
@@ -127,7 +128,7 @@ const station = {
         let code;
         code = reading.weather[0].id;
         report.code = roundNearest100(code);
-        report.date = date.toISOString().replace("T", " ").replace("Z", "");
+        report.date = formattedDate;
         report.id = uuid.v1();
         report.temperature = reading.temp;
         report.windSpeed = reading.wind_speed;
@@ -153,7 +154,7 @@ const station = {
     // New Reading Data
     const newReading = {
       id: uuid.v1(),
-      date: date.toISOString().replace("T", " ").replace("Z", ""),
+      date: report.date,
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
@@ -177,6 +178,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
+    const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
 
     let report = {};
     const lat = station.lat;
@@ -192,7 +194,7 @@ const station = {
         let code;
         code = reading.weather[0].id;
         report.code = roundNearest100(code);
-        report.date = date.toISOString().replace("T", " ").replace("Z", "");
+        report.date = formattedDate;
         report.id = uuid.v1();
         report.temperature = reading.temp;
         report.windSpeed = reading.wind_speed;
