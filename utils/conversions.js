@@ -18,11 +18,8 @@ const conversions = {
     let weather = "";
     while (weatherCode != 0) {
       switch (weatherCode) {
-        case 100:
-          weather = "Thunderstorm";
-          break;
         case 200:
-          weather = "Thunder";
+          weather = "Thunderstorm";
           break;
         case 300:
           weather = "Drizzle Rain";
@@ -31,7 +28,7 @@ const conversions = {
           weather = "Heavy Showers";
           break;
         case 500:
-          weather = "Light Showers";
+          weather = "Rain";
           break;
         case 600:
           weather = "Snow";
@@ -40,7 +37,7 @@ const conversions = {
           weather = "Mists";
           break;
         case 800:
-          weather = "Clear";
+          weather = "Clear / Clouds";
           break;
         default:
           weather = "";
@@ -66,13 +63,13 @@ const conversions = {
       if (latestWeather == "Clear") {
         latestWeatherIcon = "cloud rainbow icon";
       }
-      if (latestWeather == "Partial clouds") {
+      if (latestWeather == "Clear / Clouds") {
         latestWeatherIcon = "cloud sun icon";
       }
-      if (latestWeather == "Cloudy") {
+      if (latestWeather == "Mists") {
         latestWeatherIcon = "cloud icon";
       }
-      if (latestWeather == "Light Showers") {
+      if (latestWeather == "Drizzle Rain") {
         latestWeatherIcon = "cloud sun rain icon";
       }
       if (latestWeather == "Heavy Showers") {
@@ -84,7 +81,7 @@ const conversions = {
       if (latestWeather == "Snow") {
         latestWeatherIcon = "snowflake icon";
       }
-      if (latestWeather == "Thunder") {
+      if (latestWeather == "Thunderstorm") {
         latestWeatherIcon = "poo storm icon";
       }
       return latestWeatherIcon;
