@@ -111,7 +111,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
-    const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
+    const formattedDate = `${date.toLocaleString("en-GB")}`;
 
     // API Call
     let report = {};
@@ -178,7 +178,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const date = new Date();
-    const formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
+    const formattedDate = `${date.toLocaleString("en-GB")}`;
 
     let report = {};
     const lat = station.lat;
