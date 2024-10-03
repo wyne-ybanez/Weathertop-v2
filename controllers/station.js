@@ -183,8 +183,8 @@ const station = {
     let report = {};
     const lat = station.lat;
     const lng = station.lng;
-    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
-    `;
+    const requestUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${station.lat}&lon=${station.lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72`;    
+
     try {
       const result = await axios.get(requestUrl);
 
@@ -209,6 +209,8 @@ const station = {
           const date = new Date(trends[i].dt * 1000);
           report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
         }
+
+        stationsStore.addReading(stationId, report);
       }
     } catch {
       // if API call fails, set labels and trends to empty array
@@ -217,7 +219,6 @@ const station = {
       report.trendLabels = [];
     }
 
-    stationsStore.addReading(stationId, report);
     logger.debug("New Reading = ", report);
     response.redirect("/station/" + stationId);
   },

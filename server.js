@@ -9,7 +9,7 @@ const fileUpload = require("express-fileupload");
 const app = express();
 app.use(cookieParser());
 app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-eval'");
+  res.setHeader("Content-Security-Policy", "script-src 'self' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval' 'unsafe-inline'");
   next();
 });
 const exphbs = require("express-handlebars");

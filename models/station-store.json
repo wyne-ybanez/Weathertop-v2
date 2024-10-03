@@ -768,11 +768,11 @@
           ]
         }
       ],
-      "trends": false,
-      "BeaufortValue": 2,
-      "windCompass": "South South East",
-      "windChill": 9.84,
-      "fahrenheitValue": 51.025999999999996,
+      "trends": true,
+      "BeaufortValue": 11,
+      "windCompass": "North",
+      "windChill": null,
+      "fahrenheitValue": null,
       "maxTemperature": 10.57,
       "minTemperature": 10.57,
       "maxWindSpeed": 7.2,
@@ -781,11 +781,7 @@
       "minPressure": 1019,
       "tempTrend": false,
       "windTrend": false,
-      "pressureTrend": false,
-      "latestWeatherIcon": "cloud rainbow icon",
-      "latestWeather": "Clear",
-      "temperature": 10.57,
-      "pressure": 1019
+      "pressureTrend": false
     },
     {
       "id": "995d3030-d48a-11ed-a73d-53f075c9a0a5",
@@ -864,17 +860,20 @@
         }
       ],
       "trends": false,
-      "latestWeatherIcon": "cloud rainbow icon",
-      "BeaufortValue": 1,
-      "windCompass": "West North West",
-      "windChill": 14.36,
-      "fahrenheitValue": 56.048,
-      "maxTemperature": 13.36,
-      "minTemperature": 13.36,
-      "maxWindSpeed": 2.57,
-      "minWindSpeed": 2.57,
-      "maxPressure": 1017,
-      "minPressure": 1017
+      "latestWeatherIcon": "cloud sun icon",
+      "BeaufortValue": 2,
+      "windCompass": "South",
+      "windChill": 11.62,
+      "fahrenheitValue": 53.42,
+      "maxTemperature": 11.9,
+      "minTemperature": 11.9,
+      "maxWindSpeed": 6.17,
+      "minWindSpeed": 6.17,
+      "maxPressure": 1020,
+      "minPressure": 1020,
+      "latestWeather": "Clear / Clouds",
+      "temperature": 11.9,
+      "pressure": 1020
     },
     {
       "id": "2863c540-d49b-11ed-8b43-b504880a181f",
@@ -884,13 +883,13 @@
       "lng": -8.4242,
       "readings": [
         {
-          "code": 800,
+          "code": 700,
           "date": "7/3/2023 - 12:42",
           "id": "511c8870-d539-11ed-9350-859df8639402",
           "temperature": 10.49,
           "windSpeed": 7.2,
           "pressure": 1019,
-          "windDirection": 160,
+          "windDirection": null,
           "tempTrend": [
             10.49,
             11.3,
@@ -914,9 +913,8 @@
         }
       ],
       "trends": false,
-      "latestWeatherIcon": "cloud rainbow icon",
       "BeaufortValue": 2,
-      "windCompass": "South South East",
+      "windCompass": "North",
       "windChill": 9.75,
       "fahrenheitValue": 50.882000000000005,
       "maxTemperature": 10.49,
@@ -928,7 +926,8 @@
       "tempTrend": false,
       "windTrend": false,
       "pressureTrend": false,
-      "latestWeather": "Clear",
+      "latestWeather": "Mists",
+      "latestWeatherIcon": "cloud icon",
       "temperature": 10.49,
       "pressure": 1019
     },
@@ -970,7 +969,7 @@
         }
       ],
       "trends": false,
-      "latestWeatherIcon": "cloud rainbow icon",
+      "latestWeatherIcon": "cloud sun icon",
       "BeaufortValue": 1,
       "windCompass": "South South West",
       "windChill": 32.2,
@@ -984,7 +983,7 @@
       "tempTrend": true,
       "windTrend": false,
       "pressureTrend": false,
-      "latestWeather": "Clear",
+      "latestWeather": "Clear / Clouds",
       "temperature": 29.84,
       "pressure": 1010
     }
