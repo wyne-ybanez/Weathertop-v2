@@ -8,6 +8,10 @@ const fileUpload = require("express-fileupload");
 
 const app = express();
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-eval'");
+  next();
+});
 const exphbs = require("express-handlebars");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
