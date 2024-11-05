@@ -2,23 +2,29 @@
 
 WeatherTop is a web application where members can submit weather reports from their stations to
 the website where their entries are recorded, capturing the reading from a specific time. Each
-member can create any number of weather stations records. The web application utilises weather 
+member can create any number of weather stations records. The web application utilises weather
 analytics and conversions for each reading which is automatically calculated when a report is made.
 
-View the live project here: https://weathertop-v2.herokuapp.com/
+To access the project: Whilst in the project directory, type in your terminal enter `npm run start`
+
+Go to `http://localhost:4000` or whichever port your console is telling you to go to.
 
 <strong>Test Account:</strong>
 
 - User: `homer@simpson.com`
 - Password: `secret`
 
+## Disclaimer
+
+WeatherTop is not maintained. API's will have changed their structures over time and may become subscription services to which I am not subscribed to. Despite this, the project was created to function properly with the versions of the API and dependecies as to when it was created originally.
+
 ## Project Goal
 
 The goal of the project is to create a web app that incorporates the principles of CRUD and designed
-according to the MVC pattern. The project will achieve this by allowing users to create accounts, 
-stations, weather reports and either edit or delete these as the user pleases. The web app provides 
-only a very specific function by recording weather reports and providing a date/time recording of 
-these reports. Thus, each recording will not be edited, however, user information can be edited by 
+according to the MVC pattern. The project will achieve this by allowing users to create accounts,
+stations, weather reports and either edit or delete these as the user pleases. The web app provides
+only a very specific function by recording weather reports and providing a date/time recording of
+these reports. Thus, each recording will not be edited, however, user information can be edited by
 the user.
 
 ## UX
@@ -57,12 +63,15 @@ The following main pages will be implemented:
 - About page, explains the web app and its purpose - about.hbs
 
 - Home page, displays what the app is about - index.hbs
+
   - Menu should the user have logged in - menu.html
 
 - Dashboard, displays user records (Stations), allows users to add stations and delete stations - dashboard.html
+
   - Create station - addstation.html
 
 - Station details - station.html
+
   - Displays a list of the readings relating to the station - listreadings.hbs
   - Create a report and record it in the station's readings list - addreading.hbs
 
@@ -97,23 +106,24 @@ The following main pages will be implemented:
 #### Frameworks
 
 - Main template frameworks used
-    * Fomantic UI (https://fomantic-ui.com/)
-    * Express
-    * Handlebars
+  - Fomantic UI (https://fomantic-ui.com/)
+  - Express
+  - Handlebars
 
 #### Colour Scheme
 
 - Main Colors
-    * White
-    * Fomantic Blue
-    * Fomantic Green
+
+  - White
+  - Fomantic Blue
+  - Fomantic Green
 
 - Secondary Colors, used for icons
-    * blueviolet
-    * red
-    * dodgerblue
-    * forestgreen
-    * orange
+  - blueviolet
+  - red
+  - dodgerblue
+  - forestgreen
+  - orange
 
 #### Fonts
 
@@ -130,16 +140,16 @@ explores the website.
 The website is also responsive for mobile display.
 
 Each page provides a menu, links and forms to relevant areas of the web app. The colors are simple
-with white and blue being the main colors. The site maintains this theme on all pages only 
-diverging from this color scheme when going to the dashboard. This is meant to allow the user to 
-distinguish between differing station information, usually through icons. This portrays an 
+with white and blue being the main colors. The site maintains this theme on all pages only
+diverging from this color scheme when going to the dashboard. This is meant to allow the user to
+distinguish between differing station information, usually through icons. This portrays an
 easy to understand, easy to use application.
 
 ### Efficiency:
 
 The web app incorporates a utilities folder with the follow files: 'conversions' and 'station-analytics'.
 This utilities folder is utilised in the web app for automatic calculations. The user's readings
-will be converted to its relevant data as per the user's input. Hence, it is an efficient system 
+will be converted to its relevant data as per the user's input. Hence, it is an efficient system
 as the user will not need to do this from scratch.
 
 ### Convenience:
@@ -155,14 +165,17 @@ when viewing the site during development.
 ## Technologies used:
 
 ### Languages
+
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://www.javascript.com/)
 
 ### IDE
+
 - [Visual Studio Code](https://code.visualstudio.com/) - The IDE used to code the website.
 
 ### Frameworks, Libraries, CDN's, Resources etc.
+
 - [Node](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Fomantic UI](https://fomantic-ui.com/)
@@ -174,16 +187,16 @@ when viewing the site during development.
 1. Log into Github/Register for a Github account. Here is a link: https://github.com/
 2. Log into Bitbucket/Register for a Bitbucket account: https://bitbucket.org/
 3. Install Sourcetree: https://www.sourcetreeapp.com/
-4. In the Sourcetree settings, select Authentication and add a Github account (if you already have 
-a Github account set up, it might be simpler to use your personal access token).
+4. In the Sourcetree settings, select Authentication and add a Github account (if you already have
+   a Github account set up, it might be simpler to use your personal access token).
 5. Go to your github profile settings and click on "Developer settings" at the side menu.
 6. Go to Personal Access Tokens, Press generate token.
-7. The token can be set to unlimited (which is not recommended). Perhaps select 90 days. Give the 
-token a name and press the Generate token button. You will then see the generated token and be able 
-to copy it to the clipboard.
+7. The token can be set to unlimited (which is not recommended). Perhaps select 90 days. Give the
+   token a name and press the Generate token button. You will then see the generated token and be able
+   to copy it to the clipboard.
 8. Back in Sourcetree, click 'Refresh Password'.
 9. Here you will be pasting in the token generated on the Github site (in your clipboard hopefully).
-Press Ok.
+   Press Ok.
 10. Create a new repository on Github.
 11. Back in Sourcetree, press the local button.
 12. Create a repository with the local project folder on your device.
@@ -191,9 +204,9 @@ Press Ok.
 14. You can enter a commit message down below the Sourcetree app, which is your commit message.
 15. Select master on the left, update the repository with the commit message.
 16. In Sourcetree, select Repository-Repository Settings, Press add, and enter the remote name: 'origin', the URL path
-is the repository path we have created.
+    is the repository path we have created.
 17. Back in the main Sourcetree window, press 'Push'. Thus, sending your files to the github remote
-repository.
+    repository.
 
 ### Forking the Repository
 
@@ -223,12 +236,14 @@ The app is deployed on Heroku using this repository as the main branch: https://
 
 ## Bugs
 
-* There is an error 500 bug that occurs when a new user updates their account details. This bug requires a future fix but for the moment, an error may occur when submitting account detail updates.
+- There is an error 500 bug that occurs when a new user updates their account details. This bug requires a future fix but for the moment, an error may occur when submitting account detail updates.
 
 ## References
 
 ### External Solutions:
+
 - Formatting JS Date:
+
   - https://stackoverflow.com/questions/12945003/format-date-as-yyyy-mm-ddthhmmss-sssz
 
 - Sorting Stations:
