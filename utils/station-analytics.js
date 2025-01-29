@@ -74,11 +74,13 @@ const stationAnalytics = {
       if (station.readings.length > 1) {
         latestReading = station.readings[station.readings.length - 1];
       }
-      logger.debug("Latest WindSpeed is " + latestReading.windSpeed);
 
       if (latestReading.windSpeed) {
         latestWindSpeed = latestReading.windSpeed;
       }
+
+            logger.debug("Latest WindSpeed is " + latestReading.windSpeed);
+
       return latestWindSpeed;
     }
   },
