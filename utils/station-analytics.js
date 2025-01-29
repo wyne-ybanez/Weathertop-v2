@@ -21,15 +21,14 @@ const stationAnalytics = {
       if (station.readings.length > 1) {
         latestReading = station.readings[station.readings.length - 1];
       }
-      logger.info("Latest Reading is " + latestReading);
-      logger.debug("Latest Reading code is " + latestReading.code);
 
       if (!latestReading.code) {
         latestWeather = "";
       } else {
         latestWeather = conversions.convertCodeToWeather(latestReading.code);
       }
-      logger.info("Latest Weather is " + latestWeather);
+    } else {
+      logger.info('Getting Latest Weather & Reading failed.');
     }
     return latestWeather;
   },

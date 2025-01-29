@@ -7,7 +7,7 @@ const reading = {
   index(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
-    logger.debug(`Editing Reading ${readingId} from Station ${stationId}`);
+    logger.info(`Editing Reading ${readingId} from Station ${stationId}`);
     const viewData = {
       title: "Edit Reading",
       station: stationsStore.getStation(stationId),
@@ -27,7 +27,7 @@ const reading = {
       pressure: Number(request.body.pressure),
       windDirection: Number(request.body.windDirection),
     };
-    logger.debug(`Updating Reading ${readingId} from Station ${stationId}`);
+    logger.info(`Updating Reading ${readingId} from Station ${stationId}`);
     stationsStore.updateReading(reading, newReading);
     response.redirect("/station/" + stationId);
   },

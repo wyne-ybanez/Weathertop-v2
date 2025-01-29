@@ -24,8 +24,8 @@
   // Looping through stations, add markers
   for (let i = 0; i < {{stations.length}}; i++){
     {{#each stations}}
-      var marker = L.marker([{{lat}}, {{lng}}])
-        .bindPopup("{{name}}: {{lat}}° N, {{lng}}° W")
+      var marker = L.marker([{{lat}}, {{lon}}])
+        .bindPopup("{{name}}: {{lat}}° N, {{lon}}° W")
         .addTo(map);
     {{/each}}
   }

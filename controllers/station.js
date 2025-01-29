@@ -28,7 +28,6 @@ const station = {
 
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
-    logger.debug("Station Id = ", stationId);
 
     // if there are readings, then there are values for station summary
     if (station.readings.length > 0) {
@@ -49,7 +48,7 @@ const station = {
       name: station.name,
       station: stationsStore.getStation(stationId),
       latitude: station.lat,
-      longitude: station.lng,
+      longitude: station.lon,
       stationSummary: {
         // Latest Station Values
         latestWeather: latestWeather,
@@ -58,12 +57,13 @@ const station = {
         latestPressure: latestPressure,
       },
     };
+
+    logger.info(`Render station: ${station.name}, ID: ${stationId}`);
     response.render("station", viewData);
   },
 
   /*
     Edit Station
-    - Rename station
   */
   editStation(request, response) {
     const stationId = request.params.id;
@@ -71,20 +71,24 @@ const station = {
       title: "Edit Station",
       station: stationsStore.getStation(stationId),
     };
+
+    logger.info(`Edit station process for station: ${station.name}, ID: ${stationId}`);
     response.render("editstation", viewData);
   },
 
   /*
     Update Station
-    - Rename station
   */
   updateStation(request, response) {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
     const updatedStation = {
       name: request.body.name,
+      lat: request.body.latitude,
+      lon: request.body.longitude
     };
 
+    logger.info(`Updating station: ${station.name}, ${stationId}`);
     stationsStore.updateStation(station, updatedStation);
     response.redirect("/station/" + stationId);
   },
@@ -95,8 +99,9 @@ const station = {
   */
   deleteReading(request, response) {
     const stationId = request.params.id;
+    const station = stationsStore.getStation(stationId);
     const readingId = request.params.readingid;
-    logger.debug(`Deleting Reading ${readingId} from Station ${stationId}`);
+    logger.info(`Deleting reading - reading ID: '${readingId}' from station: ${station.name}, ID: ${stationId} `);
     stationsStore.removeReading(stationId, readingId);
     response.redirect("/station/" + stationId);
   },
@@ -107,18 +112,16 @@ const station = {
     - Makes API Call to add report labels & trends to trend graph
   */
   async addreading(request, response) {
-    logger.info("rendering new reading");
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
+    logger.info(`Adding new reading to station: ${station.name}, ID: ${stationId}`);
     const date = new Date();
     const formattedDate = `${date.toLocaleString("en-GB")}`;
 
     // API Call
     let report = {};
-    const lat = station.lat;
-    const lng = station.lng;
-    const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72
-    `;
+    const requestUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${station.lat}&lon=${station.lon}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72`;
+
     try {
       const result = await axios.get(requestUrl);
 
@@ -165,30 +168,29 @@ const station = {
     };
 
     stationsStore.addReading(stationId, newReading);
-    logger.debug("New Reading = ", newReading);
     response.redirect("/station/" + stationId);
   },
 
   /*
     Add Reading Automatically
-    - Obtain station ID and lat/lng values
+    - Obtain station ID and lat/lon values
     - Request API for location data, then adds to readings
   */
   async addAutoReading(request, response) {
     const stationId = request.params.id;
     const station = stationsStore.getStation(stationId);
+    logger.info(`Adding auto reading to station: ${station.name}, ${stationId}`);
     const date = new Date();
     const formattedDate = `${date.toLocaleString("en-GB")}`;
 
     let report = {};
-    const lat = station.lat;
-    const lng = station.lng;
-    const requestUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${station.lat}&lon=${station.lng}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72`;    
+    const requestUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${station.lat}&lon=${station.lon}&units=metric&appid=3e4f8f021b82edfd153011f778cd9a72`;
 
     try {
       const result = await axios.get(requestUrl);
 
       if (result.status == 200) {
+       //  logger.info("API call successful");
         const reading = result.data.current;
 
         let code;
@@ -214,12 +216,12 @@ const station = {
       }
     } catch {
       // if API call fails, set labels and trends to empty array
-      console.log(report);
+      logger.info("API call failed",  response ? response.data : response.message);
       report.tempTrend = [];
       report.trendLabels = [];
     }
 
-    logger.debug("New Reading = ", report);
+    // logger.info("New Reading = ", report);
     response.redirect("/station/" + stationId);
   },
 };

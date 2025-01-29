@@ -1,7 +1,5 @@
 "use strict";
 
-const logger = require("./logger.js");
-
 const conversions = {
   // Utility rounding to nearest number
   roundNearest100(num) {
@@ -41,8 +39,7 @@ const conversions = {
           break;
         default:
           weather = "";
-          console.log("Invalid code input. " + weatherCode);
-          logger.debug("Invalid code input " + weatherCode);
+          logger.info("Invalid code input " + weatherCode);
           break;
       }
       return weather;
@@ -151,8 +148,7 @@ const conversions = {
       Assuming that anything beyond 117km/hr is a violent storm,
       hence the value defaults at 11 bft.
      */
-      console.log("Invalid wind speed input.");
-      logger.error("Invalid wind speed input.");
+      logger.info("Invalid wind speed input.");
       return BeaufortValue;
     }
     return BeaufortValue;

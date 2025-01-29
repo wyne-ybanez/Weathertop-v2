@@ -5,7 +5,7 @@
       "memberid": "b38d6480-2241-11ed-9e37-578e0560250b",
       "name": "Test",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "id": "dd98a7a0-2d0c-11ed-a741-19a76395853e",
@@ -90,7 +90,7 @@
       "memberid": "dd1ceda0-2e2d-11ed-b660-c394b5317122",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -169,7 +169,7 @@
       "memberid": "e31a74d0-2fa3-11ed-9333-8f038665ce01",
       "name": "Cork",
       "lat": 24.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -254,7 +254,7 @@
       "memberid": "94b33cc0-301e-11ed-91a9-29435e3f6e6a",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -307,7 +307,7 @@
       "memberid": "39d73d00-301f-11ed-9791-695a2016152b",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -346,7 +346,7 @@
       "memberid": "cbd13bc0-301f-11ed-a5af-f70223dc1be0",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -385,7 +385,7 @@
       "memberid": "7aedb980-3020-11ed-a588-83c8a88a0235",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -424,7 +424,7 @@
       "memberid": "cc1ef120-3020-11ed-9f0a-b993de24387c",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -463,7 +463,7 @@
       "memberid": "fb5baf50-3020-11ed-80d8-c78aefcb7fa5",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -502,7 +502,7 @@
       "memberid": "4124e900-3023-11ed-a6e1-57465260d180",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -541,7 +541,7 @@
       "memberid": "8c58f730-3024-11ed-85bf-51dbcd03e52d",
       "name": "Cork",
       "lat": 12.12,
-      "lng": 12.12,
+      "lon": 12.12,
       "readings": [
         {
           "code": 800,
@@ -580,7 +580,7 @@
       "memberid": "c12a8aa0-3024-11ed-ae23-c787955226f1",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -619,7 +619,7 @@
       "memberid": "e692f520-3024-11ed-97b1-e18b0642666c",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -658,7 +658,7 @@
       "memberid": "00cecef0-3025-11ed-8509-b96d0f410a2f",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -697,7 +697,7 @@
       "memberid": "47d9c250-3025-11ed-8e45-53ca724af7fd",
       "name": "Cork",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -736,59 +736,63 @@
       "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Cork",
       "lat": 51.9036,
-      "lng": -8.4683,
+      "lon": -8.4683,
       "readings": [
         {
           "code": 800,
-          "date": "7/3/2023 - 12:42",
-          "id": "3a6a4a90-d539-11ed-9350-859df8639402",
-          "temperature": 10.57,
-          "windSpeed": 7.2,
-          "pressure": 1019,
-          "windDirection": 160,
+          "date": "29/01/2025, 12:21:25",
+          "id": "8f2b48b0-de3b-11ef-8be9-43ba9478c881",
+          "temperature": 6.57,
+          "windSpeed": 6.69,
+          "pressure": 1005,
+          "windDirection": 350,
           "tempTrend": [
-            10.57,
-            11.63,
-            10.42,
-            11.07,
-            9.39,
-            8.08,
-            5.41,
-            8.64
+            6.57,
+            6.53,
+            7.48,
+            9.26,
+            9.06,
+            10.47,
+            9.38,
+            7.69
           ],
           "trendLabels": [
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023",
-            "14/3/2023"
+            "29/0/2025",
+            "30/0/2025",
+            "31/0/2025",
+            "1/1/2025",
+            "2/1/2025",
+            "3/1/2025",
+            "4/1/2025",
+            "5/1/2025"
           ]
         }
       ],
       "trends": true,
-      "BeaufortValue": 11,
+      "BeaufortValue": 2,
       "windCompass": "North",
-      "windChill": null,
-      "fahrenheitValue": null,
-      "maxTemperature": 10.57,
-      "minTemperature": 10.57,
-      "maxWindSpeed": 7.2,
-      "minWindSpeed": 7.2,
-      "maxPressure": 1019,
-      "minPressure": 1019,
-      "tempTrend": false,
-      "windTrend": false,
-      "pressureTrend": false
+      "windChill": 5.67,
+      "fahrenheitValue": 45.626000000000005,
+      "maxTemperature": 7.57,
+      "minTemperature": 6.57,
+      "maxWindSpeed": 10.29,
+      "minWindSpeed": 6.69,
+      "maxPressure": 1006,
+      "minPressure": 1005,
+      "tempTrend": true,
+      "windTrend": true,
+      "pressureTrend": true,
+      "latestWeather": "Clear / Clouds",
+      "latestWeatherIcon": "cloud sun icon",
+      "temperature": 7.57,
+      "pressure": 1006
     },
     {
       "id": "995d3030-d48a-11ed-a73d-53f075c9a0a5",
       "memberid": "8dcdbf00-d48a-11ed-a73d-53f075c9a0a5",
       "name": "test",
       "lat": 12,
-      "lng": 12,
+      "lon": 12,
       "readings": [
         {
           "code": 800,
@@ -827,165 +831,165 @@
       "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Waterford",
       "lat": 52.2583,
-      "lng": -7.1119,
+      "lon": -7.1119,
       "readings": [
         {
           "code": 800,
-          "date": "7/3/2023 - 12:43",
-          "id": "75107b60-d539-11ed-9350-859df8639402",
-          "temperature": 11.9,
-          "windSpeed": 6.17,
-          "pressure": 1020,
-          "windDirection": 170,
+          "date": "29/01/2025, 12:22:24",
+          "id": "b2909030-de3b-11ef-8be9-43ba9478c881",
+          "temperature": 6.07,
+          "windSpeed": 6.69,
+          "pressure": 1004,
+          "windDirection": 10,
           "tempTrend": [
-            11.9,
-            11.02,
-            11.38,
-            11.37,
-            9.54,
-            8.14,
-            5.14,
-            8.62
+            6.07,
+            6.31,
+            6.58,
+            9.24,
+            9.48,
+            9.95,
+            9.88,
+            7.19
           ],
           "trendLabels": [
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023",
-            "14/3/2023"
+            "29/0/2025",
+            "30/0/2025",
+            "31/0/2025",
+            "1/1/2025",
+            "2/1/2025",
+            "3/1/2025",
+            "4/1/2025",
+            "5/1/2025"
           ]
         }
       ],
       "trends": false,
       "latestWeatherIcon": "cloud sun icon",
       "BeaufortValue": 2,
-      "windCompass": "South",
-      "windChill": 11.62,
-      "fahrenheitValue": 53.42,
-      "maxTemperature": 11.9,
-      "minTemperature": 11.9,
-      "maxWindSpeed": 6.17,
-      "minWindSpeed": 6.17,
-      "maxPressure": 1020,
-      "minPressure": 1020,
+      "windCompass": "North",
+      "windChill": 4.74,
+      "fahrenheitValue": 42.926,
+      "maxTemperature": 6.07,
+      "minTemperature": 6.07,
+      "maxWindSpeed": 6.69,
+      "minWindSpeed": 6.69,
+      "maxPressure": 1004,
+      "minPressure": 1004,
       "latestWeather": "Clear / Clouds",
-      "temperature": 11.9,
-      "pressure": 1020
+      "temperature": 6.07,
+      "pressure": 1004
     },
     {
       "id": "2863c540-d49b-11ed-8b43-b504880a181f",
       "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Douglas",
-      "lat": 51.8711,
-      "lng": -8.4242,
+      "lat": "51.876",
+      "lon": "-8.425",
       "readings": [
         {
-          "code": 700,
-          "date": "7/3/2023 - 12:42",
-          "id": "511c8870-d539-11ed-9350-859df8639402",
-          "temperature": 10.49,
-          "windSpeed": 7.2,
-          "pressure": 1019,
-          "windDirection": null,
+          "code": 800,
+          "date": "29/01/2025, 12:22:05",
+          "id": "a6ce7640-de3b-11ef-8be9-43ba9478c881",
+          "temperature": 6.49,
+          "windSpeed": 6.69,
+          "pressure": 1005,
+          "windDirection": 350,
           "tempTrend": [
-            10.49,
-            11.3,
-            10.3,
-            10.89,
-            9.27,
-            8.03,
-            5.21,
-            8.62
+            6.49,
+            6.44,
+            7.4,
+            9.23,
+            9.06,
+            10.43,
+            9.31,
+            7.61
           ],
           "trendLabels": [
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023",
-            "14/3/2023"
+            "29/0/2025",
+            "30/0/2025",
+            "31/0/2025",
+            "1/1/2025",
+            "2/1/2025",
+            "3/1/2025",
+            "4/1/2025",
+            "5/1/2025"
           ]
         }
       ],
-      "trends": false,
+      "trends": true,
       "BeaufortValue": 2,
       "windCompass": "North",
-      "windChill": 9.75,
-      "fahrenheitValue": 50.882000000000005,
-      "maxTemperature": 10.49,
-      "minTemperature": 10.49,
-      "maxWindSpeed": 7.2,
-      "minWindSpeed": 7.2,
-      "maxPressure": 1019,
-      "minPressure": 1019,
-      "tempTrend": false,
+      "windChill": 5.55,
+      "fahrenheitValue": 44.186,
+      "maxTemperature": 6.77,
+      "minTemperature": 6.49,
+      "maxWindSpeed": 6.69,
+      "minWindSpeed": 6.69,
+      "maxPressure": 1006,
+      "minPressure": 1005,
+      "tempTrend": true,
       "windTrend": false,
-      "pressureTrend": false,
-      "latestWeather": "Mists",
-      "latestWeatherIcon": "cloud icon",
-      "temperature": 10.49,
-      "pressure": 1019
+      "pressureTrend": true,
+      "latestWeather": "Clear / Clouds",
+      "latestWeatherIcon": "cloud sun icon",
+      "temperature": 6.77,
+      "pressure": 1006
     },
     {
       "id": "9f43bf30-d49b-11ed-8b43-b504880a181f",
       "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Manila",
       "lat": 14.5995,
-      "lng": 120.9842,
+      "lon": 120.9842,
       "readings": [
         {
           "code": 800,
-          "date": "7/3/2023 - 12:43",
-          "id": "705a4650-d539-11ed-9350-859df8639402",
-          "temperature": 29.84,
-          "windSpeed": 2.57,
-          "pressure": 1010,
-          "windDirection": 200,
+          "date": "29/01/2025, 12:22:15",
+          "id": "ad3827b0-de3b-11ef-8be9-43ba9478c881",
+          "temperature": 26.11,
+          "windSpeed": 4.12,
+          "pressure": 1014,
+          "windDirection": 50,
           "tempTrend": [
-            30.49,
-            31.19,
-            32.01,
-            30.65,
-            29.32,
-            30.35,
-            29.95,
-            30.93
+            25.34,
+            26.46,
+            28.4,
+            29.17,
+            28.35,
+            28.3,
+            28.27,
+            26.26
           ],
           "trendLabels": [
-            "7/3/2023",
-            "8/3/2023",
-            "9/3/2023",
-            "10/3/2023",
-            "11/3/2023",
-            "12/3/2023",
-            "13/3/2023",
-            "14/3/2023"
+            "29/0/2025",
+            "30/0/2025",
+            "31/0/2025",
+            "1/1/2025",
+            "2/1/2025",
+            "3/1/2025",
+            "4/1/2025",
+            "5/1/2025"
           ]
         }
       ],
       "trends": false,
       "latestWeatherIcon": "cloud sun icon",
       "BeaufortValue": 1,
-      "windCompass": "South South West",
-      "windChill": 32.2,
-      "fahrenheitValue": 85.712,
-      "maxTemperature": 29.84,
-      "minTemperature": 29.84,
-      "maxWindSpeed": 2.57,
-      "minWindSpeed": 2.57,
-      "maxPressure": 1010,
-      "minPressure": 1010,
+      "windCompass": "North North East",
+      "windChill": 28.07,
+      "fahrenheitValue": 78.99799999999999,
+      "maxTemperature": 26.11,
+      "minTemperature": 26.11,
+      "maxWindSpeed": 4.12,
+      "minWindSpeed": 4.12,
+      "maxPressure": 1014,
+      "minPressure": 1014,
       "tempTrend": true,
       "windTrend": false,
       "pressureTrend": false,
       "latestWeather": "Clear / Clouds",
-      "temperature": 29.84,
-      "pressure": 1010
+      "temperature": 26.11,
+      "pressure": 1014
     }
   ]
 }

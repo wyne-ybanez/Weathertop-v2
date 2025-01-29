@@ -31,6 +31,8 @@ const stationsStore = {
 
   updateStation(station, updatedStation) {
     station.name = updatedStation.name;
+    station.lat = updatedStation.lat;
+    station.lon = updatedStation.lon;
     this.store.save();
   },
 

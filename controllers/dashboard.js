@@ -11,13 +11,11 @@ const { processAnalytics, processTrendAnalytics } = require("../utils/station-an
 const dashboard = {
   // Index
   index(request, response) {
-    logger.info("dashboard rendering");
     const loggedInMember = accounts.getCurrentMember(request);
     const stations = stationsStore.getMemberStations(loggedInMember.id);
 
     // Station sorting
     const sortedStations = stations.sort((a, b) => (a.name > b.name ? 1 : -1));
-    console.log("Sorted Stations by Name: ", sortedStations, "--------------");
 
     // Loop through all the stations,
     // For each station, output the Conversions & Analytics
@@ -32,7 +30,6 @@ const dashboard = {
       member: loggedInMember,
       stations: sortedStations,
     };
-    logger.info("about to render", stationsStore.getAllStations());
     response.render("dashboard", viewData);
   },
 
@@ -44,10 +41,10 @@ const dashboard = {
       memberid: loggedInMember.id,
       name: request.body.name,
       lat: Number(request.body.lat),
-      lng: Number(request.body.lng),
+      lon: Number(request.body.lon),
       readings: [],
     };
-    logger.debug("Creating a new Station", newStation);
+    logger.info("Creating a new Station", newStation);
     stationsStore.addStation(newStation);
     response.redirect("/dashboard");
   },
@@ -55,7 +52,7 @@ const dashboard = {
   // Delete Station
   deleteStation(request, response) {
     const stationId = request.params.id;
-    logger.debug(`Deleting station ${stationId}`);
+    logger.info(`Deleting station ${stationId}`);
     stationsStore.removeStation(stationId);
     response.redirect("/dashboard");
   },

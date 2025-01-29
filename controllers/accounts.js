@@ -35,7 +35,7 @@ const accounts = {
     const member = request.body;
     member.id = uuid.v1();
     memberStore.addMember(member);
-    logger.info(`registering ${member.email}`);
+    logger.info(`Registering ${member.email}`);
     response.redirect("/");
   },
 
@@ -43,7 +43,7 @@ const accounts = {
     const member = memberStore.getMemberByEmail(request.body.email);
     if (member) {
       response.cookie("member", member.email);
-      logger.info(`logging in ${member.email}`);
+      logger.info(`Logging in ${member.email}`);
       response.redirect("/dashboard");
     } else {
       response.redirect("/login");
